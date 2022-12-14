@@ -1,0 +1,57 @@
+{% extends "main/base.html" %}
+{% load socialaccount %}
+	{% providers_media_js %}
+{% block content %}
+<section class="courses">
+	<div class="col-sm-6 ">
+        <h4>Login</h4>
+	<article class="registration">
+        <p class="signup-text">Signin now to benefit from the number one online market place in africa</p>
+<p>Login Using</p>
+                        <a class="btn btn-block btn-social btn-google" style="background-color:#DB4437; color:aliceblue;" href="{% provider_login_url "google" %}"> <span class="fa fa-google"></span> Gmail</a>
+                        <p>--OR--</p>
+{% if form.errors %}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+{% if next %}
+{% if user.is_authenticated %}
+<p>Your account doesn't have access to this page. To proceed,
+please login with an account that has access.</p>
+{% else %}
+<p>Please login to see this page.</p>
+{% endif %}
+{% endif %}
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+<!--<table>
+<tr>
+<td>{{ form.username.label_tag }}</td>
+<td>{{ form.username }}</td>
+</tr>
+<tr>
+<td>{{ form.password.label_tag }}</td>
+<td>{{ form.password }}</td>
+</tr>
+</table>-->{{form}}
+<input type="submit" class="btn amado-btn" value="login" />
+<input type="hidden"  name="next" value="{{ next }}" />
+
+</form>
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a href="{% url 'register' %}">Don't have an account? <b>CREATE one</b></a></p>
+</article></div>
+
+</section>
+{% endblock %}
+{% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        $(' input').addClass('form-control');
+        $(' input').css('margin-bottom','10px');
+        $('.courses li').css('color','red');
+        $('.checkout_form label').css('display','none');
+        
+    })
+</script>
+{% endblock formadjust %}

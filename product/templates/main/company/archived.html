@@ -1,0 +1,113 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{{block.super}}
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="cart-title mt-50">
+                    <h2>Shopping Cart</h2>
+                </div>
+
+                <div class="cart-table clearfix">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                            
+                                    {% for product in request.user.cart.content.all %}
+                            <tr>
+                                <td class="cart_product_img">
+                                    <a href="#"><img src="{{product.product.image.url}}" alt="{{product.product.name}}"></a>
+                                </td>
+                                <td class="cart_product_desc">
+                                    <h5>{{product.product.name}}</h5>
+                                </td>
+                                <td>
+                                    {{product.quantity}}
+                                </td>
+                                <td class="price" style="margin-left: -20px;">
+
+                                    <span>&#8358;{{product.price}}</span>
+                                </td>
+                                
+                                <td style="padding: 0px; margin-left: -10px;">
+                                    <form class="cart clearfix" method="post" action="{% url 'add_cart' %}">{% csrf_token %}
+                                        <input type="hidden" name="sale_id" value="{{product.id}}" />
+                                        <button class="cancel-btn" style="background-color: #fff; border: none;"><i class="fa fa-trash"></i></button>
+                                        
+                                    </form>
+                                </td>
+                                <!-- <td class="qty">
+                                    <div class="qty-btn d-flex">
+                                        <form action="{% url 'cart:update' %}" method="post">
+                                        <p>Qty</p>
+                                        <div class="quantity">
+                                            <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false; $('.show-update-btn').css('display','inline-block');"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                            <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity" value="{{product.quantity}}">
+                                            <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false; $('.show-update-btn').css('display','inline-block');"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                        </div>
+                                        <input type="hidden" name="sale_id" value="{{product.id}}" />
+                                        <input type="hidden" id="formerPrice" value="{{product.price}}" />
+                                        <button class="show-update-btn main-btn" style="border-radius: 5px;  padding: none; margin-left: 3px;" type="submit">update</button>
+                                        </form>
+                                    </div>
+                                </td> -->
+                                    
+                            </tr>
+                            {% endfor %}
+                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="cart-summary">
+                    <h5>Cart Total</h5>
+                    <ul class="summary-table">
+                        <li><span>subtotal:</span> <span>&#8358;{{request.user.cart.total_price}}</span></li>
+                        <li><span>delivery:</span> <span>Undefined</span></li>
+                        <li><span>total:</span> <span>&#8358;{{request.user.cart.total_price}}</span></li>
+                    </ul>
+                    <div class="cart-btn mt-100">
+                        <a href="{% url 'delivery:delivery-info' %}" class="btn amado-btn w-100">Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock content %}
+{% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        $('.show-update-btn').css('display','none');
+        
+        $("tr").each(function(key,obj){
+            $('.qty-plus').on("click",function(){
+            $(this).find('.show-update-btn').css('display','block');
+        });
+        $('.qty-minus').on("click",function(){
+            $(this).find('.show-update-btn').css('display','block');
+           var formerPrice= $('#formerPrice').val();
+
+        });
+        });
+        
+            
+        
+        
+    });
+    
+</script>
+{% endblock formadjust %}

@@ -1,0 +1,73 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{{block.super}}
+
+{% load static %}
+
+<section class="courses">
+    
+
+<div id="">
+    <!-- row -->
+    <div class="row">
+        
+    <!-- Single Product Area -->
+    {% for shop in object_list %}
+    
+    <!-- Single Product Area -->
+    
+   <a href="{{shop.get_company_url}}">
+            <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="product product-single">
+                    <div class="product-thumb">
+                        
+                        <a href="{{shop.get_company_url}}"><button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button></a>
+                        {% if shop.logo %}<img src="{{shop.logo.url}}" alt="">{% endif %}
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-price">{{shop.name}}</h3>
+                        <div class="product-rating rating-class">
+<input type="hidden" name="" id="" value="{{shop.rating}}" />
+                        </div>
+                        <h2 class="product-name"><a href="{{shop.get_company_url}}">{{shop.description | truncatechars:30}}</a></h2>
+
+                    </div>
+                </div>
+            </div>
+            </a>
+
+    {% endfor %}
+
+
+    </div>
+</div>
+</section>
+
+
+    <div class="aside">
+        <h3 class="aside-title">Top Rated Stores</h3>
+        <!-- widget product -->
+        
+        <div class="product product-widget">
+            {% for product in object_list %}
+            <a href="/products/{{product.slug}}">
+            <div class="product-thumb">
+                <img src="{{product.image.url}}" alt="">
+            </div>
+            <div class="product-body">
+                <h2 class="product-name"><a href="{{product.get_company_url}}">{{product.name}}</a></h2>
+                
+                {% if product.rating > 0 %} <div class="rating-class">
+                    <input type="hidden" name="" id="" value="{{product.rating}}" />
+                  </div>{% endif %}
+            </div>
+            </a>
+            {% endfor %}
+           
+            
+            
+        </div>
+        <!-- /widget product -->
+</div>
+  
+{% endblock content %}

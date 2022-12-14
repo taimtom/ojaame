@@ -1,0 +1,170 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{{block.super}}
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="checkout_details_area mt-50 clearfix">
+
+                    <div class="cart-title">
+                        <h2>Checkout</h2>
+                    </div>
+
+                        <div class="row">
+                            
+                            <div class="col-12 mb-3 delivery-details">
+                              <div class="col-sm-6">Name: {{delivery.first_name|title}} {{delivery.last_name|title}}</div>
+                              <div class="col-sm-6">Phone No: +{{delivery.country_code}}{{delivery.number}} </div>
+                              
+                              <div class="col-sm-12">Address: {{delivery.street|title}}, {{delivery.town|title}}, {{delivery.state|title}}, {{delivery.country|title}}</div>
+                              <div class="col-sm-6">Email: {{delivery.email}}</div>
+                              <div class="col-sm-6">Zip code: {{delivery.zip_code|title}}</div>
+                              <div class="col-sm-12">Comment: {{delivery.comment}}</div>
+                            </div>
+                            <div class="col-12">
+                                <div class="custom-control custom-checkbox d-block">
+                                    
+                                    <a href="{% url 'delivery:delivery-info' %}" class="custom-control-label" for="customCheck3">Ship to a different address</a href="{% url 'delivery:delivery-info' %}">
+                                </div>
+                                <div class="payment-method">
+                                  <!-- Cash on delivery -->
+                                  
+                                  
+                                  
+                                  <script src="https://js.paystack.co/v1/inline.js"></script>
+                                  <div id="paystackEmbedContainer"></div>
+                              </div>
+                              <a href="{% url 'accounts:my-pack' %}" class="btn amado-btn w-100 view-pack-btn">View Your Pack Details</a>
+                            </div>
+                            
+                            
+                        </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <div class="cart-summary">
+                    <h5>Cart Total</h5>
+                    <ul class="summary-table">
+                        <li><span>subtotal:</span> <span>&#8358;{{cart.total}}</span></li>
+                        <li><span>delivery:</span> <span id="deliveryCharge">&#8358;</span></li>
+                        <li><span>delivery type:</span> <span >{{user.cart.delivery_type | title}}</span></li>
+                        <li><span>delivery type price:</span> <span >&#8358;{% if user.cart.delivery_type == "vip" %}5000{% elif user.cart.delivery_type == "standard" %} 1000 {% else %}Free{% endif %}</span></li>
+                        <li><span>gift card:</span> <span>&#8358;{% if request.user.userprofile.gift_card > 0 %}{{request.user.userprofile.gift_card}}{% else %}0{% endif %}</span></li>
+                        <input type="hidden" id="giftTotal" name="price"  value="{% if request.user.userprofile.gift_card > 0 %}{{request.user.userprofile.gift_card}}{% else %}0{% endif %}">
+                        <input type="hidden" id="priceSubtotal" name="price"  value="{{cart.total}}">
+                        <li><span>total:</span>  <span id="TotalPrice">&#8358;</span></li>
+                    </ul>
+                    
+                    <input type="hidden" class="product-delivery-cost" value="{{delivery_price}}" />
+                    
+              
+
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}
+{% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        $('.checkout_form input').addClass('form-control');
+        $('.checkout_form input').css('margin-bottom','10px');
+        $('.checkout_form li').css('color','red');
+        $('.checkout_form label').css('display','none');
+        $('#id_comment').addClass('.w-100')
+    })
+</script>
+
+<script>
+  var endpoint='/record/pack/';
+  var giftTotal= $('#giftTotal').val()
+    // let sumCost=0;
+    
+    // $("input.product-delivery-cost").each(function(){
+    //   let prod=$(this).val();
+    //    sumCost=parseInt(sumCost)+parseInt(prod);
+    // });
+  let sumCost=$("input.product-delivery-cost").val();
+  console.log(sumCost);
+  
+  $(".view-pack-btn").css("display","none");
+  let prodAmmount=$('#priceSubtotal').val();
+  var delivery_type_price='{% if user.cart.delivery_type == "vip" %}5000{% elif user.cart.delivery_type == "standard" %} 1000 {% else %}0{% endif %}'
+  var amountTotal= parseInt(prodAmmount) + parseInt(sumCost) + parseInt(delivery_type_price)-parseInt(giftTotal) ;
+  $('#deliveryCharge').append(sumCost);
+  $('#TotalPrice').append(amountTotal);
+
+  var customerEmail= $('#email_id').val()
+  PaystackPop.setup({
+   key: 'pk_live_0554c6e067454af24a162d1e6823aa2ae1046cb9',
+   email: '{{delivery.email}}',
+   amount: window.amountTotal+'00',
+   container: 'paystackEmbedContainer',
+   callback: function(response){
+       
+        var record={
+        "delivery_fee":900,
+        "csrfmiddlewaretoken":"{{csrf_token}}"
+          
+        };
+
+        $.ajax({
+                type:'POST',
+                url:endpoint,
+                data:record,
+                success:function(data){
+                  $(".view-pack-btn").css("display","block");
+                },
+                error:function(){
+                    alert('error ');
+                }
+                
+            });
+  
+    },
+  });
+</script>
+
+
+
+{% endblock formadjust %}
+<!-- <form >
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <button type="button" onclick="payWithPaystack()"> Pay </button> 
+  </form>
+   
+  <script>
+    function payWithPaystack(){
+      var handler = PaystackPop.setup({
+        key: 'pk_test_86d32aa1nV4l1da7120ce530f0b221c3cb97cbcc',
+        email: 'customer@email.com',
+        amount: 10000,
+        currency: "NGN",
+        ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+        firstname: 'Stephen',
+        lastname: 'King',
+        // label: "Optional string that replaces customer email"
+        metadata: {
+           custom_fields: [
+              {
+                  display_name: "Mobile Number",
+                  variable_name: "mobile_number",
+                  value: "+2348012345678"
+              }
+           ]
+        },
+        callback: function(response){
+            alert('success. transaction ref is ' + response.reference);
+        },
+        onClose: function(){
+            alert('window closed');
+        }
+      });
+      handler.openIframe();
+    }
+  </script> -->
+  

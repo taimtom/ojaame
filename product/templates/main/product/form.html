@@ -1,0 +1,208 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{{block.super}}
+<div class="cart-table-area section-padding-100">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <div class="checkout_details_area mt-50 clearfix">
+
+                    <div class="cart-title">
+                        <h2>{{title}}</h2>
+                    </div>
+
+                    <form action="." method="POST" class="checkout_form" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="row">
+                            <!-- {% if form.errors %}
+                            {{form.errors}}
+                            {% endif %} -->
+                            <div class="col-12 mb-3">
+                                {{form}}
+                                
+<br/>
+ <label for="category">{{cat_filter|title}} Category: <small>(This Field is Required)</small> </label>
+ 
+{% if cat_filter == 'fashion' %}
+<select name="sub_category" id="sub_category"  required>
+    <option value="">--Select Product Category --</option>
+    <option value="men's clothes"> Men's Clothing</option>
+    <option value="men's bags"> Men's Bags </option>
+    <option value="men's shoes">Men's Shoes</option>
+    <option value="men's accessories">Men's Accessories</option>
+    <option value="women's clothing">Women's Clothings</option>
+    <option value="women's shoes">Women's Shoes</option>
+    <option value="women's accessories">Women's Accessories</option>
+    <option value="women's handbags"> Women's Handbags</option>
+    <option value="girl's clothing"> Girl's Clothing</option>
+    <option value="boy's clothing">Boy's Clothing</option>
+    <option value="unisex clothing">Unisex Kid's Clothing</option>
+    <option value="baby clothing">Baby Clothing</option>
+    <option value="children shoes and accessories">Children Shoes & Accessories</option>
+    
+</select>
+{% elif cat_filter == 'electronics and phones' %}
+<select name="sub_category" id="category"  required>
+    <option value="">--Select Product Category --</option>
+    <option value="laptops"> Laptops</option>
+    <option value="desktops"> Desktops </option>
+    <option value="printers">Printers</option>
+    <option value="storage and drives">Computer Drives & Storage Devices</option>
+    <option value="video games">Video Games</option>
+    <option value="smartphones">Smart Phones</option>
+    <option value="cell phones">Cell Phones</option>
+    <option value="smart watches"> Smart Watches</option>
+    <option value="wrist watches"> Wrist Watches</option>
+    <option value="televisions">Televisions</option>
+    <option value="cameras">Cameras</option>
+    <option value="headsets">Headsets</option>
+    <option value="surveilance">Surveilance</option>
+    <option value="electronics tools">Electronics Tools</option>
+    
+    
+</select>
+{% elif cat_filter == 'home and kitchen' %}
+<select name="sub_category" id="category"  required>
+    <option value="">--Select Product Category --</option>
+    <option value="refrigerators"> Refrigerators</option>
+    <option value="dish washers"> Dish Washers </option>
+    <option value="cooking stoves">Cooking Gas & Stoves</option>
+    <option value="kitchen accessories">Kitchen Accessories</option>
+    <option value="kitchen furnitures">Kitchen Furnitures</option>
+    <option value="christmans trees">Christmans Trees</option>
+    <option value="string lights">String Lights</option>
+    <option value="window curtains and drapes"> Window Curtains And Drapes</option>
+    <option value="rugs and carpets"> Rugs & Carpets</option>
+    <option value="mattress">Mattress</option>
+    <option value="bathroom supplies">Bathroom Supplies</option>
+    <option value="washers and dryers">Washers & Dryers</option>
+    <option value="stationaries">Stationaries</option>
+    
+    
+</select>
+{% elif cat_filter == 'furnitures and woodworks' %}
+<select name="sub_category" id="category"  required>
+    <option value="">--Select Product Category --</option>
+    <option value="chairs"> Chairs</option>
+    <option value="tables"> Tables </option>
+    <option value="wardrobes">Wardrobes</option>
+    <option value="kid's furnitures">Kid's Furnitures</option>
+    <option value="beds and pillows">Beds & Pillows</option>
+    <option value="office tables and drawers">Office Tables & Drawers</option>
+    <option value="partition screens">Partition Screens</option>
+    <option value="office chairs"> Office Chairs</option>
+    <option value="filing cabinet">Filing Cabinet</option>
+    <option value="office desk accessories">Office Desk Accessories</option>
+    <option value="doors and windows">Doors And Windows</option>
+    <option value="shelves">Shelves</option>
+    <option value="artwork frames">Artwork frames</option>
+    <option value="vases">Vases</option>
+    <option value="sculptures and statuses">Sculptures & Statuses</option>
+    
+    
+</select>
+{% elif cat_filter == 'pets and livestocks' %}
+<select name="sub_category" id="category"  required>
+    <option value="">--Select Product Category --</option>
+    <option value="dogs"> Dogs</option>
+    <option value="cats"> Cats </option>
+    <option value="dog feeds and medications">Dog Feeds & Medications</option>
+    <option value="chains and cages">Chains And Cages</option>
+    <option value="cattles">Cattles</option>
+    <option value="poultry birds">Poultry Birds</option>
+    <option value="fish and feeds">Fish and Feeds</option>
+    <option value="farm equipments"> Farm Equipments</option>
+    
+    
+    
+</select>
+{% elif cat_filter == 'health and beauty' %}
+<select name="sub_category" id="category"  required>
+    <option value="">--Select Product Category --</option>
+    <option value="fragrance"> Fragrance (perfume)</option>
+    <option value="skin care products"> Skin Care Products </option>
+    <option value="oral care products">Oral Care products</option>
+    <option value="makeup">Makeup Products</option>
+    <option value="manicure pedicure and nail care products">Manicure, Pedicure & Nail Care Products</option>
+    <option value="mobility or walking equipment">Mobility/Walking Equipment</option>
+    <option value="daily living aids">Daily Living Aids</option>
+    <option value="reading glasses"> Reading Glasses</option>
+    <option value="vision care products">Vision Care Products</option>
+    <option value="natural and alternative remedies">Natural & Alternative Remedies</option>
+    <option value="hair extentions and wigs">Hair Extentions & Wigs</option>
+    <option value="shampoos and conditioners">Shampoos & Conditioners</option>
+    <option value="hair loss treatments">Hair Loss Treatments</option>
+    <option value="hair clippers and trimmers">Hair Clippers & Trimmers</option>
+    <option value="hair driers">Hair Driers</option>
+    
+    
+</select>
+{% elif cat_filter == 'automobiles and industrial machines' %}
+<select name="sub_category" id="category"  required>
+    <option value="">--Select Product Category --</option>
+    <option value="cars"> Cars</option>
+    <option value="trucks"> Trucks </option>
+    <option value="car parts">Car Parts</option>
+    <option value="truck parts">Truck Parts</option>
+    <option value="automotive tools and supplies">Automotive Tools & Supplies</option>
+    <option value="small generators">Small Generators</option>
+    <option value="heavy duty generators">Heavy Duty Generators</option>
+    <option value="motorcycles">Motorcycles</option>
+    <option value="motorcycle parts">motorcycle parts</option>
+    <option value="generator parts">Generator Parts</option>
+    <option value="buses">buses</option>
+    <option value="commercial trucks">Commercial trucks</option>
+    <option value="tricycles">Tricycles ( kekenapep)</option>
+    <option value="boats and yatchs">Boats & yatchs</option>
+    <option value="aircraft">Aircraft</option>
+    
+    
+</select>
+
+{% endif %}
+
+
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<br/>     
+                            </div>
+                        </div>
+                           
+                        <button type="submit" class="btn amado-btn w-100">{{button}}</button>
+                    </form>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+</div>
+{% endblock content %}
+{% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        $('.checkout_form input').addClass('form-control');
+        $('.checkout_form li').css('color','navy');
+        $('.checkout_form textarea').addClass('form-control');
+        $('.checkout_form select').addClass('form-control');
+        $('.checkout_form input').css('margin-bottom','10px');
+        $('.checkout_form .nice-select').css('width','100%');
+        // $('.checkout_form label').css('display','none')
+        $('#id_comment').addClass('.w-100')
+    })
+</script>
+{% endblock formadjust %}

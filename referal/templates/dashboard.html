@@ -1,0 +1,546 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block company %}
+<div class="company-head"  style="background-image: {% if object.cover %}url('{{object.cover.url}}'){% else %} url('{% static 'img/product-img/pro-big-1.jpg' %}'){% endif %};">
+    
+    
+    <div class="company-logo">
+        {% if instance.user.userprofile.image %}
+        <img  src="{{instance.user.userprofile.image.url}}"  >
+        {% else %}
+        
+        <h1 style="text-align: center; color: #717571;">{{instance.user.username|title}} {{instance.user.userprofile.fullname|title}}</h1>
+        {% endif %}
+    </div>
+    
+   
+</div>
+{% endblock company %}
+{% block content %}
+{{block.super}}
+
+
+
+
+
+<section class="courses">
+     <!-- <h4 class=" ">CUSTOMERS ({{instance.customers.all.count}} )</h4> -->
+     
+    {% if request.user == instance.user %}
+
+    <div class="row ">
+        <h3 style="display: block;" >Invite Your Friends Using:</h3>
+        <div style="display: block;">
+            <button id="sendEmailBtn" class="btn btn-primary" style=" float:left; background-color: #da4104; border-color: #da4104; margin: 5px;"><i class="icon ion-mail"></i>Email</button>
+        <button id="sendWhatsAppBtn" class="btn btn-primary" style="float:left; background-color: #2cac6c; border-color:#2cac6c; margin: 5px;"><i class="icon ion-social-whatsapp-outline"></i>WhatsApp Broadcast</button>
+        <button id="sendFacebookBtn" class="btn btn-primary" style="float:left; background-color: #052cca; border-color:#052cca; margin: 5px;"><i class="icon ion-social-facebook-outline"></i>Facebook Timeline</button>
+        </div>
+        
+        <div id="sendFacebook" style="width:91%; height:200px; border: solid 3px #717571; border-radius: 5px; background-color: #ebeeeb; font-size:larger; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: italic;">
+        **  Add Your Picture To The Post When You Want To Post It **
+
+Hello!! Everyone I'm doing a give away this ** (morning/afternoon/evening) **.
+To take part in this follow the link below.
+https://ojaa.me/referral/{{instance.referral_link}}/register
+By clicking that link you'll be getting N1000 gift card to buy 
+anything you like on ojaa.me. 
+It's for a limited time o!!!
+https://ojaa.me/referral/{{instance.referral_link}}/register
+
+        "</div>
+        <div id="sendWhatsApp" style=" width:91%; height:200px; border: solid 3px #717571; border-radius: 5px; background-color: #ebeeeb; font-size:larger; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-style: italic;">  ** Add Your Picture To The Post When You Want To Post It **
+
+    Hello!! Friend I'm doing a give away this ** (morning/afternoon/evening) **.
+    To take part in this follow the link below.
+    https://ojaa.me/referral/{{instance.referral_link}}/register
+    By clicking that link you'll be getting N1000 gift card to buy 
+    anything you like on ojaa.me. 
+    It's for a limited time o!!!
+    https://ojaa.me/referral/{{instance.referral_link}}/register
+        "</div>
+        <div class="email-form">
+            <form id="sendEmailForm" action="." method="post">
+                <label for="sendEmail">Enter Your Friends Email <small>(Seperate Each With Semicolon (;))</small></label>
+            <textarea name="email_addresses" id="sendEmail" class="form-control" placeholder="johndoe@gmail.com;example@yahoo.com...." required></textarea>
+            <input  type="submit" class="btn amado-btn" value="Send Email">
+    
+        </form>
+        </div>
+        
+    <div class="text-muted">
+        <p>
+            Hurray!!! Your promo commission is {{profit.percent_commition}}% . You can increase it by inviting more of your friends and relatives. Don't miss this offer !!!!!!
+        </p>
+        <p>
+            You also have &#8358;{{profit.available_balance}} in your referral account. Tell your friend to buy more to increase it.
+        </p>
+        <p>
+        Your referral link is <a href="https://ojaa.me/referral/{{instance.referral_link}}/register">ojaa.me/referral/{{instance.referral_link}}/register</a>. When ever you invite anyone to register, they would automatically be added to your customer list. Any time they buy anything from this E-Market you will recieve your commission. The commission you recieve depends on your current commission percentage.
+
+        </p>
+        <p>
+            Your unit increases as you invite a friend. For every 1000 units you have an addition of 1%.
+        </p>
+        <p>
+            Note: The first withdrawal request can only be made when your account bala &#8358;1000
+            Note: You can't request for a withdrawal until your available balance is upto &#8358;1000
+        </p>
+    </div>
+    </div>
+    {% endif %}
+    <div class="row ">
+        <div class="col-12">
+            <div class="product-topbar d-xl-flex align-items-end justify-content-between">
+                <!-- Total Products -->
+               
+                <div class="product-sorting d-flex">
+                    <div class="sort-by-date d-flex align-items-center mr-15">
+                        <p>Month</p>
+                        <form action="#" method="get">
+                            <select class="select-month" name="select" id="sortBydate">
+                                <option value="1">January</option>
+                                <option value="2">Febuary</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="view-product d-flex align-items-center">
+                        <p>Year</p>
+                        <form action="#" method="get">
+                            <select name="select" class="select-year" id="viewProduct">
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="2026">2026</option>
+                                <option value="2027">2027</option>
+                                <option value="2028">2028</option>
+                                <option value="2029">2029</option>
+                                <option value="2030">2030</option>
+                                <option value="2031">2031</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas id="myChart" width="300" height="200"></canvas>
+    <canvas id="myChart2" width="300" height="200"></canvas>
+
+    <!-- row -->
+    <div class="store">
+    <div class="row">
+       
+        
+       
+                    <div class="cart-table clearfix " style="overflow-x: scroll;">
+                      <table class="table table-responsive" style="overflow: hidden; outline: currentcolor none medium;">
+                        <thead>
+                          <tr style="background-color: #f5f7fa;">
+                            <th> Name </th>
+                            <th> Email </th>
+                            <th> Date Joined </th>
+                            
+                            
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for customer in instance.customers.all %}
+                          <tr>
+                            
+                            <td> {{customer.username}}</td>
+                            <td>
+                              <label class="badge badge-gradient-success">{{customer.email}}</label>
+                            </td>
+                            <td> {{customer.date_joined}}</td>
+                           
+                          </tr>
+                          {% endfor %}
+                          
+                        </tbody>
+                      </table>
+                      </div>
+        
+     </div>
+</div>
+
+</section>
+
+
+    <div class="aside">
+        <label class="aside-title">Referral Link</label>
+        <!-- widget product -->
+        
+        <div class="product product-widget">
+            <input class="form-control" value="ojaa.me/referral/{{instance.referral_link}}/register" readonly />
+            
+            
+            
+        </div>
+        <h3 class="aside-title">Commition Percentage</h3>
+        <!-- widget product -->
+        
+        <div class="product product-widget">
+            <h1>{{profit.percent_commition}}%</h1>
+            
+            
+            
+        </div>
+        <h3 class="aside-title">Available Balance</h3>
+        <!-- widget product -->
+        
+        <div class="product product-widget">
+            <h2>&#8358;{{profit.available_balance}}</h2>
+            
+            
+        </div>
+        <h3 class="aside-title">Units</h3>
+        <!-- widget product -->
+        
+        <div class="product product-widget">
+            <h1>{{profit.units}}</h1>
+            
+            
+            
+        </div>
+        <!-- /widget product -->
+        <h3 class="aside-title">Total Commition Recieved</h3>
+        <!-- widget product -->
+        
+        <div class="product product-widget">
+            <h2>&#8358;{{profit.total_commition}}</h2>
+            
+            
+        </div>
+        <!-- /widget product -->
+        <h3 class="aside-title">Last Commition Recieved</h3>
+        <!-- widget product -->
+        
+        <div class="product product-widget">
+            <h2>&#8358;{{profit.last_commistion_recieved}}</h2>
+            
+            
+        </div>
+        <!-- /widget product -->
+        <!-- <h3 class="aside-title">Ledger Balance</h3> -->
+        <!-- widget product -->
+        
+        <!-- <div class="product product-widget">
+            <h2>&#8358;{{profit.ledger_balance}}</h2>
+            
+            
+        </div> -->
+        <!-- /widget product -->
+       
+        <!-- /widget product -->
+        <!-- /widget product -->
+        
+            
+            <button id="cashout-btn" name="addtocart" value="5" class="btn amado-btn"> Cash out</button>
+            {% if messages %}
+            <ul class="messages">
+            {% for message in messages %}
+            <li class="{{message.tags}}">{{message}}</li>
+            {% endfor %}
+            </ul>
+            {% endif %}
+        <div id="cashout-form" class="">
+            <h3 class="aside-title  cashout" >Cashout</h3>
+        <!-- widget product -->
+        
+        <div class="product product-widget">
+            <form action="{% url 'referral:withdraw' %}" class="form-group" method="POST">
+                {% csrf_token %}
+                <label>Ammount Requested</label>
+                {% if form.error %}
+                {{form.errors}}
+                {% endif %}
+                
+                
+                <p id="id_ammount_alert"></p>
+                <input type="hidden" name="" id="savings_balance" value="{{profit.savings_balance}}">
+                <input type="text" id="id_ammount_requested" maxlength="240" name="ammount_request"  required class="form-control">
+                <button   type="submit" class="btn amado-btn"> Cash out</button>
+                
+            </form>
+            
+            
+        </div>
+        </div>
+        <!-- /widget product -->
+</div>
+        
+{% endblock content %}
+{% block formadjust %}
+<script>
+$.ajax()
+</script>
+<script>
+$('#cashout-btn').on('click',function(){
+    $('#cashout-form').addClass('open');
+    $('#cashout-btn').addClass('close');
+});
+var withdrawAmmount=$('#id_ammount_alert');
+var savingsBalance=$('#savings_balance').val();
+var inputArea=$('#id_ammount_requested');
+console.log(savingsBalance)
+$('#sendEmailForm').css('display','none');
+$('#sendFacebook').css('display','none');
+$('#sendWhatsApp').css('display','none');
+$('#sendEmailBtn').on("click", function(){
+    $('#sendEmailForm').css('display','block');
+    $('#sendFacebook').css('display','none');
+    $('#sendWhatsApp').css('display','none');
+});
+$('#sendWhatsAppBtn').on("click", function(){
+    $('#sendEmailForm').css('display','none');
+    $('#sendFacebook').css('display','none');
+    $('#sendWhatsApp').css('display','block');
+});
+$('#sendFacebookBtn').on("click", function(){
+    $('#sendEmailForm').css('display','none');
+    $('#sendFacebook').css('display','block');
+    $('#sendWhatsApp').css('display','none');
+});
+
+$('#sendEmailForm').on("submit", function(){
+    event.preventDefault();
+    var emails=$('#sendEmail').val();
+    var record={
+        "email_addresses":emails,
+        "csrfmiddlewaretoken":"{{csrf_token}}"
+          
+        };
+
+        $.ajax({
+                type:'POST',
+                url:"/referral/email/send/",
+                data:record,
+                success:function(data){
+                    $('#sendEmailForm').css('display','none');
+                    $('.email-form').append('<h2>Emails Were Successfully Sent</h2>');
+                },
+                error:function(err){
+                    console.log('error '+err);
+                }
+                
+            });
+  
+    
+});
+
+inputArea.keyup(function(){
+    var withdrawAmmountValue=$(this).val();
+    if(parseInt(withdrawAmmountValue) >= savingsBalance){
+        var x="<p> You Don't have upto "+withdrawAmmountValue+" in your account</p>";
+        if(savingsBalance < 5000){
+        var x="<p>Your savings balance is not yet uptod upto N5000.Ask your friends to buy more. Thanks</p>";
+        document.getElementById('id_ammount_alert').innerHTML= x;
+    };
+    document.getElementById('id_ammount_alert').innerHTML= x;
+};
+});
+    
+
+if(parseInt(withdrawAmmount) >= savingsBalance){
+    alert('Insufficient Balance');
+};
+
+</script>
+<script>
+    // var endpoint_sale='/referral/sale/api/'
+
+// $.ajax({
+//         type:'GET',
+//         url:endpoint_sale,
+//         success:function(data){
+//             var dayList=[];
+//             var monthList=[];
+//             var totalPrice=[];
+//             $.each(data,function(i,datum){
+//                 totalPrice.push(datum.total_price)
+//                 var date=datum.date;
+//                 var d=new Date(date);
+//                 dayList.push(d.getDate());
+//                 monthList.push(d.getMonth()+1);
+                
+//             });
+//             console.log(dayList);
+//             console.log(monthList);
+//             console.log(totalPrice);
+            
+            
+            
+//         },
+//         error:function(){
+//             alert('error loading review');
+//         }
+        
+//     });
+var endpoint='/referral/s/api/'
+
+
+$.ajax({
+        type:'GET',
+        url:endpoint,
+        success:function(data){
+            lab=data.days
+            labels=["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"]
+            $('#year').on('click', function(){
+                labels=["January","Febuary","March","April","May","June","July","August","September","October","November","December"]
+            });
+            DataCustomers=data.customers;
+            defaultData=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+            // personal function
+
+            // current date
+            var today = new Date();
+                var monthSelected = today.getMonth()+1;
+                var yearSelected =today.getFullYear();
+
+           viewUpdate(lab,DataCustomers,monthSelected,yearSelected,defaultData);
+           resetOption(monthSelected)
+           
+
+           
+            $(".select-month").change(function(){
+                var monthSelected=$(this).children("option:selected").val();
+                defaultData=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+                viewUpdate(lab,DataCustomers,monthSelected,yearSelected,defaultData);
+                resetOption(monthSelected)
+                });
+                $(".select-year").change(function(){
+                    var yearSelected=$(this).children("option:selected").val();
+                    defaultData=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+                    viewUpdate(lab,DataCustomers,monthSelected,yearSelected,defaultData);
+                    resetOption(monthSelected) 
+            });
+            
+        },
+        error:function(){
+            alert('error loading review');
+        }
+        
+    });
+function resetOption(monthSelected){
+    console.log("called  "+ monthSelected);
+        $(".select-month option").each(function(){
+            console.log( $(this).val())
+            if ($(this).val() == monthSelected){
+            $(this).attr("selected","selected");
+            };
+        });
+        }
+function viewUpdate(lab,DataCustomers,monthSelected,yearSelected,defaultData){
+    for(const[i, x] of lab.entries()){
+        
+                var d=new Date(x);
+                var day=d.getDate()-1;
+                var month_=d.getMonth()+1;
+                var year=d.getFullYear();
+                
+                console.log(monthSelected+ " : "+ yearSelected+ ":"+x);
+                
+                if (month_ == monthSelected && year == yearSelected){
+                    
+                    defaultData[day]=DataCustomers[i];
+                    console.log("day: "+ day + " customer :" + DataCustomers, );
+                    console.log("customer[i]: "+ DataCustomers[i] + " defaultData[day] :" + defaultData[day]+ " ::::   "+ defaultData);
+
+                    
+                };
+                
+                setChart();
+               
+                
+                
+            };
+            
+
+};
+    
+            
+    
+
+function setChart(){
+var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'No of Referred customers',
+            data: defaultData,
+            backgroundColor: [
+                
+                'rgba(255, 206, 86, 0.2)'
+               
+            ],
+            borderColor: [
+                'rgba(255, 206, 86, 1)'
+               
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+}
+
+function setCharts(){
+var ctx = document.getElementById('myChart2');
+
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labels,
+        datasets: [{
+            label: 'No of Referred customers',
+            data: defaultData,
+            backgroundColor: [
+                
+                'rgba(255, 206, 86, 0.2)'
+               
+            ],
+            borderColor: [
+                'rgba(255, 206, 86, 1)'
+               
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+}
+</script>
+
+
+{% endblock formadjust %}

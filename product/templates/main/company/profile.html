@@ -1,0 +1,157 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block company %}
+<div class="company-head"  style="background-image: {% if object.cover %}url('{{object.cover.url}}'){% else %} url('{% static 'img/product-img/pro-big-1.jpg' %}'){% endif %};">
+    
+    
+    
+        
+      <div class="company-logo">
+        {% if object.logo %}
+        <img  src="{{object.logo.url}}" style="height: 132px ; width:200px;" >
+        {% else %}
+        
+        <h1 style="text-align: center; color: #717571;">{{object.name|title}}</h1>
+        {% endif %}
+    </div>
+    {% if object == user.company %}
+    <div class="profile-link">
+        <a class="" href="{% url 'products:create'  %}"> <i class="icon ion-plus"></i><span>Add Product</span></a><a class="" href="{% url 'company:update'  %}">  
+				  <i class="ion ion-edit"
+	></i>	<span>Update Store Info</span>	</a>
+    </div>
+  {% endif %}
+    
+   
+</div>
+{% endblock company %}
+{% block content %}
+{{block.super}}
+
+
+
+
+
+<section class="courses">
+    {% if request.user == object.owner %}
+    <div class="row ">
+        <div class="col-12">
+          
+                    
+                    <a href="/{{object.slug}}/account/" class="btn btn-primary" style=" float:left; background-color: #30323A; border-color: #30323A; margin: 5px;">My Company Finance</a>
+                    <a href="/{{object.slug}}/requested/" class="btn btn-main" style="float:left; border-color:#30323A;; margin: 5px;;">Recent Orders</a>
+                    <a href="/{{object.slug}}/delivered/" class="btn btn-main" style=" float:left;  border-color: #30323A; margin: 5px;">Delivered Orders</a>
+                    <a href="/{{object.slug}}/returned/" class="btn btn-main" style="float:left; border-color:#30323A;; margin: 5px;;">Returned Orders</a>
+               
+                <!-- Sorting -->
+               
+        </div>
+    </div>
+    {% endif %}
+<div id="store">
+    <!-- row -->
+    
+    <div class="row">
+        {% if request.user == object.user %}
+
+    
+    <div class="text-muted">
+        <p>
+            Welcome to your online shop. This message would be visible to you alone.
+        </p>
+        <p>
+        Your website link is <a href="https://ojaa.me/{{object.get_company_url}}/">ojaa.me/{{object.get_company_url}}/</a>. When people visit this link they would see all the products you post. Posting of products is free on this E-Market. 10% commission would be collected for any item you sell on this E-Market.
+
+        </p>
+        <p>
+           You can also refer your friends to buy from this Market and recieve upto 90% commission. 
+        </p>
+        
+    </div>
+    {% endif %}
+    <!-- Single Product Area -->
+   
+    <!-- Single Product Area -->
+    {% for product in object.products_set.all %}
+      <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="product product-single">
+                    <div class="product-thumb">
+                        <div class="product-label">
+                            <span>New</span>
+                            <span class="sale">-{{product.discount}}%</span>
+                        </div>
+                        <a href="{{product.get_absolute_url}}"><button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button></a>
+                        <img src="{{product.image.url}}" alt="">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-price">&#8358;{{product.price}} <del class="product-old-price">&#8358;{{product.discounted_from}}</del></h3>
+                        
+                        <h2 class="product-name"><a href="#">{{product.name}}</a></h2>
+                       {% if product.rating > 0 %} <div class="rating-class">
+                          <input type="hidden" name="" id="" value="{{product.rating}}" />
+                        </div>{% endif %}
+                        
+                    </div>
+                </div>
+            </div>
+   
+{% endfor %}
+    </div>
+</div>
+</section>
+
+
+<div class="aside" style="margin-right: 0px; padding-right: 0px;">
+    <label class="aside-title" style="width: 70%;">{{object.name| truncatechars:25}} Website Link</label>
+    <!-- widget product -->
+    
+    <div class="product product-widget">
+        <input class="form-control" value="ojaa.me/{{object.slug}}/" readonly style="width: 70%;" />
+        
+        
+        
+    </div>
+    <label class="aside-title">Our Contact</label>
+    <!-- widget product -->
+    
+    <div class="product product-widget">
+        <h5><a href="">Email: {{object.owner.email}}</a></h5> 
+        <h5><a href="">Phone: {{object.phone}}</a></h5> 
+        <h5><a href="">Address: {{object.location | truncatechars:60 }}</a></h5>    
+    </div>
+    <h3 class="aside-title">Top Rated Product</h3>
+    <!-- widget product -->
+    
+    <div class="product product-widget">
+        {% for product in object.products_set.all|slice:":10" %}
+        <a href="/products/{{product.slug}}">
+        <div class="product-thumb">
+            <img src="{{product.image.url}}" alt="">
+        </div>
+        <div class="product-body">
+            <h2 class="product-name"><a href="/products/{{product.slug}}">{{product.name}}</a></h2>
+            <h3 class="product-price">&#8358;{{product.price}} <del class="product-old-price">&#8358;{{product.discounted_from}}</del></h3>
+            <div class="product-rating">
+                <!-- <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o empty"></i> -->
+            </div>
+        </div>
+        </a>
+        {% endfor %}
+       
+        
+    </div>
+    <label class="aside-title">About Us</label>
+    <!-- widget product -->
+    
+    <div class="product product-widget">
+        <h5 style="width:60%"><a href=""> {{object.description}}</a></h5> 
+         
+    </div>
+    <!-- /widget product -->
+</div>
+
+{% endblock content %}

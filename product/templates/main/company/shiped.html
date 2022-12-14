@@ -1,0 +1,112 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block company %}
+<div class="company-head"  style="background-image: {% if object.cover %}url('{{object.cover.url}}'){% else %} url('{% static 'img/product-img/pro-big-1.jpg' %}'){% endif %};">
+    
+    
+    
+        
+      <div class="company-logo">
+        {% if object.logo %}
+        <img  src="{{object.logo.url}}"  >
+        {% else %}
+        
+        <h1 style="text-align: center; color: #717571;">{{object.name|title}}</h1>
+        {% endif %}
+    </div>
+    {% if object == user.company %}
+    <div class="profile-link">
+        <a class="" href="{% url 'products:create'  %}"> <i class="icon ion-plus"></i><span>Add Product</span></a><a class="" href="{% url 'company:update'  %}">  
+				  <i class="ion ion-edit"
+	></i>	<span>Update Store Info</span>	</a>
+    </div>
+  {% endif %}
+    
+   
+</div>
+{% endblock company %}
+{% block content %}
+{{block.super}}
+
+
+
+
+
+<section class="courses">
+    <div class="row ">
+        <div class="col-12">
+          
+                    
+                    <a href="/{{object.slug}}/account/" class="btn btn-primary" style=" float:left; background-color: #30323A; border-color: #30323A; margin: 5px;">My Company Finance</a>
+                    <a href="/{{object.slug}}/requested/" class="btn btn-main" style="float:left; border-color:#30323A;; margin: 5px;;">Recent Orders</a>
+                    <a href="/{{object.slug}}/delivered/" class="btn btn-main" style=" float:left;  border-color: #30323A; margin: 5px;">Delivered Orders</a>
+                    <a href="/{{object.slug}}/returned/" class="btn btn-main" style="float:left; border-color:#30323A;; margin: 5px;;">Returned Orders</a>
+               
+                <!-- Sorting -->
+               
+        </div>
+    </div>
+<div id="store">
+    <!-- row -->
+    
+    <div class="sale-record">
+        
+    <!-- Single Product Area -->
+   
+    <!-- Single Product Area -->
+    {% for product in delivered %}
+      <div class=" ">
+                <div class=" " style="width: 100%; float: none;">
+                    <div class="" style="float: left; width: 30%;">
+                        
+     
+                        <img src="{{product.product.image.url}}" alt="">
+                    </div>
+                    <div class="">
+                        <h5 class="product-price" ><b>{{product.name}} </b> </h5>
+                        <h5 class="product-price" > <b> Package Number:{{product.package_number}} 123456789 </b> </h5>
+                        <h6 class="product-name"style="float: right; padding:5px;">Status: Delivered {{product.status}}  </h6>
+                        
+                        <h6 class="product-name" style="">Price: &#8358;{{product.price}}</h6>
+                        <h6 class="product-name" style="">Quantity: 5</h6>
+                        <h6 class="product-name" style=" padding:5px;"> Date Requested: 12 sep 2020  </h6>
+                        <h6 class="product-name"style=" padding:5px;"><span>Delivery Company: Kwik</span>   </h6>
+                        <h6 class="product-name"style=" padding:5px;"> Delivery Agent: Mr. Adeaga  </h6>
+                        <h6 class="product-name"style=" padding:5px;"> Date Delivered: 12 sep 2020  </h6>
+                        <h6 class="product-name"style=" padding:5px;"> Date Returned: 12 sep 2020  </h6>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+            <br/>
+{% endfor %}
+    </div>
+</div>
+</section>
+
+
+    <div class="aside">
+        <h3 class="aside-title">Top Sales</h3>
+        <!-- widget product -->
+        
+        <div class="product product-widget">
+            {% for product in object_list %}
+            <a href="/products/{{product.slug}}">
+            <div >
+                <img src="{{product.image.url}}" alt="">
+            </div>
+            <div class="product-body">
+                <h2 class="product-name"><a href="/products/{{product.slug}}">{{product.name}}</a></h2>
+                <h3 class="product-price">${{product.price}} <del class="product-old-price">${{product.discounted_from}}</del></h3>
+                
+            </div>
+            </a>
+            {% endfor %}
+            
+            
+        </div>
+        <!-- /widget product -->
+</div>
+        
+{% endblock content %}

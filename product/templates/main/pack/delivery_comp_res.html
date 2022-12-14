@@ -1,0 +1,140 @@
+{% extends 'main/base.html' %}
+{% load staticfiles %}
+{% block company %}
+<div class="company-head"  style="background-image: {% if object.cover %}url('{{object.cover.url}}'){% else %} url('{% static 'img/product-img/pro-big-1.jpg' %}'){% endif %};">
+    
+    
+    
+        
+      <div class="company-logo">
+        {% if object.logo %}
+        <img  src="{{object.logo.url}}"  >
+        {% else %}
+        
+        <h1 style="text-align: center; color: #717571;">{{object.name|title}}</h1>
+        {% endif %}
+    </div>
+    {% if object == user.company %}
+    <div class="profile-link">
+        <a class="" href="{% url 'products:create'  %}"> <i class="icon ion-plus"></i><span>Add Product</span></a><a class="" href="{% url 'company:update'  %}">  
+				  <i class="ion ion-edit"
+	></i>	<span>Update Store Info</span>	</a>
+    </div>
+  {% endif %}
+    
+   
+</div>
+{% endblock company %}
+{% block content %}
+{{block.super}}
+
+
+
+
+
+<section class="courses">
+    <div class="row ">
+        <div class="col-12">
+            <div class="product-topbar d-xl-flex align-items-end justify-content-between">
+                <!-- Total Products -->
+                <div class="total-products">
+                    
+                    <div class="view d-flex">
+                        <a href="#"><i class="fa fa-th-large" aria-hidden="true"></i></a>
+                        <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <!-- Sorting -->
+                <div class="product-sorting d-flex">
+                    <div class="sort-by-date d-flex align-items-center mr-15">
+                        <p>Sort by</p>
+                        <form action="#" method="get">
+                            <select name="select" id="sortBydate">
+                                <option value="value">Date</option>
+                                <option value="value">Newest</option>
+                                <option value="value">Popular</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class="view-product d-flex align-items-center">
+                        <p>View</p>
+                        <form action="#" method="get">
+                            <select name="select" id="viewProduct">
+                                <option value="value">12</option>
+                                <option value="value">24</option>
+                                <option value="value">48</option>
+                                <option value="value">96</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="store">
+    <!-- row -->
+    
+    <div class="row">
+        
+    <!-- Single Product Area -->
+   
+    <!-- Single Product Area -->
+    {% for product in object.products_set.all %}
+      <div class="col-md-3 col-sm-6 col-xs-6">
+                <div class="product product-single">
+                    <div class="product-thumb">
+                        <div class="product-label">
+                            <span>New</span>
+                            <span class="sale">-{{product.discount}}%</span>
+                        </div>
+                        <a href="{{product.get_absolute_url}}"><button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button></a>
+                        <img src="{{product.image.url}}" alt="">
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-price">&#8358;{{product.price}} <del class="product-old-price">&#8358;{{product.discounted_from}}</del></h3>
+                        
+                        <h2 class="product-name"><a href="#">{{product.name}}</a></h2>
+                       {% if product.rating > 0 %} <div class="rating-class">
+                          <input type="hidden" name="" id="" value="{{product.rating}}" />
+                        </div>{% endif %}
+                        <div class="product-btns">
+                            <button class="main-btn icon-btn pull-left"><i class="fa fa-heart"></i></button>
+    
+                            <button class="main-btn icon-btn pull-left"><i class="fa fa-exchange"></i></button>
+                         <div class="cart-div">
+                           
+                            {% for sale in carts.content.all %}{% if product == sale.product %}
+                        <input type="hidden" name="" class="incarttest" value="{{product}}" />    
+                            <button class="default-btn add-to-cart pull-right" style="background-color:#30323A;" onclick="window.location.href='/cart/'">
+                                <i class="fa fa-shopping-cart"></i> Added To Cart 
+                            </button>
+                            {% endif %}{% endfor %}
+                            {% if not user.is_authenticated %}
+<button class="primary-btn pull-right" onclick="window.location.href='/cart/'"><i class="fa fa-shopping-cart" ></i> Add To Cart </button>{% else %}
+                            <form class="cart clearfix pull-right cart-form" method="post" action="">{% csrf_token %}
+                                <input type="hidden" name="product_name" value="{{product.id}}" />
+                  <input type="hidden" name="product_qty" value="{{product.quantity}}" />
+                   <input type="hidden" name="product_price" value="{{product.price}}" />
+                    <input type="hidden" name="product_csrf" value="{{csrf_token}}" />
+                    <div>
+                      
+                    </div>
+                                <button class="primary-btn add-to-cart main-cart-btn"><i class="fa fa-shopping-cart" onclick="preventDefault()"></i> Add To Cart </button>
+                                
+                            </form>
+                            {% endif %}
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+   
+{% endfor %}
+    </div>
+</div>
+</section>
+
+
+    
+        
+{% endblock content %}

@@ -1,0 +1,148 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+{{block.super}}
+
+<div class="single-product-area detail-section section-padding-100 clearfix">
+    <div class="container-fluid">
+       
+        <div id="breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    
+                    <li  style="padding:10px; "><a href="{% url 'accounts:my-pack' %}" class="active" >All Orders |</a> </li>
+                    <li style="padding:10px;"><a href="{% url 'accounts:my-pack-requested' %}">Requested orders |</a></li>
+                    <li style="padding:10px;" ><a href="{% url 'accounts:my-pack-shipped' %}" style="color: rgb(243, 162, 55);">Shiped orders |</a></li>
+                    <li style="padding:10px;"><a href="{% url 'accounts:my-pack-delivered' %}">Delivered orders |</a></li>
+                    <li style="padding:10px;"><a href="{% url 'accounts:my-pack-returned' %}" >Returned orders</a></li>
+                </ul>
+            </div>
+        </div>
+    
+     
+        {% for obj in user.salerecord_set.all %}
+        {% if obj.paid %}
+        {% if obj.status == "shiped" %}
+        <div id="breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    
+                    <li class="active">{{obj.product.name| title}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <div class="single_product_thumb">
+                    <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                      
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                    <img class="gallery_img d-block w-100" style="height: 300px;" src="{{obj.product.image.url}}" alt="{{obj.product.name}}">
+                               
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="single_product_desc">
+                    <!-- Product Meta Data -->
+                    <div class="product-meta-data">
+                        <div class="line"></div>
+                        
+                            <h3 style="display: inline;">Package Number: {{obj.package_number}}</h3>
+                       
+                        <div class="line"></div>
+                        <h3 class="">&#8358;{{obj.price}} </h3>
+                        <h5 class="product-price">Quantity Requested: {{obj.quantity}} </h5>
+                        
+                      
+                        <!-- Avaiable -->
+                        <p class="avaibility"><a href="/{{obj.product.company.slug}}">Sold by : {{obj.product.company.name}}</a></p><br/>
+                        <h6 class="text-muted">Requested On: {{obj.package_time}} </h6>
+                        {% if obj.status == 'delivered' %}
+                        <h6 class="text-muted">Delivered On: {{obj.delivery_time}} </h6>
+                        {% elif obj.status == 'returned' %}
+                        <h6 class="text-muted">Returned On: {{obj.returned_time}} </h6>
+                        {% elif obj.status == 'shipped' %}
+                        <h6 class="text-muted">Shipped On: {{obj.collected_time}} </h6>
+                        {% endif %}
+                    </div>
+
+
+                
+                    
+      
+                    
+                       
+                        <form class="cart clearfix cart-form" method="post" action="{% url 'add_cart' %}" >{% csrf_token %}
+                           {% if obj.status == 'returned' %}
+                            <button class="primary-btn add-to-cart " onclick="event.preventDefault()">Status: {{obj.status| title}} </button>
+  
+                            {% elif obj.status == 'shipped' %}
+                            <button class="primary-btn add-to-cart accept-btn">Accept It</button>
+                            <input type="hidden" id="saleId" value="{{obj.id}}" />
+                            <button class="main-btn  add-to-cart return-btn" >Return</button>
+                            {% endif %}
+                        </form>
+                        
+                    
+                       
+                        <p>Message From {{obj.product.company}} : {{obj.shiping_msg}}</p>
+                      
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+    </div>
+    </div>
+
+    {% endblock content %}
+    {% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        var saleId=$("#saleId").val();
+        $('.cart-form .accept-btn').on("click", function(event){
+            event.preventDefault();
+            datum={
+                "status":"accepted",
+                "sale_id":saleId,
+                "csrfmiddlewaretoken":"{{csrf_token}}"
+            }
+            myRespond(datum);
+        });
+        $('.cart-form .return-btn').on("click", function(event){
+            event.preventDefault();
+            datum={
+                "status":"rejected",
+                "sale_id":saleId,
+                "csrfmiddlewaretoken":"{{csrf_token}}"
+            }
+            myRespond(datum);
+        });
+        function myRespond(datum){
+          
+            $.ajax({
+                 type:'POST',
+                 url:"/record/customer-response/",
+                 data:datum,
+                 success:function(data){
+                   alert('successfully: The Product Has Been'+data.status)
+                 },
+                 error:function(err){
+                     alert('error :'+err);
+                 }
+                 
+             });
+        }
+        
+    })
+</script>
+{% endblock formadjust %}

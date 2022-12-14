@@ -1,0 +1,86 @@
+{% extends 'main/base.html' %}
+{% block content %}
+<section class="courses">
+  <div class="row ">
+ 
+      <div class="col-12">
+<div style="width: 100%;">
+
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <div id="paystackEmbedContainer"></div>
+</div>
+      </div>
+      </div>
+
+</section>
+{% endblock content %}
+{% block formadjust %}
+<script type="text/javascript">
+var cartAmmount=parseInt("{{cart.total}}");
+var endpoint="127.0.0.1:8000"+"/record/pack/";
+         var record={
+          "id": 1,
+        "contents": [
+           0
+        ],
+        "total_price": 0,
+        "user": 1,
+           "csrfmiddlewaretoken":"{{csrf_token}}"
+         };
+ 
+         $.ajax({
+                 type:'POST',
+                 url:"127.0.0.1:8000/record/pack/",
+                 data:record,
+                 success:function(data){
+                   alert('successfully added')
+                 },
+                 error:function(err){
+                     alert('error :'+err);
+                 }
+                 
+             });
+PaystackPop.setup({
+    key: 'pk_test_37594665d8156eff9f674d8fe0ee495ba71fc61a',
+    email: '{{cart.user.email}}',
+    amount: cartAmmount+"00",
+    container: 'paystackEmbedContainer',
+    callback: function(response){
+         
+         var endpoint="127.0.0.1:8000"+"/record/pack/";
+         var record={
+          "id": 1,
+        "contents": [
+           0
+        ],
+        "total_price": 0,
+        "user": 1,
+           "csrfmiddlewaretoken":"{{csrf_token}}"
+         };
+ 
+         $.ajax({
+                 type:'POST',
+                 url:endpoint,
+                 data:record,
+                 success:function(data){
+                   alert('successfully added')
+                 },
+                 error:function(){
+                     alert('error ');
+                 }
+                 
+             });
+             alert('successfully subscribed. transaction ref is ' + response.reference+ endpoint);
+     },
+   });
+   </script>
+   <script type="text/javascript">
+   $('document').ready(function(){
+       $(".head-nav ul").css("display", "none");
+       $("#responsive-nav").css("display", "none");
+       $(".mobile-nav").css("display", "none");
+       
+
+    });
+   </script>
+   {% endblock formadjust %}

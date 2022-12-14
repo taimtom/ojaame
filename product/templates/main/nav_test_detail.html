@@ -1,0 +1,402 @@
+	<!-- NAVIGATION -->
+	<div id="navigation">
+		<!-- container -->
+		<div class="container">
+			<div id="responsive-nav">
+				<!-- category nav -->
+				<div class="category-nav show-on-click">
+					<span class="category-header">Categories <i class="fa fa-list"></i></span>
+					<ul class="category-list">
+        
+						<li class="dropdown side-dropdown" id="nav-list"  >
+							<a class="" href="{% url 'search' %}?cat_q=fashion"  aria-expanded="true">Fashion <i class="fa fa-plus"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Men</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=men's clothes"> Men's Clothing</a></li>
+											<li><a href="{% url 'search' %}?cat_q=men's bags">Men's Bags</a></li>
+											<li><a href="{% url 'search' %}?cat_q=men's shoes">Men's Shoes</a></li>
+											<li><a href="{% url 'search' %}?cat_q=men's accessories">Men's Accessories</a></li>
+											
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Women</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=women's clothing">Women's Clothings</a></li>
+											<li><a href="{% url 'search' %}?cat_q=women's shoes">Women's Shoes</a></li>
+											<li><a href="{% url 'search' %}?cat_q=women's accessories">Women's Accessories</a></li>
+											<li><a href="{% url 'search' %}?cat_q=women's handbags">Women's Handbags</a></li>
+											
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Children</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=girl's clothing">Girl's Clothing</a></li>
+											<li><a href="{% url 'search' %}?cat_q=boy's clothing">Boy's Clothing</a></li>
+											<li><a href="{% url 'search' %}?cat_q=unisex clothing">Unisex Kid's Clothing</a></li>
+											<li><a href="{% url 'search' %}?cat_q=baby clothing">Baby Clothing</a></li>
+											<li><a href="{% url 'search' %}?cat_q=children shoes and accessories">Shoes & Accessories</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="row hidden-sm hidden-xs">
+									<div class="col-md-12">
+										<hr>
+										<a class="banner banner-1" href="{% url 'search' %}?cat_q=pc">
+											<img src="{% static 'img/myimages/tailor.jpg' %}" alt="">
+											<div class="banner-caption text-center">
+												<h2 class="white-color">NEW COLLECTION</h2>
+												<h3 class="white-color font-weak">HOT DEAL</h3>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown side-dropdown" id="nav-list">
+							<a class="" href="{% url 'search' %}?cat_q=electronics and phones" aria-expanded="true" >Electronics & Phones<i class="fa fa-plus"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Computers</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=laptops">Laptops</a></li>
+											<li><a href="{% url 'search' %}?cat_q=desktops">Desktops</a></li>
+											<li><a href="{% url 'search' %}?cat_q=printers">Printers</a></li>
+											<li><a href="{% url 'search' %}?cat_q=storage and drives">Computer Drives & Storage Devices</a></li>
+											<li><a href="{% url 'search' %}?cat_q=video games">Video Games</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Phones</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=smartphones">Smart Phones</a></li>
+											<li><a href="{% url 'search' %}?cat_q=smartphone accessories">Smart Phone Accessories</a></li>
+											<li><a href="{% url 'search' %}?cat_q=cell phones">Cell Phones</a></li>
+											<li><a href="{% url 'search' %}?cat_q=smart watches">Smart Watches</a></li>
+											<li><a href="{% url 'search' %}?cat_q=wrist watches">Wrist Watches</a></li>
+										</ul>
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Other Electronics</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=televisions">Televisions</a></li>
+											<li><a href="{% url 'search' %}?cat_q=cameras">Cameras</a></li>
+											<li><a href="{% url 'search' %}?cat_q=headsets">Headsets</a></li>
+											<li><a href="{% url 'search' %}?cat_q=surveilance">Surveilance</a></li>
+											<li><a href="{% url 'search' %}?cat_q=electronics tools">Electronics Tools</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									
+								</div>
+								<div class="row hidden-sm hidden-xs">
+									<div class="col-md-12">
+										<hr>
+										<a class="banner banner-1" href="{% url 'search' %}?cat_q=pc">
+											<img src="{% static 'img/myimages/tailor.jpg' %}" alt="">
+											<div class="banner-caption text-center">
+												<h2 class="white-color">NEW COLLECTION</h2>
+												<h3 class="white-color font-weak">HOT DEAL</h3>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<!-- </li> -->
+						<li class="dropdown side-dropdown" id="nav-list">
+							<a class="" href="{% url 'search' %}?cat_q=home and kitchen" aria-expanded="true">Home & Kitchen<i class="fa fa-plus"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Kitchen</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=Regrigerators">Refrigerators </a></li>
+											<li><a href="{% url 'search' %}?cat_q=dish washer">Dish Washers</a></li>
+											<li><a href="{% url 'search' %}?cat_q=cooking stoves">Cooking Gas & Stoves</a></li>
+											<li><a href="{% url 'search' %}?cat_q=kitchen accessories">Kitchen Accessories</a></li>
+											<li><a href="{% url 'search' %}?cat_q=kitchen furnitures">Kitchen Furnitures</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Home & Holiday Decoration</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=christmans trees">Christmas Trees</a></li>
+											<li><a href="{% url 'search' %}?cat_q=string lights">String Lights</a></li>
+											<li><a href="{% url 'search' %}?cat_q=window curtains and drapes">Window Curtains And Drapes</a></li>
+											<li><a href="{% url 'search' %}?cat_q=rugs and carpets">Rugs & Carpets</a></li>
+											<li><a href="{% url 'search' %}?cat_q=clocks">Clocks</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Others</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=mattress">Mattress</a></li>
+											<li><a href="{% url 'search' %}?cat_q=bathroom supplies">Bathroom Supplies</a></li>
+											<li><a href="{% url 'search' %}?cat_q=washers and dryers">Washers & Dryers</a></li>
+											<li><a href="{% url 'search' %}?cat_q=Stationaries">Stationaries</a></li>
+											
+										</ul>
+									</div>
+								</div>
+								<div class="row hidden-sm hidden-xs">
+									<div class="col-md-12">
+										<hr>
+										<a class="banner banner-1" href="{% url 'search' %}?cat_q=pc">
+											<img src="{% static 'img/myimages/tailor.jpg' %}" alt="">
+											<div class="banner-caption text-center">
+												<h2 class="white-color">NEW COLLECTION</h2>
+												<h3 class="white-color font-weak">HOT DEAL</h3>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown side-dropdown" id="nav-list">
+							<a class="" href="{% url 'search' %}?cat_q=furnitures and woodwork" aria-expanded="true">Furnitures & Woodworks <i class="fa fa-plus"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Home Funitures</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=cushion chairs">Cushion Chairs</a></li>
+											<li><a href="{% url 'search' %}?cat_q=dining tables ">Dining Tables</a></li>
+											<li><a href="{% url 'search' %}?cat_q=wardrobes">Wardrobes</a></li>
+											<li><a href="{% url 'search' %}?cat_q=kid's furnitures">Kid's Furnitures</a></li>
+											<li><a href="{% url 'search' %}?cat_q=beds and pillows">Beds & Pillows</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Office Furnitures</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=office tables and drawers">Tables & Drawers</a></li>
+											<li><a href="{% url 'search' %}?cat_q=partition screens">Partition Screens</a></li>
+											<li><a href="{% url 'search' %}?cat_q=Office chairs">Office Chairs</a></li>
+											<li><a href="{% url 'search' %}?cat_q=filing cabinet">Filing Cabinet</a></li>
+											<li><a href="{% url 'search' %}?cat_q=office desk accessories">Office Desk Accessories</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Others</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=doors and windows">Doors And Windows</a></li>
+											<li><a href="{% url 'search' %}?cat_q=shelves">Shelves</a></li>
+											<li><a href="{% url 'search' %}?cat_q=artwork frames ">Artwork frames</a></li>
+											<li><a href="{% url 'search' %}?cat_q=vases">Vases</a></li>
+											<li><a href="{% url 'search' %}?cat_q=sculptures and statuses">Sculptures & Statuses</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="row hidden-sm hidden-xs">
+									<div class="col-md-12">
+										<hr>
+										<a class="banner banner-1" href="{% url 'search' %}?cat_q=pc">
+											<img src="{% static 'img/myimages/tailor.jpg' %}" alt="">
+											<div class="banner-caption text-center">
+												<h2 class="white-color">NEW COLLECTION</h2>
+												<h3 class="white-color font-weak">HOT DEAL</h3>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown side-dropdown" id="nav-list">
+							<a class="" href="{% url 'search' %}?cat_q=pets and livestocks" aria-expanded="true">Pets & Livestocks<i class="fa fa-plus"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Pets</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=dogs">Dogs</a></li>
+											<li><a href="{% url 'search' %}?cat_q=cats">Cats</a></li>
+											<li><a href="{% url 'search' %}?cat_q=dog feeds and medications">Dog Feeds & Medications</a></li>
+											<li><a href="{% url 'search' %}?cat_q= chains and cages">Chains And Cages</a></li>
+											
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+								   
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Live Stocks</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=cattles">Cattles</a></li>
+											<li><a href="{% url 'search' %}?cat_q=fish and feeds">Fish and Feeds</a></li>
+											<li><a href="{% url 'search' %}?cat_q=poultry birds">Poultry Birds</a></li>
+											<li><a href="{% url 'search' %}?cat_q= farm equipments">farm equipments</a></li>
+											
+										</ul>
+									</div>
+								</div>
+								<div class="row hidden-sm hidden-xs">
+									<div class="col-md-12">
+										<hr>
+										<a class="banner banner-1" href="{% url 'search' %}?cat_q=pc">
+											<img src="{% static 'img/myimages/tailor.jpg' %}" alt="">
+											<div class="banner-caption text-center">
+												<h2 class="white-color">NEW COLLECTION</h2>
+												<h3 class="white-color font-weak">HOT DEAL</h3>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown side-dropdown" id="nav-list">
+							<a class="" href="{% url 'search' %}?cat_q=health and beauty" aria-expanded="true">Health & Beauty<i class="fa fa-plus"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Skin Care, Fragrance & Makeup</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=Fragrance">Fragrance (perfume)</a></li>
+											<li><a href="{% url 'search' %}?cat_q=skin care products">Skin Care Products</a></li>
+											<li><a href="{% url 'search' %}?cat_q=oral care products ">Oral Care products</a></li>
+											<li><a href="{% url 'search' %}?cat_q=makeup">Makeup Products</a></li>
+											<li><a href="{% url 'search' %}?cat_q=manicure pedicure and nail care products">Manicure, Pedicure & Nail Care Products</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Medical & Health Care </h3></li>
+											<li><a href="{% url 'search' %}?cat_q=mobility or walking equipment">Mobility/Walking Equipment</a></li>
+											<li><a href="{% url 'search' %}?cat_q=daily living aids">Daily Living Aids</a></li>
+											<li><a href="{% url 'search' %}?cat_q=reading glasses">Reading Glasses</a></li>
+											<li><a href="{% url 'search' %}?cat_q=vision care products">Vision Care Products</a></li>
+											<li><a href="{% url 'search' %}?cat_q=natural and alternative remedies">Natural & Alternative Remedies</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Hair Care & Styling</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=hair extentions and wigs">Hair Extentions & Wigs</a></li>
+											<li><a href="{% url 'search' %}?cat_q=shampoos and conditioners">Shampoos & Conditioners</a></li>
+											<li><a href="{% url 'search' %}?cat_q=hair loss treatments">Hair Loss Treatments</a></li>
+											<li><a href="{% url 'search' %}?cat_q=hair clippers and trimmers">Hair Clippers & Trimmer</a></li>
+											<li><a href="{% url 'search' %}?cat_q=hair dryers">Hair Driers</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="row hidden-sm hidden-xs">
+									<div class="col-md-12">
+										<hr>
+										<a class="banner banner-1" href="{% url 'search' %}?cat_q=pc">
+											<img src="{% static 'img/myimages/tailor.jpg' %}" alt="">
+											<div class="banner-caption text-center">
+												<h2 class="white-color">NEW COLLECTION</h2>
+												<h3 class="white-color font-weak">HOT DEAL</h3>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="dropdown side-dropdown" id="nav-list">
+							<a class="" href="{% url 'search' %}?cat_q=automobiles and industrial machines" aria-expanded="true">Automobiles & Industrial Machines<i class="fa fa-plus"></i></a>
+							<div class="custom-menu">
+								<div class="row">
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Cars & Trucks</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=cars">Cars</li>
+											<li><a href="{% url 'search' %}?cat_q=trucks">Trucks</a></li>
+											<li><a href="{% url 'search' %}?cat_q=car parts">Car Parts</a></li>
+											<li><a href="{% url 'search' %}?cat_q=truck parts">Truck Parts</a></li>
+											<li><a href="{% url 'search' %}?cat_q=automotive tools and supplies">Automotive Tools & Supplies</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Motorcycles And Generators</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=small generators">Small Generators</a></li>
+											<li><a href="{% url 'search' %}?cat_q=heavy duty generators">Heavy Duty Generators</a></li>
+											<li><a href="{% url 'search' %}?cat_q=motorcycles">Motorcycles</a></li>
+											<li><a href="{% url 'search' %}?cat_q=motorcycle parts">motorcycle parts</a></li>
+											<li><a href="{% url 'search' %}?cat_q=generator parts">Generator Parts</a></li>
+										</ul>
+										<hr class="hidden-md hidden-lg">
+									</div>
+									<div class="col-md-4">
+										<ul class="list-links">
+											<li>
+												<h3 class="list-links-title">Others</h3></li>
+											<li><a href="{% url 'search' %}?cat_q=buses">buses</a></li>
+											<li><a href="{% url 'search' %}?cat_q=commercial trucks">Commercial trucks</a></li>
+											<li><a href="{% url 'search' %}?cat_q=tricycles">Tricycles ( kekenapep) </a></li>
+											<li><a href="{% url 'search' %}?cat_q=boats and yatchs">Boats & yatchs</a></li>
+											<li><a href="{% url 'search' %}?cat_q=aircraft">Aircraft</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="row hidden-sm hidden-xs">
+									<div class="col-md-12">
+										<hr>
+										<a class="banner banner-1" href="{% url 'search' %}?cat_q=pc">
+											<img src="{% static 'img/myimages/tailor.jpg' %}" alt="">
+											<div class="banner-caption text-center">
+												<h2 class="white-color">NEW COLLECTION</h2>
+												<h3 class="white-color font-weak">HOT DEAL</h3>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li><a href="{% url 'company:list' %}">All Shops and Stores</a></li>
+						<li><a href="{% url 'products:list' %}">All Products</a></li>
+				 
+						
+					</ul> 
+				</div>
+				<!-- /category nav -->
+
+				<!-- menu nav -->
+				<span class="menu-header">Menu <i class="fa fa-list"></i></span>
+    <ul class="menus-list">
+            <li class=""><a href="{% url 'home' %}">Home</a> </li>
+            <li class=""><a href="{% url 'cart:cart' %}">Cart</a></li>
+            <li class=""><a href="{% url 'referral:create' %}">Refer Others</a></li>
+            <li  class=""><a href="{% url 'company:list' %}">Shops And Stores</a></li>
+            <li class=""><a href="{% url 'company:create' %}">Create Store & Sell Products</a></li>
+    </ul>
+				<!-- menu nav -->
+			</div>
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /NAVIGATION -->

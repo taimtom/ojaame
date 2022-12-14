@@ -1,0 +1,100 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+{{block.super}}
+
+<div class="single-product-area detail-section section-padding-100 clearfix">
+    <div class="container-fluid">
+       
+        
+       
+        {% for obj in notifications %}
+
+   
+        <div class="row">
+           
+            <div class="col-12 col-lg-5">
+                <div class="single_product_desc">
+                    <!-- Product Meta Data -->
+                    <div class="product-meta-data">
+                        <div class="line"></div>
+                        
+                            <h3 style="display: inline;">{{obj.subject|title}}</h3>
+                       
+                        <div class="line"></div>
+                        <h3 class="">&#8358;{{obj.price}} </h3>
+                        <h5 class="product-price">Quantity Requested: {{obj.quantity}} </h5>
+                        
+                      
+                        
+                    </div>
+
+
+                
+                    
+      
+                    
+                       
+                      
+                        
+                    
+                       
+
+                      
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        
+       
+      
+    </div>
+    </div>
+
+    {% endblock content %}
+    {% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        var saleId=$("#saleId").val();
+        $('.cart-form .accept-btn').on("click", function(event){
+            event.preventDefault();
+            datum={
+                "status":"accepted",
+                "sale_id":saleId,
+                "csrfmiddlewaretoken":"{{csrf_token}}"
+            }
+            myRespond(datum);
+        });
+        $('.cart-form .return-btn').on("click", function(event){
+            event.preventDefault();
+            datum={
+                "status":"rejected",
+                "sale_id":saleId,
+                "csrfmiddlewaretoken":"{{csrf_token}}"
+            }
+            myRespond(datum);
+        });
+        function myRespond(datum){
+          
+            $.ajax({
+                 type:'POST',
+                 url:"/record/customer-response/",
+                 data:datum,
+                 success:function(data){
+                   alert('successfully: The Product Has Been'+data.status)
+                 },
+                 error:function(err){
+                     alert('error :'+err);
+                 }
+                 
+             });
+        }
+        
+    })
+</script>
+{% endblock formadjust %}

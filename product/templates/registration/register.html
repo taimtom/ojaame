@@ -1,0 +1,45 @@
+{% extends "main/base.html" %}
+{% load socialaccount %}
+	{% providers_media_js %}
+{% block content %}
+
+<section class="courses">
+
+<div class="form-class col-sm-6 ">
+
+	<h4>{{title}}</h4>
+	<article class="registration">
+        <p class="signup-text">Signup now to benefit from the number one online market place in africa<</p>
+<p>Signup Using</p>
+                        <a class="btn btn-block btn-social btn-google" style="background-color:#DB4437; color:aliceblue;" href="{% provider_login_url "google" %}"> <span class="fa fa-google"></span> Gmail</a>
+                        <p>--OR--</p>
+<form method="post" action=".">
+{% csrf_token %}
+{{ register_form }}
+<input type="submit" class="btn amado-btn" value="{{button}}" />
+<input type="hidden" name="next" value="{{ next }}" />
+<input type="hidden" name="referral_link" value="{{ referral_link }}" />
+</form>
+
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a href="{% url 'login' %}">Already have an account</a></p>
+</article>
+</div>
+
+</section>
+{% endblock content %}
+
+{% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        $(' input').addClass('form-control');
+        $('input').css('margin-bottom','10px');
+        $('.courses li').css('color','red');
+        $('.checkout_form label').css('display','none');
+        $('.helptext').css({'color':'red','font-size':'0.9em','width':'1000px'});
+        $('#id_comment').addClass('.w-100')
+        $('.helptext').html('Do not add space in username');
+       
+    })
+</script>
+{% endblock formadjust %}

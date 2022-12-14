@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html ng-app="hub" class="csspositionsticky ng-scope" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="readme-deploy" content="b04e13b610dd975e5dc449ffb0e2975c558b9f3d"><meta name="readme-subdomain" content="paystack"><meta name="readme-version" content="1.0"><title ng-bind="pageTitle" class="ng-binding">Test Cards</title><meta name="description" content="Accept payments online. Modern payments infrastructure for African businesses."><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><meta name="twitter:card" content="summary"><meta property="og:title" content="Test Cards"><meta property="og:site_name" content="Paystack"><meta property="og:description" content="Here’s are some cards that work on our test environment. No validation Card Number: 408 408 408 408 408 1Expiry Date: any date in the futureCVV: 408 PIN+OTP validation (nonreusable) Card Number: 5060 6666 6666 6666 666 (Verve)Expiry Date: any date in the futureCVV: 123PIN: 1234OTP: 123456 PIN only v..."><link id="favicon" href="https://files.readme.io/58e1ad6-favicon.ico" rel="shortcut icon" type="image/x-icon"><link rel="canonical" href="https://developers.paystack.co/docs/test-cards"><!-- Application styles--><link rel="stylesheet" href="Test%20Cards_files/bundle-hub2.css"><!-- Custom CSS--><style>:root{--project-color-primary:#011b33;--project-color-inverse:#fff}a{color:#1a84f5}a:hover{color:#0752a2}a.text-muted:hover{color:#1a84f5}.btn.btn-primary{background-color:#1a84f5}.btn.btn-primary:hover{background-color:#0752a2}.theme-line #hub-landing-top h2{color:#1a84f5}#hub-landing-top .btn:hover{color:#1a84f5}.theme-line #hub-landing-top .btn:hover{color:#fff}.theme-solid header#hub-header #header-top{background-color:#011b33}.theme-solid.header-gradient header#hub-header #header-top{background:linear-gradient(to bottom,#011b33,#000)}.theme-solid.header-custom header#hub-header #header-top{background-image:url(undefined)}.theme-line header#hub-header #header-top{border-bottom-color:#011b33}.theme-line header#hub-header #header-top .btn{background-color:#011b33}header#hub-header #header-top #header-logo{width:211px;height:40px;margin-top:0;background-image:url(https://files.readme.io/d25f3e1-small-two-toned_1.png)}nav#hub-sidebar ul a:hover:not(.active){color:#011b33}nav#hub-sidebar ul a.active,nav#hub-sidebar ul>li.subnav-expanded>a{color:#fff;background-color:#011b33}nav#hub-sidebar ul a.active:not(.active),nav#hub-sidebar ul>li.subnav-expanded>a:not(.active){color:#384248}nav#hub-sidebar ul.subpages{border-left-color:#011b33}nav#hub-sidebar ul.subpages:after{background-color:#011b33!important}nav#hub-sidebar ul.subpages>li>a.subpage.active{color:#fff!important;background-color:#011b33}#hub-subheader-parent #hub-subheader .hub-subheader-breadcrumbs .dropdown-menu a:hover{background-color:#011b33}.discussion .submit-vote.submit-vote-parent.voted a.submit-vote-button{background-color:#1a84f5}section#hub-discuss .discussion a .discuss-body h4{color:#1a84f5}section#hub-discuss .discussion a:hover .discuss-body h4{color:#0752a2}#hub-subheader-parent #hub-subheader.sticky-header.sticky{border-bottom-color:#1a84f5}#hub-subheader-parent #hub-subheader.sticky-header.sticky .search-box{border-bottom-color:#1a84f5}#hub-search-results h3 em{color:#1a84f5}.main_background,.tag-item{background:#1a84f5!important}.main_background:hover{background:#0752a2!important}.main_color{color:#011b33!important}.border_bottom_main_color{border-bottom:2px solid #011b33}.main_color_hover:hover{color:#011b33!important}section#hub-discuss h1{color:#1a84f5}#hub-reference .hub-api .api-manager .param-table .param-item .param-item-info .param-item-table .param-item-input input[type=number]:focus,#hub-reference .hub-api .api-manager .param-table .param-item .param-item-info .param-item-table .param-item-input input[type=text]:focus,#hub-reference .hub-api .api-manager .param-table .param-item .param-item-info .param-item-table .param-item-input textarea:focus{border:1px solid #1a84f5}#hub-reference .hub-api .api-definition .api-try-it-out.active{border-color:#1a84f5;background-color:#1a84f5}#hub-reference .hub-api .api-definition .api-try-it-out.active:hover{background-color:#0752a2;border-color:#0752a2}#hub-reference .hub-api .api-definition .api-try-it-out:hover{border-color:#1a84f5;color:#1a84f5}#hub-reference .hub-reference .logs .logs-login .logs-login-button{border-color:#1a84f5;background-color:#1a84f5}#hub-reference .hub-reference .logs .logs-login .logs-login-button:hover{background-color:#0752a2;border-color:#0752a2}#hub-reference .hub-reference .logs .logs-login .logs-login-button:hover{border-color:#1a84f5;color:#1a84f5}#hub-reference .hub-reference .logs .logs-login>svg>path{fill:#1a84f5}#hub-reference .hub-reference .hub-reference-section .hub-reference-left header .hub-reference-edit:hover{color:#1a84f5}.main-color-accent{border-bottom:3px solid #011b33;padding-bottom:8px}html{font-size:62.5%}body{-webkit-font-smoothing:antialiased;font-family:Graphik-Regular,sans-serif;font-size:1.6rem}h1{font-family:Boing,sans-serif}#header-top{background:url(https://paystack.com/public/background.svg)}.container,.hub-container{max-width:1500px!important;margin:auto;position:relative}header#hub-header #header-top #header-logo{width:140px;height:40px;margin-top:16px}header#hub-header #header-top{padding-top:0}header#hub-header #header-top .clearfix{border-bottom:solid 1px rgba(255,255,255,.055);padding:35px 0}#hub-landing-top h2{font-family:Boing,sans-serif;font-weight:700;font-size:3rem;line-height:1.2;margin:0}@font-face{font-family:Graphik-Medium;src:url(https://paystack.com/public/fonts/graphik/Graphik-Medium.woff) format("woff"),}@font-face{font-family:Graphik-Regular;src:url(https://paystack.com/public/fonts/graphik/Graphik-Regular.woff) format("woff"),}@font-face{font-family:Boing_SemiboldWEB;src:url(https://paystack.com/public/fonts/boing/Boing_SemiboldWEB.woff) format("woff"),}.plugin-item{width:30%;text-align:center;padding:5px}.plugin-title{margin:25px 0 12px}.plugin-logo{display:block;width:80px;margin:auto}</style><meta name="google-site-verification" content="J04l4EgDWxGeojBZhkjXw8y79BSqNhsM4Zm7L02-tPo"><meta name="loadedProject" content="paystack"><style type="text/css">/** initial setup **/
+.nano {
+  position : relative;
+  width    : 100%;
+  height   : 100%;
+  overflow : hidden;
+}
+.nano > .nano-content {
+  position      : absolute;
+  overflow      : scroll;
+  overflow-x    : hidden;
+  top           : 0;
+  right         : 0;
+  bottom        : 0;
+  left          : 0;
+}
+.nano > .nano-content:focus {
+  outline: thin dotted;
+}
+.nano > .nano-content::-webkit-scrollbar {
+  display: none;
+}
+.has-scrollbar > .nano-content::-webkit-scrollbar {
+  display: block;
+}
+.nano > .nano-pane {
+  background : rgba(0,0,0,.25);
+  position   : absolute;
+  width      : 10px;
+  right      : 0;
+  top        : 0;
+  bottom     : 0;
+  visibility : hidden\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : .01;
+  -webkit-transition    : .2s;
+  transition            : .2s;
+  border-radius         : 5px;
+}
+.nano > .nano-pane > .nano-slider {
+  background: #444;
+  background: rgba(0,0,0,.5);
+  position              : relative;
+  margin                : 0 1px;
+  border-radius         : 3px;
+}
+.nano:hover > .nano-pane, .nano-pane.active, .nano-pane.flashed {
+  visibility : visible\9; /* Target only IE7 and IE8 with this hack */
+  opacity    : 0.99;
+}
+</style><style type="text/css">.ns-popover-list-theme{box-sizing:border-box;border:solid 1px #d2d2d2;border-radius:3px;z-index:100;background-color:#fff;-webkit-box-shadow:0 0.3125rem 0.625rem rgba(0,0,0,0.2);-moz-box-shadow:0 0.3125rem 0.625rem rgba(0,0,0,0.2);box-shadow:0 0.3125rem 0.625rem rgba(0,0,0,0.2)}.ns-popover-list-theme ul,.ns-popover-list-theme .list{padding:0;margin:0.625rem 0;display:block}.ns-popover-list-theme li,.ns-popover-list-theme .list-item{list-style-type:none}.ns-popover-list-theme li a,.ns-popover-list-theme .list-item a{padding:0.1875rem 0.625rem;display:block}.ns-popover-list-theme li a:hover,.ns-popover-list-theme .list-item a:hover{background-color:#f5f5f5}.ns-popover-tooltip-theme{box-sizing:border-box;z-index:100;background-color:transparent}.ns-popover-tooltip-theme .ns-popover-tooltip{box-sizing:border-box;border:solid 1px #d2d2d2;border-radius:3px;background-color:#fff;padding:0.5625rem 0.875rem;max-width:20rem;font-size:0.875rem;-webkit-box-shadow:0 0.3125rem 0.625rem rgba(0,0,0,0.2);-moz-box-shadow:0 0.3125rem 0.625rem rgba(0,0,0,0.2);box-shadow:0 0.3125rem 0.625rem rgba(0,0,0,0.2);margin:10px}.ns-popover-tooltip-theme .ns-popover-tooltip ul{padding:0;margin:0.625rem 0;display:block}.ns-popover-tooltip-theme .ns-popover-tooltip li{list-style-type:none}.ns-popover-tooltip-theme .ns-popover-tooltip li a{padding:0.1875rem 0.625rem;display:block}.ns-popover-tooltip-theme .ns-popover-tooltip li a:hover{background-color:#f5f5f5}.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle{content:"";display:block;width:0;height:0;border:solid 11px;border-color:transparent;position:absolute;border-bottom-color:#d2d2d2;left:50%;top:-11px;margin-left:-11px}.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after{content:" ";display:block;width:0;height:0;border:solid 10px;border-color:transparent;position:absolute}.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after{border-bottom-color:#fff;border-top-width:0;top:1px;margin-left:-10px}.ns-popover-tooltip-theme.ns-popover-top-placement .triangle{content:"";display:block;width:0;height:0;border:solid 11px;border-color:transparent;position:absolute;border-top-color:#d2d2d2;left:50%;bottom:-11px;margin-left:-11px}.ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after{content:" ";display:block;width:0;height:0;border:solid 10px;border-color:transparent;position:absolute}.ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after{border-top-color:#fff;border-bottom-width:0;bottom:1px;margin-left:-10px}.ns-popover-tooltip-theme.ns-popover-right-placement .triangle{content:"";display:block;width:0;height:0;border:solid 11px;border-color:transparent;position:absolute;border-right-color:#d2d2d2;top:50%;left:-11px;margin-top:-11px}.ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after{content:" ";display:block;width:0;height:0;border:solid 10px;border-color:transparent;position:absolute}.ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after{border-right-color:#fff;border-left-width:0;left:1px;bottom:-10px}.ns-popover-tooltip-theme.ns-popover-left-placement .triangle{content:"";display:block;width:0;height:0;border:solid 11px;border-color:transparent;position:absolute;border-left-color:#d2d2d2;top:50%;right:-11px;margin-top:-11px}.ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after{content:" ";display:block;width:0;height:0;border:solid 10px;border-color:transparent;position:absolute}.ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after{border-left-color:#fff;border-right-width:0;right:1px;bottom:-10px}.ns-popover-tooltip-theme.ns-popover-left-align .ns-popover-tooltip{margin-left:0}.ns-popover-tooltip-theme.ns-popover-right-align .ns-popover-tooltip{margin-right:0}.ns-popover-tooltip-theme.ns-popover-top-align .ns-popover-tooltip{margin-top:0}.ns-popover-tooltip-theme.ns-popover-bottom-align .ns-popover-tooltip{margin-bottom:0}
+</style><style type="text/css">.ns-popover-list-theme {
+  box-sizing: border-box;
+  border: solid 1px #d2d2d2;
+  border-radius: 3px;
+  z-index: 100;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+}
+.ns-popover-list-theme ul,
+.ns-popover-list-theme .list {
+  padding: 0;
+  margin: 0.625rem 0;
+  display: block;
+}
+.ns-popover-list-theme li,
+.ns-popover-list-theme .list-item {
+  list-style-type: none;
+}
+.ns-popover-list-theme li a,
+.ns-popover-list-theme .list-item a {
+  padding: 0.1875rem 0.625rem;
+  display: block;
+}
+.ns-popover-list-theme li a:hover,
+.ns-popover-list-theme .list-item a:hover {
+  background-color: #f5f5f5;
+}
+.ns-popover-tooltip-theme {
+  box-sizing: border-box;
+  z-index: 100;
+  background-color: transparent;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip {
+  box-sizing: border-box;
+  border: solid 1px #d2d2d2;
+  border-radius: 3px;
+  background-color: #fff;
+  padding: 0.5625rem 0.875rem;
+  max-width: 20rem;
+  font-size: 0.875rem;
+  -webkit-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3125rem 0.625rem rgba(0, 0, 0, 0.2);
+  margin: 10px;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip ul {
+  padding: 0;
+  margin: 0.625rem 0;
+  display: block;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip li {
+  list-style-type: none;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip li a {
+  padding: 0.1875rem 0.625rem;
+  display: block;
+}
+.ns-popover-tooltip-theme .ns-popover-tooltip li a:hover {
+  background-color: #f5f5f5;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-bottom-color: #d2d2d2;
+  left: 50%;
+  top: -11px;
+  margin-left: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-placement .triangle:after {
+  border-bottom-color: #fff;
+  border-top-width: 0;
+  top: 1px;
+  margin-left: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-top-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-top-color: #d2d2d2;
+  left: 50%;
+  bottom: -11px;
+  margin-left: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-top-placement .triangle:after {
+  border-top-color: #fff;
+  border-bottom-width: 0;
+  bottom: 1px;
+  margin-left: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-right-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-right-color: #d2d2d2;
+  top: 50%;
+  left: -11px;
+  margin-top: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-right-placement .triangle:after {
+  border-right-color: #fff;
+  border-left-width: 0;
+  left: 1px;
+  bottom: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-left-placement .triangle {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 11px;
+  border-color: transparent;
+  position: absolute;
+  border-left-color: #d2d2d2;
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+}
+.ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 10px;
+  border-color: transparent;
+  position: absolute;
+}
+.ns-popover-tooltip-theme.ns-popover-left-placement .triangle:after {
+  border-left-color: #fff;
+  border-right-width: 0;
+  right: 1px;
+  bottom: -10px;
+}
+.ns-popover-tooltip-theme.ns-popover-left-align .ns-popover-tooltip {
+  margin-left: 0;
+}
+.ns-popover-tooltip-theme.ns-popover-right-align .ns-popover-tooltip {
+  margin-right: 0;
+}
+.ns-popover-tooltip-theme.ns-popover-top-align .ns-popover-tooltip {
+  margin-top: 0;
+}
+.ns-popover-tooltip-theme.ns-popover-bottom-align .ns-popover-tooltip {
+  margin-bottom: 0;
+}
+</style><style type="text/css">tags-input{display:block}tags-input *,tags-input :after,tags-input :before{-webkit-box-sizing:border-box;box-sizing:border-box}tags-input .host{position:relative;margin-top:5px;margin-bottom:5px;height:100%}tags-input .host:active{outline:0}tags-input .tags{-moz-appearance:textfield;-webkit-appearance:textfield;padding:1px;overflow:hidden;word-wrap:break-word;cursor:text;background-color:#fff;border:1px solid #a9a9a9;-webkit-box-shadow:1px 1px 1px 0 #d3d3d3 inset;box-shadow:1px 1px 1px 0 #d3d3d3 inset;height:100%}tags-input .tags.focused{outline:0;-webkit-box-shadow:0 0 3px 1px rgba(5,139,242,.6);box-shadow:0 0 3px 1px rgba(5,139,242,.6)}tags-input .tags .tag-list{margin:0;padding:0;list-style-type:none}tags-input .tags .tag-item{margin:2px;padding:0 5px;display:inline-block;float:left;font:14px "Helvetica Neue",Helvetica,Arial,sans-serif;height:26px;line-height:25px;border:1px solid #acacac;border-radius:3px;background:-webkit-gradient(linear,left top, left bottom,color-stop(0, #f0f9ff),color-stop(47%, #cbebff),to(#a1dbff));background:linear-gradient(to bottom,#f0f9ff 0,#cbebff 47%,#a1dbff 100%)}tags-input .tags .tag-item.selected{background:-webkit-gradient(linear,left top, left bottom,color-stop(0, #febbbb),color-stop(45%, #fe9090),to(#ff5c5c));background:linear-gradient(to bottom,#febbbb 0,#fe9090 45%,#ff5c5c 100%)}tags-input .tags .tag-item .remove-button{margin:0 0 0 5px;padding:0;border:none;background:0 0;cursor:pointer;vertical-align:middle;font:700 16px Arial,sans-serif;color:#585858}tags-input .tags .tag-item .remove-button:active{color:red}tags-input .tags .input{border:0;outline:0;margin:2px;padding:0;padding-left:5px;float:left;height:26px;font:14px "Helvetica Neue",Helvetica,Arial,sans-serif}tags-input .tags .input.invalid-tag{color:red}tags-input .tags .input::-ms-clear{display:none}tags-input.ng-invalid .tags{-webkit-box-shadow:0 0 3px 1px rgba(255,0,0,.6);box-shadow:0 0 3px 1px rgba(255,0,0,.6)}tags-input .autocomplete{margin-top:5px;position:absolute;padding:5px 0;z-index:999;width:100%;background-color:#fff;border:1px solid rgba(0,0,0,.2);-webkit-box-shadow:0 5px 10px rgba(0,0,0,.2);box-shadow:0 5px 10px rgba(0,0,0,.2)}tags-input .autocomplete .suggestion-list{margin:0;padding:0;list-style-type:none}tags-input .autocomplete .suggestion-item{padding:5px 10px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font:16px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;background-color:#fff}tags-input .autocomplete .suggestion-item.selected,tags-input .autocomplete .suggestion-item.selected em{color:#fff;background-color:#0097cf}tags-input .autocomplete .suggestion-item em{font:normal bold 16px "Helvetica Neue",Helvetica,Arial,sans-serif;color:#000;background-color:#fff}</style><style type="text/css">/* Magnific Popup CSS */
+.mfp-bg {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1042;
+  overflow: hidden;
+  position: fixed;
+  background: #0b0b0b;
+  opacity: 0.8;
+  filter: alpha(opacity=80); }
+
+.mfp-wrap {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1043;
+  position: fixed;
+  outline: none !important;
+  -webkit-backface-visibility: hidden; }
+
+.mfp-container {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 8px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.mfp-container:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
+
+.mfp-align-top .mfp-container:before {
+  display: none; }
+
+.mfp-content {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 auto;
+  text-align: left;
+  z-index: 1045; }
+
+.mfp-inline-holder .mfp-content,
+.mfp-ajax-holder .mfp-content {
+  width: 100%;
+  cursor: auto; }
+
+.mfp-ajax-cur {
+  cursor: progress; }
+
+.mfp-zoom-out-cur, .mfp-zoom-out-cur .mfp-image-holder .mfp-close {
+  cursor: -webkit-zoom-out;
+  cursor: zoom-out; }
+
+.mfp-zoom {
+  cursor: pointer;
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in; }
+
+.mfp-auto-cursor .mfp-content {
+  cursor: auto; }
+
+.mfp-close,
+.mfp-arrow,
+.mfp-preloader,
+.mfp-counter {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+      user-select: none; }
+
+.mfp-loading.mfp-figure {
+  display: none; }
+
+.mfp-hide {
+  display: none !important; }
+
+.mfp-preloader {
+  color: #CCC;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  text-align: center;
+  margin-top: -0.8em;
+  left: 8px;
+  right: 8px;
+  z-index: 1044; }
+  .mfp-preloader a {
+    color: #CCC; }
+    .mfp-preloader a:hover {
+      color: #FFF; }
+
+.mfp-s-ready .mfp-preloader {
+  display: none; }
+
+.mfp-s-error .mfp-content {
+  display: none; }
+
+button.mfp-close,
+button.mfp-arrow {
+  overflow: visible;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+  display: block;
+  outline: none;
+  padding: 0;
+  z-index: 1046;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0; }
+
+.mfp-close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  padding: 0 0 18px 10px;
+  color: #FFF;
+  font-style: normal;
+  font-size: 28px;
+  font-family: Arial, Baskerville, monospace; }
+  .mfp-close:hover,
+  .mfp-close:focus {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .mfp-close:active {
+    top: 1px; }
+
+.mfp-close-btn-in .mfp-close {
+  color: #333; }
+
+.mfp-image-holder .mfp-close,
+.mfp-iframe-holder .mfp-close {
+  color: #FFF;
+  right: -6px;
+  text-align: right;
+  padding-right: 6px;
+  width: 100%; }
+
+.mfp-counter {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #CCC;
+  font-size: 12px;
+  line-height: 18px;
+  white-space: nowrap; }
+
+.mfp-arrow {
+  position: absolute;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  margin: 0;
+  top: 50%;
+  margin-top: -55px;
+  padding: 0;
+  width: 90px;
+  height: 110px;
+  -webkit-tap-highlight-color: transparent; }
+  .mfp-arrow:active {
+    margin-top: -54px; }
+  .mfp-arrow:hover,
+  .mfp-arrow:focus {
+    opacity: 1;
+    filter: alpha(opacity=100); }
+  .mfp-arrow:before,
+  .mfp-arrow:after,
+  .mfp-arrow .mfp-b,
+  .mfp-arrow .mfp-a {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin-top: 35px;
+    margin-left: 35px;
+    border: medium inset transparent; }
+  .mfp-arrow:after,
+  .mfp-arrow .mfp-a {
+    border-top-width: 13px;
+    border-bottom-width: 13px;
+    top: 8px; }
+  .mfp-arrow:before,
+  .mfp-arrow .mfp-b {
+    border-top-width: 21px;
+    border-bottom-width: 21px;
+    opacity: 0.7; }
+
+.mfp-arrow-left {
+  left: 0; }
+  .mfp-arrow-left:after,
+  .mfp-arrow-left .mfp-a {
+    border-right: 17px solid #FFF;
+    margin-left: 31px; }
+  .mfp-arrow-left:before,
+  .mfp-arrow-left .mfp-b {
+    margin-left: 25px;
+    border-right: 27px solid #3F3F3F; }
+
+.mfp-arrow-right {
+  right: 0; }
+  .mfp-arrow-right:after,
+  .mfp-arrow-right .mfp-a {
+    border-left: 17px solid #FFF;
+    margin-left: 39px; }
+  .mfp-arrow-right:before,
+  .mfp-arrow-right .mfp-b {
+    border-left: 27px solid #3F3F3F; }
+
+.mfp-iframe-holder {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .mfp-iframe-holder .mfp-content {
+    line-height: 0;
+    width: 100%;
+    max-width: 900px; }
+  .mfp-iframe-holder .mfp-close {
+    top: -40px; }
+
+.mfp-iframe-scaler {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  padding-top: 56.25%; }
+  .mfp-iframe-scaler iframe {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #000; }
+
+/* Main image in popup */
+img.mfp-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  line-height: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 40px 0 40px;
+  margin: 0 auto; }
+
+/* The shadow behind the image */
+.mfp-figure {
+  line-height: 0; }
+  .mfp-figure:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40px;
+    bottom: 40px;
+    display: block;
+    right: 0;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+    background: #444; }
+  .mfp-figure small {
+    color: #BDBDBD;
+    display: block;
+    font-size: 12px;
+    line-height: 14px; }
+  .mfp-figure figure {
+    margin: 0; }
+
+.mfp-bottom-bar {
+  margin-top: -36px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  cursor: auto; }
+
+.mfp-title {
+  text-align: left;
+  line-height: 18px;
+  color: #F3F3F3;
+  word-wrap: break-word;
+  padding-right: 36px; }
+
+.mfp-image-holder .mfp-content {
+  max-width: 100%; }
+
+.mfp-gallery .mfp-image-holder .mfp-figure {
+  cursor: pointer; }
+
+@media screen and (max-width: 800px) and (orientation: landscape), screen and (max-height: 300px) {
+  /**
+       * Remove all paddings around the image on small screen
+       */
+  .mfp-img-mobile .mfp-image-holder {
+    padding-left: 0;
+    padding-right: 0; }
+  .mfp-img-mobile img.mfp-img {
+    padding: 0; }
+  .mfp-img-mobile .mfp-figure:after {
+    top: 0;
+    bottom: 0; }
+  .mfp-img-mobile .mfp-figure small {
+    display: inline;
+    margin-left: 5px; }
+  .mfp-img-mobile .mfp-bottom-bar {
+    background: rgba(0, 0, 0, 0.6);
+    bottom: 0;
+    margin: 0;
+    top: auto;
+    padding: 3px 5px;
+    position: fixed;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+    .mfp-img-mobile .mfp-bottom-bar:empty {
+      padding: 0; }
+  .mfp-img-mobile .mfp-counter {
+    right: 5px;
+    top: 3px; }
+  .mfp-img-mobile .mfp-close {
+    top: 0;
+    right: 0;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    text-align: center;
+    padding: 0; } }
+
+@media all and (max-width: 900px) {
+  .mfp-arrow {
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75); }
+  .mfp-arrow-left {
+    -webkit-transform-origin: 0;
+    transform-origin: 0; }
+  .mfp-arrow-right {
+    -webkit-transform-origin: 100%;
+    transform-origin: 100%; }
+  .mfp-container {
+    padding-left: 6px;
+    padding-right: 6px; } }
+
+.mfp-ie7 .mfp-img {
+  padding: 0; }
+
+.mfp-ie7 .mfp-bottom-bar {
+  width: 600px;
+  left: 50%;
+  margin-left: -300px;
+  margin-top: 5px;
+  padding-bottom: 5px; }
+
+.mfp-ie7 .mfp-container {
+  padding: 0; }
+
+.mfp-ie7 .mfp-content {
+  padding-top: 44px; }
+
+.mfp-ie7 .mfp-close {
+  top: 0;
+  right: 0;
+  padding-top: 0; }
+</style><style type="text/css">[class~=ReadMeUI],[id=react-root],[data-preview]>:only-child,[data-testid="mountNode"]{font-family:Proxima Nova,"proxima-nova",Avenir,Avenir Next,sans-serif;color:#384248}[class~=ReadMeUI] h1,[class~=ReadMeUI] h2,[class~=ReadMeUI] h3,[class~=ReadMeUI] h4,[class~=ReadMeUI] h5,[class~=ReadMeUI] h6,[id=react-root] h1,[id=react-root] h2,[id=react-root] h3,[id=react-root] h4,[id=react-root] h5,[id=react-root] h6,[data-preview]>:only-child h1,[data-preview]>:only-child h2,[data-preview]>:only-child h3,[data-preview]>:only-child h4,[data-preview]>:only-child h5,[data-preview]>:only-child h6,[data-testid="mountNode"] h1,[data-testid="mountNode"] h2,[data-testid="mountNode"] h3,[data-testid="mountNode"] h4,[data-testid="mountNode"] h5,[data-testid="mountNode"] h6{margin-top:0;margin-bottom:0}[class~=ReadMeUI] pre,[class~=ReadMeUI] code,[id=react-root] pre,[id=react-root] code,[data-preview]>:only-child pre,[data-preview]>:only-child code,[data-testid="mountNode"] pre,[data-testid="mountNode"] code{font-family:source code pro, monaco, menlo, monospace}[class~=ReadMeUI] pre,[id=react-root] pre,[data-preview]>:only-child pre,[data-testid="mountNode"] pre{max-width:0;min-width:100%;overflow:auto;margin:0;box-sizing:border-box;-webkit-overflow-scrolling:touch}[class~=ReadMeUI] code,[id=react-root] code,[data-preview]>:only-child code,[data-testid="mountNode"] code{font-size:inherit}[class~=ReadMeUI] input:focus,[id=react-root] input:focus,[data-preview]>:only-child input:focus,[data-testid="mountNode"] input:focus{outline:0 solid transparent}[class~=ReadMeUI] hr,[id=react-root] hr,[data-preview]>:only-child hr,[data-testid="mountNode"] hr{border-width:1px 0 0;border-style:solid;border-color:#dfe2e6;margin-top:1em;margin-bottom:1em}[class~=ReadMeUI] hr:first-child,[id=react-root] hr:first-child,[data-preview]>:only-child hr:first-child,[data-testid="mountNode"] hr:first-child{margin-top:0}[class~=ReadMeUI] hr:last-child,[id=react-root] hr:last-child,[data-preview]>:only-child hr:last-child,[data-testid="mountNode"] hr:last-child{margin-bottom:0}[class~=ReadMeUI] a,[id=react-root] a,[data-preview]>:only-child a,[data-testid="mountNode"] a{color:var(--project-color-primary, #118CFD)}[class~=ReadMeUI] p,[id=react-root] p,[data-preview]>:only-child p,[data-testid="mountNode"] p{margin-top:1em;margin-bottom:1em}[class~=ReadMeUI] ol,[class~=ReadMeUI] ul,[id=react-root] ol,[id=react-root] ul,[data-preview]>:only-child ol,[data-preview]>:only-child ul,[data-testid="mountNode"] ol,[data-testid="mountNode"] ul{list-style-position:inside;padding-left:0}[class~=ReadMeUI] label,[id=react-root] label,[data-preview]>:only-child label,[data-testid="mountNode"] label{margin-bottom:0}
+</style><style type="text/css">.Box{box-sizing:border-box;padding:1em;border-radius:5px;border:0 solid transparent}.Box_flat{background:#F8F8F8}.Box_rule,.Box_pop{border-width:1px;border-width:.88px;border-color:#ddd}.Box_pop{background-color:#fff;box-shadow:0 0.125em 0.75em -0.25em rgba(0,0,0,0.125)}.Box>.Box_inner{margin-left:calc(-1em - 1px);margin-right:calc(-1em - 1px);border-radius:0}.Box>.Box_inner:first-child{margin-top:calc(-1em - 1px)}.Box>.Box_inner:last-child{margin-bottom:calc(-1em - 1px)}
+</style><style type="text/css">.Button,.Button_ghost,.Button_text,.Button_slate,.Button_slate_ghost,.Button_slate_text,.Button_blue,.Button_blue_ghost,.Button_blue_text,.Button_green,.Button_green_ghost,.Button_green_text,.Button_red,.Button_red_ghost,.Button_red_text,.Button_yellow,.Button_yellow_ghost,.Button_yellow_text,.Button_purple,.Button_purple_ghost,.Button_purple_text,.Button_shale,.Button_shale_ghost,.Button_shale_text,.Button_chalk,.Button_chalk_ghost,.Button_chalk_text{display:inline-flex;justify-content:center;align-items:center;font:inherit;appearance:none;padding:.40188em 1em;border:none;cursor:pointer;color:#fff !important;background:#118CFD;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(2,105,201,0.5)}.Button:hover,.Button_ghost:hover,.Button_text:hover,.Button_slate:hover,.Button_slate_ghost:hover,.Button_slate_text:hover,.Button_blue:hover,.Button_blue_ghost:hover,.Button_blue_text:hover,.Button_green:hover,.Button_green_ghost:hover,.Button_green_text:hover,.Button_red:hover,.Button_red_ghost:hover,.Button_red_text:hover,.Button_yellow:hover,.Button_yellow_ghost:hover,.Button_yellow_text:hover,.Button_purple:hover,.Button_purple_ghost:hover,.Button_purple_text:hover,.Button_shale:hover,.Button_shale_ghost:hover,.Button_shale_text:hover,.Button_chalk:hover,.Button_chalk_ghost:hover,.Button_chalk_text:hover{background:#027ff1;box-shadow:inset 0 -2px #0264be}.Button:active,.Button_ghost:active,.Button_text:active,.Button_slate:active,.Button_slate_ghost:active,.Button_slate_text:active,.Button_blue:active,.Button_blue_ghost:active,.Button_blue_text:active,.Button_green:active,.Button_green_ghost:active,.Button_green_text:active,.Button_red:active,.Button_red_ghost:active,.Button_red_text:active,.Button_yellow:active,.Button_yellow_ghost:active,.Button_yellow_text:active,.Button_purple:active,.Button_purple_ghost:active,.Button_purple_text:active,.Button_shale:active,.Button_shale_ghost:active,.Button_shale_text:active,.Button_chalk:active,.Button_chalk_ghost:active,.Button_chalk_text:active{color:rgba(184,221,254,0.9) !important;box-shadow:inset 0 0 transparent}.Button:focus,.Button_ghost:focus,.Button_text:focus,.Button_slate:focus,.Button_slate_ghost:focus,.Button_slate_text:focus,.Button_blue:focus,.Button_blue_ghost:focus,.Button_blue_text:focus,.Button_green:focus,.Button_green_ghost:focus,.Button_green_text:focus,.Button_red:focus,.Button_red_ghost:focus,.Button_red_text:focus,.Button_yellow:focus,.Button_yellow_ghost:focus,.Button_yellow_text:focus,.Button_purple:focus,.Button_purple_ghost:focus,.Button_purple_text:focus,.Button_shale:focus,.Button_shale_ghost:focus,.Button_shale_text:focus,.Button_chalk:focus,.Button_chalk_ghost:focus,.Button_chalk_text:focus{outline:none}.Button_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #118CFD;color:#027ff1 !important;background:white}.Button_ghost:hover{background:#118CFD}.Button_ghost:active{box-shadow:none}.Button_text{color:#118CFD !important;background:transparent;box-shadow:none !important}.Button_text:hover{color:#fff !important}.Button_text:active{color:rgba(184,221,254,0.9) !important}.Button_slate,.Button_slate_ghost,.Button_slate_text{color:#fff !important;background:#384248;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(33,38,42,0.5)}.Button_slate:hover,.Button_slate_ghost:hover,.Button_slate_text:hover{background:#323b41;box-shadow:inset 0 -2px #1c2124}.Button_slate:active,.Button_slate_ghost:active,.Button_slate_text:active{color:rgba(195,198,200,0.9) !important;box-shadow:inset 0 0 transparent}.Button_slate:focus,.Button_slate_ghost:focus,.Button_slate_text:focus{outline:none}.Button_slate_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_slate_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #384248;color:#323b41 !important;background:white}.Button_slate_ghost:hover{background:#384248}.Button_slate_ghost:active{box-shadow:none}.Button_slate_text{color:#384248 !important;background:transparent;box-shadow:none !important}.Button_slate_text:hover{color:#fff !important}.Button_slate_text:active{color:rgba(195,198,200,0.9) !important}.Button_slate_darker,.Button_slate_darker_ghost,.Button_slate_darker_text{color:#fff !important;background:#1d2e39;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(12,20,24,0.5)}.Button_slate_darker:hover,.Button_slate_darker_ghost:hover,.Button_slate_darker_text:hover{background:#1a2a33;box-shadow:inset 0 -2px #090e11}.Button_slate_darker:active,.Button_slate_darker_ghost:active,.Button_slate_darker_text:active{color:rgba(187,192,196,0.9) !important;box-shadow:inset 0 0 transparent}.Button_slate_darker:focus,.Button_slate_darker_ghost:focus,.Button_slate_darker_text:focus{outline:none}.Button_slate_darker_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_slate_darker_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #1d2e39;color:#1a2a33 !important;background:white}.Button_slate_darker_ghost:hover{background:#1d2e39}.Button_slate_darker_ghost:active{box-shadow:none}.Button_slate_darker_text{color:#1d2e39 !important;background:transparent;box-shadow:none !important}.Button_slate_darker_text:hover{color:#fff !important}.Button_slate_darker_text:active{color:rgba(187,192,196,0.9) !important}.Button_blue,.Button_blue_ghost,.Button_blue_text{color:#fff !important;background:#118CFD;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(2,105,201,0.5)}.Button_blue:hover,.Button_blue_ghost:hover,.Button_blue_text:hover{background:#027ff1;box-shadow:inset 0 -2px #0264be}.Button_blue:active,.Button_blue_ghost:active,.Button_blue_text:active{color:rgba(184,221,254,0.9) !important;box-shadow:inset 0 0 transparent}.Button_blue:focus,.Button_blue_ghost:focus,.Button_blue_text:focus{outline:none}.Button_blue_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_blue_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #118CFD;color:#027ff1 !important;background:white}.Button_blue_ghost:hover{background:#118CFD}.Button_blue_ghost:active{box-shadow:none}.Button_blue_text{color:#118CFD !important;background:transparent;box-shadow:none !important}.Button_blue_text:hover{color:#fff !important}.Button_blue_text:active{color:rgba(184,221,254,0.9) !important}.Button_blue_darker,.Button_blue_darker_ghost,.Button_blue_darker_text{color:#fff !important;background:#005eb5;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(0,64,122,0.5)}.Button_blue_darker:hover,.Button_blue_darker_ghost:hover,.Button_blue_darker_text:hover{background:#0055a3;box-shadow:inset 0 -2px #003a70}.Button_blue_darker:active,.Button_blue_darker_ghost:active,.Button_blue_darker_text:active{color:rgba(179,207,233,0.9) !important;box-shadow:inset 0 0 transparent}.Button_blue_darker:focus,.Button_blue_darker_ghost:focus,.Button_blue_darker_text:focus{outline:none}.Button_blue_darker_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_blue_darker_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #005eb5;color:#0055a3 !important;background:white}.Button_blue_darker_ghost:hover{background:#005eb5}.Button_blue_darker_ghost:active{box-shadow:none}.Button_blue_darker_text{color:#005eb5 !important;background:transparent;box-shadow:none !important}.Button_blue_darker_text:hover{color:#fff !important}.Button_blue_darker_text:active{color:rgba(179,207,233,0.9) !important}.Button_green,.Button_green_ghost,.Button_green_text{color:#fff !important;background:#12CA93;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(13,144,105,0.5)}.Button_green:hover,.Button_green_ghost:hover,.Button_green_text:hover{background:#10b684;box-shadow:inset 0 -2px #0c8762}.Button_green:active,.Button_green_ghost:active,.Button_green_text:active{color:rgba(184,239,223,0.9) !important;box-shadow:inset 0 0 transparent}.Button_green:focus,.Button_green_ghost:focus,.Button_green_text:focus{outline:none}.Button_green_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_green_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #12CA93;color:#10b684 !important;background:white}.Button_green_ghost:hover{background:#12CA93}.Button_green_ghost:active{box-shadow:none}.Button_green_text{color:#12CA93 !important;background:transparent;box-shadow:none !important}.Button_green_text:hover{color:#fff !important}.Button_green_text:active{color:rgba(184,239,223,0.9) !important}.Button_green_darker,.Button_green_darker_ghost,.Button_green_darker_text{color:#fff !important;background:#009367;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(0,92,64,0.5)}.Button_green_darker:hover,.Button_green_darker_ghost:hover,.Button_green_darker_text:hover{background:#00855d;box-shadow:inset 0 -2px #005239}.Button_green_darker:active,.Button_green_darker_ghost:active,.Button_green_darker_text:active{color:rgba(179,223,210,0.9) !important;box-shadow:inset 0 0 transparent}.Button_green_darker:focus,.Button_green_darker_ghost:focus,.Button_green_darker_text:focus{outline:none}.Button_green_darker_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_green_darker_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #009367;color:#00855d !important;background:white}.Button_green_darker_ghost:hover{background:#009367}.Button_green_darker_ghost:active{box-shadow:none}.Button_green_darker_text{color:#009367 !important;background:transparent;box-shadow:none !important}.Button_green_darker_text:hover{color:#fff !important}.Button_green_darker_text:active{color:rgba(179,223,210,0.9) !important}.Button_red,.Button_red_ghost,.Button_red_text{color:#fff !important;background:#E95F6A;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(224,31,46,0.5)}.Button_red:hover,.Button_red_ghost:hover,.Button_red_text:hover{background:#e5424f;box-shadow:inset 0 -2px #d71e2c}.Button_red:active,.Button_red_ghost:active,.Button_red_text:active{color:rgba(248,207,210,0.9) !important;box-shadow:inset 0 0 transparent}.Button_red:focus,.Button_red_ghost:focus,.Button_red_text:focus{outline:none}.Button_red_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_red_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #E95F6A;color:#e5424f !important;background:white}.Button_red_ghost:hover{background:#E95F6A}.Button_red_ghost:active{box-shadow:none}.Button_red_text{color:#E95F6A !important;background:transparent;box-shadow:none !important}.Button_red_text:hover{color:#fff !important}.Button_red_text:active{color:rgba(248,207,210,0.9) !important}.Button_red_darker,.Button_red_darker_ghost,.Button_red_darker_text{color:#fff !important;background:#d70515;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(154,3,15,0.5)}.Button_red_darker:hover,.Button_red_darker_ghost:hover,.Button_red_darker_text:hover{background:#c20413;box-shadow:inset 0 -2px #90030e}.Button_red_darker:active,.Button_red_darker_ghost:active,.Button_red_darker_text:active{color:rgba(243,180,185,0.9) !important;box-shadow:inset 0 0 transparent}.Button_red_darker:focus,.Button_red_darker_ghost:focus,.Button_red_darker_text:focus{outline:none}.Button_red_darker_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_red_darker_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #d70515;color:#c20413 !important;background:white}.Button_red_darker_ghost:hover{background:#d70515}.Button_red_darker_ghost:active{box-shadow:none}.Button_red_darker_text{color:#d70515 !important;background:transparent;box-shadow:none !important}.Button_red_darker_text:hover{color:#fff !important}.Button_red_darker_text:active{color:rgba(243,180,185,0.9) !important}.Button_yellow,.Button_yellow_ghost,.Button_yellow_text{color:#fff !important;background:#F7C543;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(232,170,10,0.5)}.Button_yellow:hover,.Button_yellow_ghost:hover,.Button_yellow_text:hover{background:#f6bc25;box-shadow:inset 0 -2px #dea309}.Button_yellow:active,.Button_yellow_ghost:active,.Button_yellow_text:active{color:rgba(253,238,199,0.9) !important;box-shadow:inset 0 0 transparent}.Button_yellow:focus,.Button_yellow_ghost:focus,.Button_yellow_text:focus{outline:none}.Button_yellow_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_yellow_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #F7C543;color:#f6bc25 !important;background:white}.Button_yellow_ghost:hover{background:#F7C543}.Button_yellow_ghost:active{box-shadow:none}.Button_yellow_text{color:#F7C543 !important;background:transparent;box-shadow:none !important}.Button_yellow_text:hover{color:#fff !important}.Button_yellow_text:active{color:rgba(253,238,199,0.9) !important}.Button_yellow_darker,.Button_yellow_darker_ghost,.Button_yellow_darker_text{color:#fff !important;background:#d29800;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(149,107,0,0.5)}.Button_yellow_darker:hover,.Button_yellow_darker_ghost:hover,.Button_yellow_darker_text:hover{background:#bd8900;box-shadow:inset 0 -2px #8a6400}.Button_yellow_darker:active,.Button_yellow_darker_ghost:active,.Button_yellow_darker_text:active{color:rgba(242,224,179,0.9) !important;box-shadow:inset 0 0 transparent}.Button_yellow_darker:focus,.Button_yellow_darker_ghost:focus,.Button_yellow_darker_text:focus{outline:none}.Button_yellow_darker_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_yellow_darker_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #d29800;color:#bd8900 !important;background:white}.Button_yellow_darker_ghost:hover{background:#d29800}.Button_yellow_darker_ghost:active{box-shadow:none}.Button_yellow_darker_text{color:#d29800 !important;background:transparent;box-shadow:none !important}.Button_yellow_darker_text:hover{color:#fff !important}.Button_yellow_darker_text:active{color:rgba(242,224,179,0.9) !important}.Button_purple,.Button_purple_ghost,.Button_purple_text{color:#fff !important;background:#8470BE;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(94,72,159,0.5)}.Button_purple:hover,.Button_purple_ghost:hover,.Button_purple_text:hover{background:#725bb5;box-shadow:inset 0 -2px #5a4598}.Button_purple:active,.Button_purple_ghost:active,.Button_purple_text:active{color:rgba(218,212,236,0.9) !important;box-shadow:inset 0 0 transparent}.Button_purple:focus,.Button_purple_ghost:focus,.Button_purple_text:focus{outline:none}.Button_purple_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_purple_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #8470BE;color:#725bb5 !important;background:white}.Button_purple_ghost:hover{background:#8470BE}.Button_purple_ghost:active{box-shadow:none}.Button_purple_text{color:#8470BE !important;background:transparent;box-shadow:none !important}.Button_purple_text:hover{color:#fff !important}.Button_purple_text:active{color:rgba(218,212,236,0.9) !important}.Button_purple_darker,.Button_purple_darker_ghost,.Button_purple_darker_text{color:#fff !important;background:#492b9f;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(51,30,111,0.5)}.Button_purple_darker:hover,.Button_purple_darker_ghost:hover,.Button_purple_darker_text:hover{background:#42278f;box-shadow:inset 0 -2px #2f1c67}.Button_purple_darker:active,.Button_purple_darker_ghost:active,.Button_purple_darker_text:active{color:rgba(200,191,226,0.9) !important;box-shadow:inset 0 0 transparent}.Button_purple_darker:focus,.Button_purple_darker_ghost:focus,.Button_purple_darker_text:focus{outline:none}.Button_purple_darker_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_purple_darker_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #492b9f;color:#42278f !important;background:white}.Button_purple_darker_ghost:hover{background:#492b9f}.Button_purple_darker_ghost:active{box-shadow:none}.Button_purple_darker_text{color:#492b9f !important;background:transparent;box-shadow:none !important}.Button_purple_darker_text:hover{color:#fff !important}.Button_purple_darker_text:active{color:rgba(200,191,226,0.9) !important}.Button_shale,.Button_shale_ghost,.Button_shale_text{color:#fff !important;background:#939EAE;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(106,121,142,0.5)}.Button_shale:hover,.Button_shale_ghost:hover,.Button_shale_text:hover{background:#818ea0;box-shadow:inset 0 -2px #667488}.Button_shale:active,.Button_shale_ghost:active,.Button_shale_text:active{color:rgba(223,226,231,0.9) !important;box-shadow:inset 0 0 transparent}.Button_shale:focus,.Button_shale_ghost:focus,.Button_shale_text:focus{outline:none}.Button_shale_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_shale_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #939EAE;color:#818ea0 !important;background:white}.Button_shale_ghost:hover{background:#939EAE}.Button_shale_ghost:active{box-shadow:none}.Button_shale_text{color:#939EAE !important;background:transparent;box-shadow:none !important}.Button_shale_text:hover{color:#fff !important}.Button_shale_text:active{color:rgba(223,226,231,0.9) !important}.Button_shale_darker,.Button_shale_darker_ghost,.Button_shale_darker_text{color:#fff !important;background:#476590;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(50,72,103,0.5)}.Button_shale_darker:hover,.Button_shale_darker_ghost:hover,.Button_shale_darker_text:hover{background:#405b82;box-shadow:inset 0 -2px #2f4360}.Button_shale_darker:active,.Button_shale_darker_ghost:active,.Button_shale_darker_text:active{color:rgba(200,209,222,0.9) !important;box-shadow:inset 0 0 transparent}.Button_shale_darker:focus,.Button_shale_darker_ghost:focus,.Button_shale_darker_text:focus{outline:none}.Button_shale_darker_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_shale_darker_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #476590;color:#405b82 !important;background:white}.Button_shale_darker_ghost:hover{background:#476590}.Button_shale_darker_ghost:active{box-shadow:none}.Button_shale_darker_text{color:#476590 !important;background:transparent;box-shadow:none !important}.Button_shale_darker_text:hover{color:#fff !important}.Button_shale_darker_text:active{color:rgba(200,209,222,0.9) !important}.Button_chalk,.Button_chalk_ghost,.Button_chalk_text{color:#000 !important;background:#c6cbd3;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(152,161,175,0.5)}.Button_chalk:hover,.Button_chalk_ghost:hover,.Button_chalk_text:hover{background:#afb6c1;box-shadow:inset 0 -2px #929cab}.Button_chalk:active,.Button_chalk_ghost:active,.Button_chalk_text:active{color:rgba(59,61,63,0.9) !important;box-shadow:inset 0 0 transparent}.Button_chalk:focus,.Button_chalk_ghost:focus,.Button_chalk_text:focus{outline:none}.Button_chalk_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_chalk_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #c6cbd3;color:#afb6c1 !important;background:white}.Button_chalk_ghost:hover{background:#c6cbd3}.Button_chalk_ghost:active{box-shadow:none}.Button_chalk_text{color:#c6cbd3 !important;background:transparent;box-shadow:none !important}.Button_chalk_text:hover{color:#000 !important}.Button_chalk_text:active{color:rgba(59,61,63,0.9) !important}.Button_chalk_darker,.Button_chalk_darker_ghost,.Button_chalk_darker_text{color:#fff !important;background:#6280b0;border-radius:3px;box-shadow:inset 0 -1px transparent, 0 1px transparent;transition:.2s .01s ease-in;box-shadow:inset 0 -2px rgba(69,95,137,0.5)}.Button_chalk_darker:hover,.Button_chalk_darker_ghost:hover,.Button_chalk_darker_text:hover{background:#5372a4;box-shadow:inset 0 -2px #425a82}.Button_chalk_darker:active,.Button_chalk_darker_ghost:active,.Button_chalk_darker_text:active{color:rgba(208,217,231,0.9) !important;box-shadow:inset 0 0 transparent}.Button_chalk_darker:focus,.Button_chalk_darker_ghost:focus,.Button_chalk_darker_text:focus{outline:none}.Button_chalk_darker_ghost{box-shadow:inset 0 0 0 2px transparent}.Button_chalk_darker_ghost:not(:hover):not(:active){box-shadow:inset 0 0 0 2px #6280b0;color:#5372a4 !important;background:white}.Button_chalk_darker_ghost:hover{background:#6280b0}.Button_chalk_darker_ghost:active{box-shadow:none}.Button_chalk_darker_text{color:#6280b0 !important;background:transparent;box-shadow:none !important}.Button_chalk_darker_text:hover{color:#fff !important}.Button_chalk_darker_text:active{color:rgba(208,217,231,0.9) !important}a.Button,a.Button_ghost,a.Button_text,a.Button_slate,a.Button_slate_ghost,a.Button_slate_text,a.Button_blue,a.Button_blue_ghost,a.Button_blue_text,a.Button_green,a.Button_green_ghost,a.Button_green_text,a.Button_red,a.Button_red_ghost,a.Button_red_text,a.Button_yellow,a.Button_yellow_ghost,a.Button_yellow_text,a.Button_purple,a.Button_purple_ghost,a.Button_purple_text,a.Button_shale,a.Button_shale_ghost,a.Button_shale_text,a.Button_chalk,a.Button_chalk_ghost,a.Button_chalk_text{text-decoration:none}
+</style><style type="text/css">.Flex{display:flex;text-align:left}.Flex[text=right]{text-align:right}.Flex[text=center]{text-align:center}.Flex[text=left]{text-align:left}.Flex[align=start]{align-items:flex-start}.Flex[align=end]{align-items:flex-end}.Flex[align=center]{align-items:center}.Flex[align=baseline]{align-items:baseline}.Flex[align=stretch]{align-items:stretch}.Flex[justify=center]{justify-content:center}.Flex[justify=between]{justify-content:space-between}.Flex[justify=around]{justify-content:space-around}.Flex[justify=end]{justify-content:flex-end}.Flex[justify=start]{justify-content:flex-start}.Flex[justify=stretch]{justify-content:stretch}.Flex[inline]{display:inline-flex}.Flex_col{flex-flow:nowrap column}.Flex_row{flex-flow:nowrap row}.Flex_row>*+*,.Flex_row>[flex=inner]>*+*,.Flex_row>.Flex_inner>*+*{margin-left:1em}.Flex_row>[shift~=start],.Flex_row>.Flex_shift\=start,.Flex_row>[flex=inner]>[shift~=start],.Flex_row>[flex=inner]>.Flex_shift\=start,.Flex_row>.Flex_inner>[shift~=start],.Flex_row>.Flex_inner>.Flex_shift\=start{margin-left:auto !important}.Flex_row>[shift~=end],.Flex_row>.Flex_shift\=end,.Flex_row>[flex=inner]>[shift~=end],.Flex_row>[flex=inner]>.Flex_shift\=end,.Flex_row>.Flex_inner>[shift~=end],.Flex_row>.Flex_inner>.Flex_shift\=end{margin-right:auto !important}.Flex_col>*+*,.Flex_col>[flex=inner]>*+*,.Flex_col>.Flex_inner>*+*{margin-top:1em !important}.Flex_col>[shift~=start],.Flex_col>.Flex_shift\=start,.Flex_col>[flex=inner]>[shift~=start],.Flex_col>[flex=inner]>.Flex_shift\=start,.Flex_col>.Flex_inner>[shift~=start],.Flex_col>.Flex_inner>.Flex_shift\=start{margin-top:auto !important}.Flex_col>[shift~=end],.Flex_col>.Flex_shift\=end,.Flex_col>[flex=inner]>[shift~=end],.Flex_col>[flex=inner]>.Flex_shift\=end,.Flex_col>.Flex_inner>[shift~=end],.Flex_col>.Flex_inner>.Flex_shift\=end{margin-bottom:auto !important}.Flex [flex=block]{flex:1}.Flex>.Flex_inner,.Flex>[flex=inner]{display:inherit;flex-flow:inherit;flex-direction:inherit;flex-wrap:inherit;justify-content:inherit;align-items:inherit;text-align:inherit}.Flex[text=start],.Flex[text=left],.Flex>.Flex_inner[text=start],.Flex>.Flex_inner[text=left],.Flex>[flex=inner][text=start],.Flex>[flex=inner][text=left]{text-align:left}.Flex[text=center],.Flex>.Flex_inner[text=center],.Flex>[flex=inner][text=center]{text-align:center}.Flex[text=end],.Flex[text=right],.Flex>.Flex_inner[text=end],.Flex>.Flex_inner[text=right],.Flex>[flex=inner][text=end],.Flex>[flex=inner][text=right]{text-align:right}
+</style><style type="text/css">.Input{appearance:none;padding:.83333em;font:inherit;background-color:#F8F8F8;color:#666;border:2px solid transparent;border-radius:6px;outline:none}.Input:focus{color:#384248;background:#fff;border:2px solid #118CFD}.Input::placeholder{color:#667283}
+</style><style type="text/css">.Metric{display:inline-flex;flex-flow:nowrap column}.Metric_chart{text-align:center}.Metric_chart .Metric-value{min-height:8.9161em;min-width:15.40702em}.Metric>hr{margin:1em 0;min-width:100%}.Metric-value{margin:0}.Metric-label{line-height:1 !important}
+</style><style type="text/css">.Title{margin-bottom:0;font-weight:500;line-height:1.3}.Title1{font-size:2.48832em}.Title2{font-size:2.0736em}.Title3{font-size:1.728em}.Title4{font-size:1.44em}.Title5{font-size:1.2em}.Title6{font-size:1em}.Title_bold{font-weight:800}
+</style><style type="text/css">.TextArea{appearance:none;box-sizing:border-box;width:100%;max-width:100%;padding:1em;font:inherit;color:#666;background-color:#F8F8F8;border:2px solid transparent;border-radius:6px;outline:none;transition:border .25s ease-in-out}.TextArea:focus{background:#fff;color:#4f5a66;border:2px solid #118CFD}.TextArea::placeholder{color:rgba(79,90,102,0.5)}
+</style><style type="text/css">.Toggle{position:relative;display:inline-flex;justify-content:center;align-items:center;max-height:1.63em}.Toggle>.fa:last-child{position:absolute;font-size:.815em;color:white;opacity:0;transition:0.3s ease-out;pointer-events:none}.Toggle_toggle{display:inline-flex;justify-content:flex-start;width:2.119em;border:2px solid #939EAE;border-radius:.815em;background:white;padding:2px;cursor:pointer}.Toggle_toggle .Toggle-input{border-radius:100%;border:none;background-color:#939EAE;margin-left:0%;transition:.2s ease}.Toggle_toggle .Toggle-input+.fa{display:none}.Toggle_toggle .Toggle-input:checked{margin-left:calc(100% - 1.63em)}.Toggle-input{box-sizing:content-box;-webkit-appearance:none;appearance:none;width:1.63em;height:1.63em;padding:0;background:white;border:2px solid #939EAE;border-radius:4px;outline:none}.Toggle-input[type='checkbox'],.Toggle-input[type='radio']{margin:0}.Toggle-input[type='radio']{border-radius:100%}.Toggle-input:checked{background:#118CFD;border-color:#118CFD}.Toggle-input:checked+.fa:last-child{opacity:1}
+</style><style type="text/css">.Table{margin:auto;border-collapse:collapse;text-align:left}.Table th,.Table td{padding:.4em .6em;font-weight:initial}.Table_striped tbody tr:nth-child(odd){background:#fbfbfb}.Table thead tr{border-bottom:1px solid #ddd}.Table thead tr th{padding-top:0}.Table thead tr:first-child th,.Table thead tr:only-child th{font-weight:bold}.Table thead th{text-transform:capitalize}.Table thead th[colspan]{border-right:1px solid #ddd;border-left:1px solid #ddd}.Table thead th[colspan]:first-child{border-left:0}.Table thead th[colspan]:last-child{border-right:0}
+</style><style type="text/css">.HTTPStatus{display:inline-flex;align-items:baseline;padding:5px 3px;line-height:0.4}.HTTPStatus.HTTPStatus{border-radius:3px;color:#666}.HTTPStatus.HTTPStatus_5,.HTTPStatus.HTTPStatus_4{color:#E95F6A}.HTTPStatus.HTTPStatus_3{color:#F7C543}.HTTPStatus.HTTPStatus_2{color:#12CA93}.HTTPStatus.HTTPStatus_1{color:#666}.HTTPStatus-status{margin-left:.15em}
+</style><style type="text/css">.Tabs{width:100%}.Tabs-list{display:flex;width:100%;margin:0;padding:0;color:#666;border-bottom:3px solid #eee;list-style:none}.Tabs-listItem{min-width:3em;padding:.6em .798em calc(.6em - 1.5px);text-align:center;box-shadow:0 3px 0 transparent;cursor:pointer;user-select:none;transition:box-shadow .25s, color .25s, background-color .25s}.Tabs-listItem:hover{color:#212121;background-color:#f5f5f5;box-shadow:0 3px 0 rgba(102,102,102,0.3)}.Tabs-listItem_active{font-weight:600;letter-spacing:-.01em;color:var(--project-color-primary, #118CFD) !important;box-shadow:0 3px 0 var(--project-color-primary, #118CFD) !important}.Tabs-listItem_active:hover{background-color:rgba(var(--project-color-primary, #118CFD), 0.06)}.Tabs-content{min-width:32em}
+</style><style type="text/css">.ShowMore{position:relative;box-sizing:border-box;min-height:3em}.ShowMore[open] .ShowMore-toggle{position:sticky;bottom:.5787em;background:transparent}.ShowMore-toggle{box-sizing:border-box;padding:.5787em 0;outline:none}.ShowMore_fade .ShowMore-toggle{order:1;position:absolute;top:0;left:0;display:flex;align-items:flex-end;justify-content:center;width:100%;height:100%;background:linear-gradient(to bottom, transparent, white 90%);cursor:pointer !important}.ShowMore_fade:not([open]){max-height:33vh;overflow:hidden}.ShowMore_fade:not([open])>:not([class*=ShowMore]){opacity:.7}.ShowMore_fade[open] .ShowMore-toggle{background:linear-gradient(to bottom, transparent, white 90%);bottom:0;padding:.5787em 0}.ShowMore:not(.ShowMore_fade):not([open])>:not(.ShowMore-toggle){display:none !important}
+</style><style type="text/css">.Range{position:relative;color:#118CFD;margin-top:1.728em}.Range:before,.Range:after{content:' ';z-index:2;position:absolute;pointer-events:none;top:.625em;height:.45em;transform:translate(0, -50%);margin:0;padding:0}.Range_marks:before{z-index:2;left:0;width:100%;max-width:100%;height:calc(.45em + 2px);margin:0 0 0 calc(1.25em/2.5);background-position:center;background-image:repeating-linear-gradient(90deg, var(--bgc, white), var(--bgc, white) 3px, transparent 0, transparent calc(100% / var(--range-marks)))}.Range:after{z-index:1;right:0;width:100%;background:#dfe2e6;border-radius:8px}.Range-input[type='range']{position:relative;z-index:3;outline:none;flex:1;margin:0;padding:0;min-height:1.25em;background:transparent;font:inherit;color:inherit}.Range-input[type='range'],.Range-input[type='range']::-webkit-slider-thumb{-webkit-appearance:none}.Range-input[type='range']::-webkit-slider-runnable-track{box-sizing:border-box;border:none;border-radius:8px;width:100%;height:.45em;background:transparent}.Range-input[type='range']::-moz-range-track{box-sizing:border-box;border:none;border-radius:8px;width:100%;height:.45em;background:transparent}.Range-input[type='range']::-ms-track{box-sizing:border-box;border:none;border-radius:8px;width:100%;height:.45em;background:transparent}.Range-input[type='range']::-webkit-slider-thumb{margin-top:-0.4em;position:relative;z-index:3;box-sizing:border-box;border:3px solid #118CFD;width:1.25em;height:1.25em;border-radius:50%;background-color:white;box-shadow:-2px 0 0 0 var(--bgc, white),2px 1px 4px -1px rgba(147,158,174,0.4);transition:0.2s ease-out}.Range-input[type='range']::-webkit-slider-thumb:hover{box-shadow:-2px 0 0 0 transparent,1px 1px 4px 1px rgba(147,158,174,0.4)}.Range-input[type='range']::-webkit-slider-thumb:hover:active{box-shadow:-2px 0 0 0 transparent,inset -1px 1px 2px 0 rgba(147,158,174,0.4) !important}.Range-input[type='range']::-moz-range-thumb{position:relative;z-index:3;box-sizing:border-box;border:3px solid #118CFD;width:1.25em;height:1.25em;border-radius:50%;background-color:white;box-shadow:-2px 0 0 0 var(--bgc, white),2px 1px 4px -1px rgba(147,158,174,0.4);transition:0.2s ease-out}.Range-input[type='range']::-moz-range-thumb:hover{box-shadow:-2px 0 0 0 transparent,1px 1px 4px 1px rgba(147,158,174,0.4)}.Range-input[type='range']::-moz-range-thumb:hover:active{box-shadow:-2px 0 0 0 transparent,inset -1px 1px 2px 0 rgba(147,158,174,0.4) !important}.Range-input[type='range']::-ms-thumb{margin-top:0;position:relative;z-index:3;box-sizing:border-box;border:3px solid #118CFD;width:1.25em;height:1.25em;border-radius:50%;background-color:white;box-shadow:-2px 0 0 0 var(--bgc, white),2px 1px 4px -1px rgba(147,158,174,0.4);transition:0.2s ease-out}.Range-input[type='range']::-ms-thumb:hover{box-shadow:-2px 0 0 0 transparent,1px 1px 4px 1px rgba(147,158,174,0.4)}.Range-input[type='range']::-ms-thumb:hover:active{box-shadow:-2px 0 0 0 transparent,inset -1px 1px 2px 0 rgba(147,158,174,0.4) !important}.Range-input[type='range']:hover:not(:active)::-webkit-slider-thumb,.Range-input[type='range']:focus::-webkit-slider-thumb{box-shadow:-2px 0 0 0 transparent,1px 1px 4px 1px rgba(147,158,174,0.4)}.Range-input[type='range']:hover:not(:active)::-webkit-slider-thumb:active,.Range-input[type='range']:focus::-webkit-slider-thumb:active{box-shadow:-2px 0 0 0 transparent,inset -1px 1px 2px 0 rgba(147,158,174,0.4) !important}.Range-input[type='range']:hover:not(:active)::-moz-range-thumb,.Range-input[type='range']:focus::-moz-range-thumb{box-shadow:-2px 0 0 0 transparent,1px 1px 4px 1px rgba(147,158,174,0.4)}.Range-input[type='range']:hover:not(:active)::-moz-range-thumb:active,.Range-input[type='range']:focus::-moz-range-thumb:active{box-shadow:-2px 0 0 0 transparent,inset -1px 1px 2px 0 rgba(147,158,174,0.4) !important}.Range-input[type='range']:hover:not(:active)::-ms-thumb,.Range-input[type='range']:focus::-ms-thumb{box-shadow:-2px 0 0 0 transparent,1px 1px 4px 1px rgba(147,158,174,0.4)}.Range-input[type='range']:hover:not(:active)::-ms-thumb:active,.Range-input[type='range']:focus::-ms-thumb:active{box-shadow:-2px 0 0 0 transparent,inset -1px 1px 2px 0 rgba(147,158,174,0.4) !important}.Range-input[type='range']::-moz-focus-outer{border:none}.Range-input[type='range']::-ms-tooltip{display:none}.Range-progress{position:absolute;z-index:2;width:calc(((var(--range-val) - var(--range-min))/(var(--range-max) - var(--range-min)) * 100%) - .6px);max-width:100%;height:.45em;border-top-left-radius:8px;border-bottom-left-radius:8px;top:.625em;transform:translate(0, -50%);background:#118CFD;transition:0.1s ease-out;pointer-events:none}.Range-output{pointer-events:none;position:absolute;bottom:100%;left:calc((var(--range-val) - var(--range-min))/(var(--range-max) - var(--range-min)) * 100%);display:inline-flex;justify-content:center;align-items:center;min-height:1rem;margin:0 0 .33333em;padding:0;transform:translate(calc((var(--range-val) - var(--range-min))/(var(--range-max) - var(--range-min)) * -100%));font:inherit;font-size:1.2em;font-weight:bold;text-align:center;background:var(--bgc, white);box-shadow:8px 0 var(--bgc, white),-8px 0 var(--bgc, white),4px 0 var(--bgc, white),-4px 0 var(--bgc, white);color:currentColor;opacity:1;transition:.3s ease-out}
+</style><style type="text/css">.Dropdown{position:relative}.Dropdown_justify\=left .Dropdown-content,.Dropdown_justify\=start .Dropdown-content{left:0}.Dropdown_justify\=center .Dropdown-content{left:50%;transform:translateX(-50%)}.Dropdown_justify\=right .Dropdown-content,.Dropdown_justify\=end .Dropdown-content{right:0}.Dropdown_align\=top .Dropdown-content,.Dropdown_align\=start .Dropdown-content{top:100%}.Dropdown_align\=center .Dropdown-content{top:50%;transform:translateY(-50%)}.Dropdown_align\=center.Dropdown_justify\=center .Dropdown-content{transform:translate(-50%, -50%)}.Dropdown_align\=bottom .Dropdown-content,.Dropdown_align\=end .Dropdown-content{bottom:100%}.Dropdown-toggle{user-select:none}.Dropdown-content{z-index:10;position:absolute;width:max-content;max-width:42em;margin:0 -.48225em;border:.48225em solid transparent;margin:0;min-width:100%}.Dropdown-content_closed{display:none}
+</style><style type="text/css">._3GJDh-LabeledCheckbox{display:flex;align-items:center;padding:.5787em;border:1px dotted transparent;border-radius:5px;-webkit-user-select:none;transition:.25s ease}._3GJDh-LabeledCheckbox:hover{background:rgba(147,158,174,0.075)}._3GJDh-LabeledCheckbox:focus-within:not(:hover){border:1px dotted rgba(0,0,0,0.2)}._6WQYz-LabeledCheckbox_selectable{-webkit-user-select:initial}._3GJDh-LabeledCheckbox>*+*{margin-left:.6em}._2rkve-LabeledCheckbox_text{overflow:hidden}._2rkve-LabeledCheckbox_text input{transition:inherit;background:rgba(147,158,174,0.075);margin:-.5787em;margin-left:.5787em;padding:.5787em;border-width:0 0 0 1px !important}._2rkve-LabeledCheckbox_text input:focus{border-radius:0}._2rkve-LabeledCheckbox_text:hover{border:1px solid rgba(0,0,0,0.1)}._2rkve-LabeledCheckbox_text:focus-within{background:#118CFD;color:white}._2rkve-LabeledCheckbox_text:focus-within,._2rkve-LabeledCheckbox_text:focus-within:not(:hover){border:1px solid #118CFD}._2rkve-LabeledCheckbox_text:hover input{background:#fff;border-radius:0}._2rkve-LabeledCheckbox_text:hover input:not(:focus){border-color:rgba(0,0,0,0.1)}
+</style><style type="text/css">._2lLvS-APILog table{width:100%}._2lLvS-APILog table td:first-child{color:var(--project-color-primary, #118CFD)}._2lLvS-APILog table td>pre:only-child{scrollbar-width:none;-ms-overflow-style:-ms-autohiding-scrollbar}._2lLvS-APILog table td>pre:only-child::-webkit-scrollbar{display:none}._2lLvS-APILog pre{max-height:25em;padding:1em;background-color:#384248;color:#F8F8F8;border-radius:4px;border:none}._3WTQY-APILog-info{padding:.6em 0}._3WTQY-APILog-info>*{white-space:nowrap}._3fhtU-APILog-tabs{z-index:10;position:sticky;top:0;background:#fff}._2_7JZ-APILog-tableValue{overflow:scroll}._2_7JZ-APILog-tableValue:not(:hover){overflow:hidden;text-overflow:ellipsis}pre._2_7JZ-APILog-tableValue{color:#384248;white-space:pre;background-color:transparent;padding:0;border:none}._32U8u-APILog-copy{position:absolute;top:0;right:0;margin:1em;display:inline-flex;align-items:baseline;font-weight:600}._32U8u-APILog-copy:before,._32U8u-APILog-copy:after{display:inline-flex;margin-right:0.4em;font-size:16px;line-height:1;font-weight:600;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;font-family:FontAwesome, "Font Awesome 5 Free";font-style:normal;font-variant:normal;text-rendering:auto;line-height:1;order:-1;transition:inherit}._32U8u-APILog-copy:before{content:'\F328';content:'\F0C5';font-weight:100}._32U8u-APILog-copy:after{content:'\F00C';top:0.5em;left:1em;position:absolute;transform:scale(0.5);opacity:0}._2XcKI-APILog-copy_OK:after{content:'\F00C'}._2kECi-APILog-copy_ERR:after{content:'\F00D'}._2XcKI-APILog-copy_OK,._2kECi-APILog-copy_ERR{pointer-events:none}._2XcKI-APILog-copy_OK:before,._2kECi-APILog-copy_ERR:before{opacity:0;transform:scale(0.5);opacity:0}._2XcKI-APILog-copy_OK:after,._2kECi-APILog-copy_ERR:after{transform:scale(1);opacity:1}
+</style><style type="text/css">._2Ra6g-MetricsDateRange{color:#666}._2Ra6g-MetricsDateRange svg,._2Ra6g-MetricsDateRange svg path{fill:currentColor}._3SSbV-MetricsDateRange-quickSet{box-shadow:0 0 0 0em transparent;transition:.2s ease-out;border-radius:4px;color:#384248;cursor:pointer;padding:.25em .5em;margin:-.5em;border:.9px dotted transparent}._3SSbV-MetricsDateRange-quickSet:hover{outline:none;background-color:var(--bgc, #F8F8F8)}._3SSbV-MetricsDateRange-quickSet:focus{outline:none;border:0.9px dotted rgba(0,0,0,0.3)}
+</style><style type="text/css">/*
+ * Toastr
+ * Version 2.0.2
+ * Copyright 2012-2014 John Papa and Hans Fjällemark.
+ * All Rights Reserved.
+ * Use, reproduction, distribution, and modification of this code is subject to the terms and
+ * conditions of the MIT license, available at http://www.opensource.org/licenses/mit-license.php
+ *
+ * Author: John Papa and Hans Fjällemark
+ * Project: https://github.com/CodeSeven/toastr
+ */
+.toast-title {
+  font-weight: bold;
+}
+.toast-message {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.toast-message a,
+.toast-message label {
+  color: #ffffff;
+}
+.toast-message a:hover {
+  color: #cccccc;
+  text-decoration: none;
+}
+.toast-close-button {
+  position: relative;
+  right: -0.3em;
+  top: -0.3em;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  -webkit-text-shadow: 0 1px 0 #ffffff;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: alpha(opacity=80);
+}
+.toast-close-button:hover,
+.toast-close-button:focus {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.4;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  filter: alpha(opacity=40);
+}
+/*Additional properties for button version
+ iOS requires the button element instead of an anchor tag.
+ If you want the anchor version, it requires `href="#"`.*/
+button.toast-close-button {
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  -webkit-appearance: none;
+}
+.toast-top-full-width {
+  top: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-bottom-full-width {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.toast-top-left {
+  top: 12px;
+  left: 12px;
+}
+.toast-top-right {
+  top: 12px;
+  right: 12px;
+}
+.toast-bottom-right {
+  right: 12px;
+  bottom: 12px;
+}
+.toast-bottom-left {
+  bottom: 12px;
+  left: 12px;
+}
+#toast-container {
+  position: fixed;
+  z-index: 999999;
+  /*overrides*/
+
+}
+#toast-container * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#toast-container > div {
+  margin: 0 0 6px;
+  padding: 15px 15px 15px 50px;
+  width: 300px;
+  border-radius: 3px 3px 3px 3px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  -webkit-box-shadow: 0 0 12px #999999;
+  box-shadow: 0 0 12px #999999;
+  color: #ffffff;
+  opacity: 0.8;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
+  filter: alpha(opacity=80);
+}
+#toast-container > :hover {
+  -webkit-box-shadow: 0 0 12px #000000;
+  box-shadow: 0 0 12px #000000;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+#toast-container > .toast-info {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=") !important;
+}
+#toast-container > .toast-error {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=") !important;
+}
+#toast-container > .toast-success {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADsSURBVEhLY2AYBfQMgf///3P8+/evAIgvA/FsIF+BavYDDWMBGroaSMMBiE8VC7AZDrIFaMFnii3AZTjUgsUUWUDA8OdAH6iQbQEhw4HyGsPEcKBXBIC4ARhex4G4BsjmweU1soIFaGg/WtoFZRIZdEvIMhxkCCjXIVsATV6gFGACs4Rsw0EGgIIH3QJYJgHSARQZDrWAB+jawzgs+Q2UO49D7jnRSRGoEFRILcdmEMWGI0cm0JJ2QpYA1RDvcmzJEWhABhD/pqrL0S0CWuABKgnRki9lLseS7g2AlqwHWQSKH4oKLrILpRGhEQCw2LiRUIa4lwAAAABJRU5ErkJggg==") !important;
+}
+#toast-container > .toast-warning {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=") !important;
+}
+#toast-container.toast-top-full-width > div,
+#toast-container.toast-bottom-full-width > div {
+  width: 96%;
+  margin: auto;
+}
+.toast {
+  background-color: #030303;
+}
+.toast-success {
+  background-color: #51a351;
+}
+.toast-error {
+  background-color: #bd362f;
+}
+.toast-info {
+  background-color: #2f96b4;
+}
+.toast-warning {
+  background-color: #f89406;
+}
+/*Responsive Design*/
+@media all and (max-width: 240px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 11em;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+@media all and (min-width: 241px) and (max-width: 480px) {
+  #toast-container > div {
+    padding: 8px 8px 8px 50px;
+    width: 18em;
+  }
+  #toast-container .toast-close-button {
+    right: -0.2em;
+    top: -0.2em;
+  }
+}
+@media all and (min-width: 481px) and (max-width: 768px) {
+  #toast-container > div {
+    padding: 15px 15px 15px 50px;
+    width: 25em;
+  }
+}
+</style><style type="text/css">.atwho-view {
+    position:absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    margin-top: 18px;
+    background: white;
+    color: black;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    min-width: 120px;
+    max-height: 200px;
+    overflow: auto;
+    z-index: 11110 !important;
+}
+
+.atwho-view .cur {
+    background: #3366FF;
+    color: white;
+}
+.atwho-view .cur small {
+    color: white;
+}
+.atwho-view strong {
+    color: #3366FF;
+}
+.atwho-view .cur strong {
+    color: white;
+    font:bold;
+}
+.atwho-view ul {
+    /* width: 100px; */
+    list-style:none;
+    padding:0;
+    margin:auto;
+}
+.atwho-view ul li {
+    display: block;
+    padding: 5px 10px;
+    border-bottom: 1px solid #DDD;
+    cursor: pointer;
+    /* border-top: 1px solid #C8C8C8; */
+}
+.atwho-view small {
+    font-size: smaller;
+    color: #777;
+    font-weight: normal;
+}
+</style></head><body ng-class="{'hub-full': state.current().opts.full, 'hub-reference-parent': state.current().name.includes('reference'), 'no-sidebar': !state.current().opts.sidebar, 'hub-is-home': state.current().name == 'home' &amp;&amp; 'landing' == 'landing', 'hub-suggested-edits': suggestedEdits.isEnabled}" class="body-none theme-solid header-solid header-bg-size-auto header-bg-pos-tl header-overlay-triangles reference-layout-column lumosity-dark "><header id="hub-header"><div id="header-top"><div class="hub-container"><div class="clearfix"><a href="https://paystack.com/" target="_self" class="header-link"><h1 id="header-logo">Paystack</h1></a><nav><ul id="header-nav-left"><li><a href="https://developers.paystack.co/docs" ui-sref="docs" title="Guides" class="active">Guides</a></li><li><a href="https://developers.paystack.co/reference" ui-sref="reference" title="API Reference">API Reference</a></li></ul><ul id="header-nav-right"><li><a href="https://dashboard.paystack.co/" target="_self">Dashboard ⧉</a></li><li><span login="" class=""><span ng-show="user.loggedIn" class="login hub-subheader-breadcrumbs ng-hide"><span class="dropdown right-dropdown"><script async="" src="Test%20Cards_files/analytics.js"></script><script type="text/ng-template" id="loginPopover"><div id="hub-user-dropdown" class="ns-popover-tooltip"><div class="ns-triangle"></div><div class="triangle"></div><ul><li ng-show="user.isAdmin"><a href="https://dash.readme.io/project/paystack/v1.0/dashboard"> <i class="fa fa-lock"></i>Admin Panel</a></li><li><a ng-href="/logout?redirect_uri={{redirect()}}" target="_self"> <i class="fa fa-power-off"></i>Log out</a></li></ul></div></script><a ns-popover="" ns-popover-trigger="click" ns-popover-theme="ns-popover-dropdown-theme" ns-popover-placement="bottom|right" ns-popover-template="loginPopover" ns-popover-timeout="-1" class="hub-breadcrumb-item dropdown-toggle ng-scope ng-binding"><i class="fa fa-chevron-down"></i></a></span></span><span ng-show="!user.loggedIn" class="login"><a href="https://dash.readme.io/to/paystack" target="_self">Log In</a></span></span></li></ul></nav></div><div id="hub-landing-top" class="hub-landing-buttons"><h2>The Paystack Developer Documentation</h2><div class="hub-landing-description"><p>Welcome to the Paystack Developer Documentation. </p>
+<p>You'll find comprehensive guides and documentation to help you start 
+working with Paystack as quickly as possible, as well as support if you 
+get stuck. Let's jump right in!</p>
+</div><a href="https://developers.paystack.co/docs" ui-sref="docs" class="btn btn-lg btn-primary active"><i class="fa fa-rocket"></i>Get Started</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://developers.paystack.co/discuss" ui-sref="discuss" class="btn btn-lg btn-secondary"><i class="icon icon-support"></i><span>Discussion</span></a></div></div></div><div id="hub-subheader-parent"><div id="hub-subheader"><div class="hub-container"><nav id="header-bottom-nav"><div id="header-icon-nav"><div class="icons"><div class="hub-subheader-breadcrumbs"><!-- Version picker--><span dropdown="" class="left-dropdown dropdown ng-isolate-scope"><a dropdown-toggle="" href="" class="hub-breadcrumb-item dropdown-toggle"><span>v1.0</span><i class="fa fa-chevron-down"></i></a></span><span dropdown="" class="left-dropdown dropdown ng-isolate-scope"><a href="" ng-class="{'hub-breadcrumb-last': !showTitle() &amp;&amp; !state.current().params.category}" dropdown-toggle="" class="hub-breadcrumb-item hub-breadcrumb-item-type dropdown-toggle"><span ng-show="state.current().root == 'home'" class="ng-hide">Home</span><span ng-show="state.current().root == 'docs'">Guides</span><span ng-show="state.current().root == 'reference'" class="ng-hide">API Reference</span><span ng-show="state.current().root == 'preview'" class="ng-hide">Reference</span><span ng-show="state.current().root == 'changelog'" class="ng-hide">Changelog</span><span ng-show="state.current().root == 'discuss'" class="ng-hide">Discussion</span><span ng-show="state.current().root == 'error'" class="ng-hide">Page Not Found</span><span ng-show="state.current().root == 'search'" class="ng-hide">Search</span><span ng-show="state.current().root == 'custompages'" class="ng-binding ng-hide">Test Cards</span><span ng-show="state.current().root == 'logs'" class="ng-hide">API Logs</span><i class="fa fa-chevron-down"></i></a></span><span ng-show="showTitle()" class="hub-breadcrumb-item hub-breadcrumb-item-title"><span ng-bind="showTitle()" class="ng-binding">Test Cards</span></span></div><div><div id="hub-search"><div searchbox="" ng-class="{full:search.full}" class="searchbox ng-scope"><input ng-model="search.query" type="text" placeholder="Search" class="search-box ng-pristine ng-untouched ng-valid"><div class="fa fa-search"></div></div></div></div></div></div></nav><div id="header-bottom-suggested-edits"><div class="pull-right"><a href="" ng-click="suggestedEdits.disable()" class="hub-suggested-edits-cancel"><i class="icon icon-cross-circle"></i>discard</a><!-- ngIf: user.isAdmin --><button ng-click="suggestedEdits.prepare()" class="btn btn-default"><i class="icon icon-right icon-register"></i><strong>Submit</strong> Suggested Edits</button></div></div></div><div><div id="hub-search-results" searchresults="" ng-class="{'hub-search-results-active':search.full}" class="notranslate ng-scope"><div class="hub-container"><h3>Search results for "<em class="ng-binding"></em>"</h3><div ng-show="!search.results.length" class="hub-search-noresults"><em class="ng-binding">No results found for "".&nbsp;</em></div></div><ul ng-show="search.results.length" class="ng-hide"><!-- ngRepeat: result in search.results --></ul><a ng-show="search.results.length" ng-href="/search?q=" class="viewAll ng-hide" href="https://developers.paystack.co/search?q=">View All Results</a></div></div><!-- ngIf: isMobile --></div></div></header><div ng-class="{active:contentLoadingSection || contentLoading}" class="hub-loading-indicator"></div><div id="hub-container" ng-class="{loading:contentLoadingSection}"><div class="hub-container"><div id="hub-sidebar-parent" sidebar="" class="hub-sidebar-sticky" style=""><nav id="hub-sidebar"><div class="scrollable-parent"><div class="nano ng-isolate-scope has-scrollbar" scroll-to-top="state.current().root"><div class="nano-content" ng-transclude="" tabindex="0" style="right: -17px;"><div id="hub-sidebar-content" class="ng-scope"><div ng-show="state.current().root == 'docs'"><h3>Getting Started</h3><ul><li ng-class="{'subnav-expanded' : isActive('5693e8703e9d080d00f06487')}"><a ui-sref="docs.show({'doc': 'accepting-payments'})" href="https://developers.paystack.co/docs/accepting-payments" ui-sref-alt="docs" class="text-overflow"><div class="link-title">Welcome</div></a></li></ul><h3>Integrating Paystack</h3><ul><li ng-class="{'subnav-expanded' : isActive('587a17702e05e71900618025')}"><a ui-sref="docs.show({'doc': 'adding-paystack-as-a-checkout-option'})" href="https://developers.paystack.co/docs/adding-paystack-as-a-checkout-option" ui-sref-alt="" class="text-overflow"><span ng-click="toggleMenu()" class="fa fa-chevron-right"></span><div class="link-title">Adding Paystack as a Checkout option</div></a><ul class="subpages"><li><a ui-sref="docs.show({'doc': 'prerequisites'})" href="https://developers.paystack.co/docs/prerequisites" class="text-overflow subpage"><div class="link-title">Prerequisites</div></a></li><li><a ui-sref="docs.show({'doc': 'transaction-parameters'})" href="https://developers.paystack.co/docs/transaction-parameters" class="text-overflow subpage"><div class="link-title">Transaction Parameters</div></a></li><li><a ui-sref="docs.show({'doc': 'change-save-order-to-pay'})" href="https://developers.paystack.co/docs/change-save-order-to-pay" class="text-overflow subpage"><div class="link-title">Change "Save Order" to "Pay"!</div></a></li><li><a ui-sref="docs.show({'doc': 'using-paystack-inline'})" href="https://developers.paystack.co/docs/using-paystack-inline" class="text-overflow subpage"><div class="link-title">Option 1: Inline</div></a></li><li><a ui-sref="docs.show({'doc': 'using-paystack-standard'})" href="https://developers.paystack.co/docs/using-paystack-standard" class="text-overflow subpage"><div class="link-title">Option 2: Standard</div></a></li><li><a ui-sref="docs.show({'doc': 'capturing-the-chargesuccess-event'})" href="https://developers.paystack.co/docs/capturing-the-chargesuccess-event" class="text-overflow subpage"><div class="link-title">VITAL: Capture charge.success</div></a></li><li><a ui-sref="docs.show({'doc': 'verify-the-transaction'})" href="https://developers.paystack.co/docs/verify-the-transaction" class="text-overflow subpage"><div class="link-title">Verify the transaction</div></a></li><li><a ui-sref="docs.show({'doc': 'paid-wrap-up'})" href="https://developers.paystack.co/docs/paid-wrap-up" class="text-overflow subpage"><div class="link-title">Paid! Wrap up.</div></a></li></ul></li></ul><h3>Dive In</h3><ul><li ng-class="{'subnav-expanded' : isActive('588760b4b23c022d00acd0ba')}"><a ui-sref="docs.show({'doc': 'paystack-inline'})" href="https://developers.paystack.co/docs/paystack-inline" ui-sref-alt="" class="text-overflow"><div class="link-title">Paystack Inline</div></a></li><li ng-class="{'subnav-expanded' : isActive('588762ebb23c022d00acd0cc')}"><a ui-sref="docs.show({'doc': 'paystack-standard'})" href="https://developers.paystack.co/docs/paystack-standard" ui-sref-alt="" class="text-overflow"><div class="link-title">Paystack Standard</div></a></li><li ng-class="{'subnav-expanded' : isActive('58ee613262b24825004e04fc')}"><a ui-sref="docs.show({'doc': 'paystack-js'})" href="https://developers.paystack.co/docs/paystack-js" ui-sref-alt="" class="text-overflow"><div class="link-title">Paystack Js</div></a></li><li><a href="https://github.com/PaystackHQ/PaystackJS-Sample-code" data-sidebar="paystack-js-sample" target="_self" class="sidebar-link"><div class="link-title"><span>Paystack JS Sample</span><div class="fa fa-external-link-square external"></div></div></a></li></ul><h3>API Overview</h3><ul><li ng-class="{'subnav-expanded' : isActive('564bd6637f04c52b0004ad26')}"><a ui-sref="docs.show({'doc': 'getting-started'})" href="https://developers.paystack.co/docs/getting-started" ui-sref-alt="" class="text-overflow"><div class="link-title">Introduction</div></a></li><li ng-class="{'subnav-expanded' : isActive('568f0ddcb700ce0d002f4a30')}"><a ui-sref="docs.show({'doc': 'authorization'})" href="https://developers.paystack.co/docs/authorization" ui-sref-alt="" class="text-overflow"><div class="link-title">Authentication</div></a></li><li ng-class="{'subnav-expanded' : isActive('568f1255bdb9260d00149d95')}"><a ui-sref="docs.show({'doc': 'errors'})" href="https://developers.paystack.co/docs/errors" ui-sref-alt="" class="text-overflow"><div class="link-title">Errors</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb5e232885e80e006c841f')}"><a ui-sref="docs.show({'doc': 'events'})" href="https://developers.paystack.co/docs/events" ui-sref-alt="" class="text-overflow"><div class="link-title">Events</div></a></li><li ng-class="{'subnav-expanded' : isActive('588c4607bded0819008ccceb')}"><a ui-sref="docs.show({'doc': 'plugins'})" href="https://developers.paystack.co/docs/plugins" ui-sref-alt="" class="text-overflow"><div class="link-title">Plugins</div></a></li><li ng-class="{'subnav-expanded' : isActive('56a92a55e590350d004b5143')}"><a ui-sref="docs.show({'doc': 'libraries-and-plugins'})" href="https://developers.paystack.co/docs/libraries-and-plugins" ui-sref-alt="" class="text-overflow"><div class="link-title">Libraries</div></a></li><li ng-class="{'subnav-expanded' : isActive('56a4fcbfb5693d0d008a92bc')}" class="subnav-expanded"><a ui-sref="docs.show({'doc': 'test-cards'})" href="https://developers.paystack.co/docs/test-cards" ui-sref-alt="" class="text-overflow active"><div class="link-title">Test Cards</div></a></li><li ng-class="{'subnav-expanded' : isActive('5935262d42a56e003b5acaa7')}"><a ui-sref="docs.show({'doc': 'test-bank-accounts'})" href="https://developers.paystack.co/docs/test-bank-accounts" ui-sref-alt="" class="text-overflow"><div class="link-title">Test Bank Accounts</div></a></li></ul><h3>Features</h3><ul><li ng-class="{'subnav-expanded' : isActive('57f364aae60d590e0010fbf4')}"><a ui-sref="docs.show({'doc': 'split-payments-overview'})" href="https://developers.paystack.co/docs/split-payments-overview" ui-sref-alt="" class="text-overflow"><div class="link-title">Split Payments</div></a></li><li ng-class="{'subnav-expanded' : isActive('5889b0e567343c1900b74196')}"><a ui-sref="docs.show({'doc': 'funds-transfers'})" href="https://developers.paystack.co/docs/funds-transfers" ui-sref-alt="" class="text-overflow"><div class="link-title">Funds Transfers</div></a></li><li ng-class="{'subnav-expanded' : isActive('5895675cf401510f0049f585')}"><a ui-sref="docs.show({'doc': 'bulk-charges'})" href="https://developers.paystack.co/docs/bulk-charges" ui-sref-alt="" class="text-overflow"><div class="link-title">Bulk Charges</div></a></li><li ng-class="{'subnav-expanded' : isActive('58de3b316641651b002d1d3d')}"><a ui-sref="docs.show({'doc': 'payment-session-timeouts'})" href="https://developers.paystack.co/docs/payment-session-timeouts" ui-sref-alt="" class="text-overflow"><div class="link-title">Payment Session Timeouts</div></a></li><li ng-class="{'subnav-expanded' : isActive('590e6938d04de70f0070f2a1')}"><a ui-sref="docs.show({'doc': 'recurring-debits'})" href="https://developers.paystack.co/docs/recurring-debits" ui-sref-alt="" class="text-overflow"><div class="link-title">Recurring Debits</div></a></li><li ng-class="{'subnav-expanded' : isActive('59252b433c954e1b00f9cfba')}"><a ui-sref="docs.show({'doc': 'charging-from-your-backend'})" href="https://developers.paystack.co/docs/charging-from-your-backend" ui-sref-alt="" class="text-overflow"><div class="link-title">Charging from your Backend</div></a></li><li ng-class="{'subnav-expanded' : isActive('5964f186ce3e85001b668808')}"><a ui-sref="docs.show({'doc': 'pay-with-bank'})" href="https://developers.paystack.co/docs/pay-with-bank" ui-sref-alt="" class="text-overflow"><div class="link-title">Pay With Bank</div></a></li><li ng-class="{'subnav-expanded' : isActive('5965144744f169001a9250a0')}"><a ui-sref="docs.show({'doc': 'understanding-authorizations'})" href="https://developers.paystack.co/docs/understanding-authorizations" ui-sref-alt="" class="text-overflow"><div class="link-title">Understanding Authorizations</div></a></li><li ng-class="{'subnav-expanded' : isActive('59980ac8f5bb7d000fa8438a')}"><a ui-sref="docs.show({'doc': 'custom-filters'})" href="https://developers.paystack.co/docs/custom-filters" ui-sref-alt="" class="text-overflow"><div class="link-title">Custom Filters</div></a></li><li ng-class="{'subnav-expanded' : isActive('5b4f48f59711cc0003430352')}"><a ui-sref="docs.show({'doc': 'hashing-inline'})" href="https://developers.paystack.co/docs/hashing-inline" ui-sref-alt="" class="text-overflow"><div class="link-title">Hashing Inline</div></a></li><li ng-class="{'subnav-expanded' : isActive('5dc057a5c11b1e0060b8c6d1')}"><a ui-sref="docs.show({'doc': 'handling-disputes'})" href="https://developers.paystack.co/docs/handling-disputes" ui-sref-alt="" class="text-overflow"><div class="link-title">Handling Disputes</div></a></li><li ng-class="{'subnav-expanded' : isActive('5e458011fcbb0e0278eabf97')}"><a ui-sref="docs.show({'doc': 'partial-debits'})" href="https://developers.paystack.co/docs/partial-debits" ui-sref-alt="" class="text-overflow"><div class="link-title">Partial Debits</div></a></li></ul></div><div ng-show="state.current().root == 'discuss'" class="ng-hide"><!--a.btn.btn-primary.btn-full.btn-lg(href="" ui-sref="discuss.create") Ask A Question--><h3>Support</h3></div><div ng-show="state.current().root == 'reference' || state.current().root == 'preview'" class="ng-hide"><div class="hub-sidebar-category active"><h3>Dive in</h3><ul><li ng-class="{'subnav-expanded' : isActive('5693f2123e9d080d00f064b1') || (false &amp;&amp; state.getStateFromUrl().params.category === 'paystack-inline-x')}" class="hub-sidebar-page"><a href="#paystack-inline-x" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="paystack-inline-x" class="text-overflow"><div class="link-title"><input type="hidden" value="Paystack Inline">Paystack Inline</div></a></li><li ng-class="{'subnav-expanded' : isActive('56940bf83e9d080d00f064f2') || (false &amp;&amp; state.getStateFromUrl().params.category === 'paystack-standard-x')}" class="hub-sidebar-page"><a href="#paystack-standard-x" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="paystack-standard-x" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Paystack Standard">Paystack Standard</div></a></li><li ng-class="{'subnav-expanded' : isActive('569416e45f1c951900644c95') || (false &amp;&amp; state.getStateFromUrl().params.category === 'verifying-transactions')}" class="hub-sidebar-page"><a href="#verifying-transactions" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="verifying-transactions" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Verifying Transactions">Verifying Transactions</div></a></li><li ng-class="{'subnav-expanded' : isActive('56941ea246b943190027fdfb') || (false &amp;&amp; state.getStateFromUrl().params.category === 'charging-returning-customers')}" class="hub-sidebar-page"><a href="#charging-returning-customers" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="charging-returning-customers" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Charging returning customers">Charging returning customers</div></a></li><li ng-class="{'subnav-expanded' : isActive('58d781aceaac780f005f3cf5') || (false &amp;&amp; state.getStateFromUrl().params.category === 'paystack-inline-embed')}" class="hub-sidebar-page"><a href="#paystack-inline-embed" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="paystack-inline-embed" class="text-overflow"><div class="link-title"><input type="hidden" value="Paystack Inline Embed">Paystack Inline Embed</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Transactions</h3><ul><li ng-class="{'subnav-expanded' : isActive('56faed95a790640e00c7ed41') || (false &amp;&amp; state.getStateFromUrl().params.category === 'initialize-a-transaction')}" class="hub-sidebar-page"><a href="#initialize-a-transaction" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="initialize-a-transaction" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Initialize Transaction">Initialize Transaction</div></a></li><li ng-class="{'subnav-expanded' : isActive('56faf83795334c0e00f55f64') || (false &amp;&amp; state.getStateFromUrl().params.category === 'verify-transaction')}" class="hub-sidebar-page"><a href="#verify-transaction" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="verify-transaction" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Verify Transaction">Verify Transaction</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fafb33ccc47e0e00465234') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-transactions')}" class="hub-sidebar-page"><a href="#list-transactions" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-transactions" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Transactions">List Transactions</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fafcd28550a90e00a33e6f') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-transaction')}" class="hub-sidebar-page"><a href="#fetch-transaction" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-transaction" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Transaction">Fetch Transaction</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fafe7bc266da0e00eb04c0') || (false &amp;&amp; state.getStateFromUrl().params.category === 'charge-authorization')}" class="hub-sidebar-page"><a href="#charge-authorization" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="charge-authorization" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Charge Authorization">Charge Authorization</div></a></li><li ng-class="{'subnav-expanded' : isActive('57bd9cdd5d48411900cd8d6b') || (false &amp;&amp; state.getStateFromUrl().params.category === 'view-transaction-timeline')}" class="hub-sidebar-page"><a href="#view-transaction-timeline" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="view-transaction-timeline" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="View Transaction Timeline">View Transaction Timeline</div></a></li><li ng-class="{'subnav-expanded' : isActive('58009587fc71170f00874c7f') || (false &amp;&amp; state.getStateFromUrl().params.category === 'transaction-totals')}" class="hub-sidebar-page"><a href="#transaction-totals" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="transaction-totals" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Transaction Totals">Transaction Totals</div></a></li><li ng-class="{'subnav-expanded' : isActive('570a401942cbb61700228c88') || (false &amp;&amp; state.getStateFromUrl().params.category === 'export-transactions')}" class="hub-sidebar-page"><a href="#export-transactions" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="export-transactions" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Export Transactions">Export Transactions</div></a></li><li ng-class="{'subnav-expanded' : isActive('58b91e8c0884220f005044c9') || (false &amp;&amp; state.getStateFromUrl().params.category === 'request-reauthorization')}" class="hub-sidebar-page"><a href="#request-reauthorization" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="request-reauthorization" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Request Reauthorization">Request Reauthorization</div></a></li><li ng-class="{'subnav-expanded' : isActive('595fc25f756f2000551e76e4') || (false &amp;&amp; state.getStateFromUrl().params.category === 'check-authorization')}" class="hub-sidebar-page"><a href="#check-authorization" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="check-authorization" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Check Authorization">Check Authorization</div></a></li><li ng-class="{'subnav-expanded' : isActive('5e458772d1bbcc005215b171') || (false &amp;&amp; state.getStateFromUrl().params.category === 'partial-debit')}" class="hub-sidebar-page"><a href="#partial-debit" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="partial-debit" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Partial Debit">Partial Debit</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Customers</h3><ul><li ng-class="{'subnav-expanded' : isActive('56fae04861b4290e00581125') || (false &amp;&amp; state.getStateFromUrl().params.category === 'create-customer')}" class="hub-sidebar-page"><a href="#create-customer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="create-customer" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Create Customer">Create Customer</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fae31d283ee90e004acae5') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-customers')}" class="hub-sidebar-page"><a href="#list-customers" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-customers" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Customers">List Customers</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fae5d711e13b170054a884') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-customer')}" class="hub-sidebar-page"><a href="#fetch-customer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-customer" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Customer">Fetch Customer</div></a></li><li ng-class="{'subnav-expanded' : isActive('56faeb9b048b8e0e00653a1f') || (false &amp;&amp; state.getStateFromUrl().params.category === 'update-customer')}" class="hub-sidebar-page"><a href="#update-customer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="update-customer" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Update Customer">Update Customer</div></a></li><li ng-class="{'subnav-expanded' : isActive('57bbca3260d92e0e0079e528') || (false &amp;&amp; state.getStateFromUrl().params.category === 'whiteblacklist-customer')}" class="hub-sidebar-page"><a href="#whiteblacklist-customer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="whiteblacklist-customer" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="White/blacklist Customer">White/blacklist Customer</div></a></li><li ng-class="{'subnav-expanded' : isActive('589359ca3a266c0f00f13612') || (false &amp;&amp; state.getStateFromUrl().params.category === 'deactivate-authorization')}" class="hub-sidebar-page"><a href="#deactivate-authorization" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="deactivate-authorization" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Deactivate Authorization">Deactivate Authorization</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Subaccounts</h3><ul><li ng-class="{'subnav-expanded' : isActive('57f4f973f0d87217009253e1') || (false &amp;&amp; state.getStateFromUrl().params.category === 'create-subaccount')}" class="hub-sidebar-page"><a href="#create-subaccount" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="create-subaccount" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Create Subaccount">Create Subaccount</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb24f01753a50e00d15533') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-subaccounts')}" class="hub-sidebar-page"><a href="#list-subaccounts" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-subaccounts" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Subaccounts">List Subaccounts</div></a></li><li ng-class="{'subnav-expanded' : isActive('57f4fea9531675240061da82') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-subaccount')}" class="hub-sidebar-page"><a href="#fetch-subaccount" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-subaccount" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Subaccount">Fetch Subaccount</div></a></li><li ng-class="{'subnav-expanded' : isActive('57f5007ea3e888170062cb5d') || (false &amp;&amp; state.getStateFromUrl().params.category === 'update-subaccount')}" class="hub-sidebar-page"><a href="#update-subaccount" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="update-subaccount" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Update Subaccount">Update Subaccount</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Plans</h3><ul><li ng-class="{'subnav-expanded' : isActive('56fb0513a745550e00b9bf6a') || (false &amp;&amp; state.getStateFromUrl().params.category === 'create-plan')}" class="hub-sidebar-page"><a href="#create-plan" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="create-plan" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Create Plan">Create Plan</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb08a0eaac000e005f9c86') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-plans')}" class="hub-sidebar-page"><a href="#list-plans" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-plans" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Plans">List Plans</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb0a64bad1610e00417239') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-plan')}" class="hub-sidebar-page"><a href="#fetch-plan" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-plan" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Plan">Fetch Plan</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb1538fcf8430e00174d3b') || (false &amp;&amp; state.getStateFromUrl().params.category === 'update-plan')}" class="hub-sidebar-page"><a href="#update-plan" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="update-plan" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Update Plan">Update Plan</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Subscriptions</h3><ul><li ng-class="{'subnav-expanded' : isActive('56fb17537c387f0e001e21e7') || (false &amp;&amp; state.getStateFromUrl().params.category === 'create-subscription')}" class="hub-sidebar-page"><a href="#create-subscription" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="create-subscription" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Create Subscription">Create Subscription</div></a></li><li ng-class="{'subnav-expanded' : isActive('58008ec5d7f8c41900bbe7af') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-subscriptions')}" class="hub-sidebar-page"><a href="#list-subscriptions" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-subscriptions" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Subscriptions">List Subscriptions</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb1b50fbd57e0e00e524ca') || (false &amp;&amp; state.getStateFromUrl().params.category === 'disable-subscription')}" class="hub-sidebar-page"><a href="#disable-subscription" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="disable-subscription" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Disable Subscription">Disable Subscription</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb1c7701f86c0e00b0ba7e') || (false &amp;&amp; state.getStateFromUrl().params.category === 'enable-subscription')}" class="hub-sidebar-page"><a href="#enable-subscription" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="enable-subscription" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Enable Subscription">Enable Subscription</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb1fbe68e1d30e00a0b652') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-subscription')}" class="hub-sidebar-page"><a href="#fetch-subscription" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-subscription" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Subscription">Fetch Subscription</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Products</h3><ul><li ng-class="{'subnav-expanded' : isActive('5d1a1317f80f3b002fdab316') || (false &amp;&amp; state.getStateFromUrl().params.category === 'create-product')}" class="hub-sidebar-page"><a href="#create-product" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="create-product" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Create Product">Create Product</div></a></li><li ng-class="{'subnav-expanded' : isActive('5d1a14b3850939045e240676') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-products')}" class="hub-sidebar-page"><a href="#list-products" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-products" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Products">List Products</div></a></li><li ng-class="{'subnav-expanded' : isActive('5d1a152fba9b830013ce6116') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-product')}" class="hub-sidebar-page"><a href="#fetch-product" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-product" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Product">Fetch Product</div></a></li><li ng-class="{'subnav-expanded' : isActive('5d1a15f796ab89005f5b0f0d') || (false &amp;&amp; state.getStateFromUrl().params.category === 'update-product')}" class="hub-sidebar-page"><a href="#update-product" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="update-product" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Update Product">Update Product</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Payment Pages</h3><ul><li ng-class="{'subnav-expanded' : isActive('56fb231168e1d30e00a0b656') || (false &amp;&amp; state.getStateFromUrl().params.category === 'create-page')}" class="hub-sidebar-page"><a href="#create-page" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="create-page" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Create Page">Create Page</div></a></li><li ng-class="{'subnav-expanded' : isActive('57f4fc3468a53b2000e03eb9') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-pages')}" class="hub-sidebar-page"><a href="#list-pages" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-pages" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Pages">List Pages</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb59182885e80e006c840e') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-page')}" class="hub-sidebar-page"><a href="#fetch-page" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-page" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Page">Fetch Page</div></a></li><li ng-class="{'subnav-expanded' : isActive('56fb59ff2885e80e006c8411') || (false &amp;&amp; state.getStateFromUrl().params.category === 'update-page')}" class="hub-sidebar-page"><a href="#update-page" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="update-page" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Update Page">Update Page</div></a></li><li ng-class="{'subnav-expanded' : isActive('57cc832bc27c3f290066dab5') || (false &amp;&amp; state.getStateFromUrl().params.category === 'check-slug-availability')}" class="hub-sidebar-page"><a href="#check-slug-availability" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="check-slug-availability" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Check Slug Availability">Check Slug Availability</div></a></li><li ng-class="{'subnav-expanded' : isActive('5d1a16d796ab89005f5b0f20') || (false &amp;&amp; state.getStateFromUrl().params.category === 'add-products')}" class="hub-sidebar-page"><a href="#add-products" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="add-products" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Add Products">Add Products</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Invoices</h3><ul><li ng-class="{'subnav-expanded' : isActive('5a294f2b15b0c7001c4bb2a2') || (false &amp;&amp; state.getStateFromUrl().params.category === 'create-invoice')}" class="hub-sidebar-page"><a href="#create-invoice" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="create-invoice" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Create Invoice">Create Invoice</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a2952c11c70b50028bc143d') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-invoices')}" class="hub-sidebar-page"><a href="#list-invoices" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-invoices" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Invoices">List Invoices</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a29531a842c120012bd7d02') || (false &amp;&amp; state.getStateFromUrl().params.category === 'view-invoice')}" class="hub-sidebar-page"><a href="#view-invoice" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="view-invoice" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="View Invoice">View Invoice</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a295379ec2b8400128ed341') || (false &amp;&amp; state.getStateFromUrl().params.category === 'verify-invoice')}" class="hub-sidebar-page"><a href="#verify-invoice" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="verify-invoice" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Verify Invoice">Verify Invoice</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a2953bd15b0c7001c4bb2ce') || (false &amp;&amp; state.getStateFromUrl().params.category === 'send-notification')}" class="hub-sidebar-page"><a href="#send-notification" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="send-notification" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Send Notification">Send Notification</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a2953d9842c120012bd7d06') || (false &amp;&amp; state.getStateFromUrl().params.category === 'get-invoice-metrics-for-dashboard')}" class="hub-sidebar-page"><a href="#get-invoice-metrics-for-dashboard" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="get-invoice-metrics-for-dashboard" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Get Invoice metrics for dashboard">Get Invoice metrics for dashboard</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a2954132f609b00300752cb') || (false &amp;&amp; state.getStateFromUrl().params.category === 'finalize-a-draft-invoice')}" class="hub-sidebar-page"><a href="#finalize-a-draft-invoice" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="finalize-a-draft-invoice" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Finalize a Draft Invoice">Finalize a Draft Invoice</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a295bc11c70b50028bc14dd') || (false &amp;&amp; state.getStateFromUrl().params.category === 'update-invoice')}" class="hub-sidebar-page"><a href="#update-invoice" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="update-invoice" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Update Invoice">Update Invoice</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a295bdf842c120012bd7d66') || (false &amp;&amp; state.getStateFromUrl().params.category === 'archive-invoice')}" class="hub-sidebar-page"><a href="#archive-invoice" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="archive-invoice" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Archive Invoice">Archive Invoice</div></a></li><li ng-class="{'subnav-expanded' : isActive('5c2c98af2aa724005cb4e290') || (false &amp;&amp; state.getStateFromUrl().params.category === 'mark-as-paid')}" class="hub-sidebar-page"><a href="#mark-as-paid" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="mark-as-paid" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Mark As Paid">Mark As Paid</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Settlements</h3><ul><li ng-class="{'subnav-expanded' : isActive('581ceed9bb096b0f002e61e3') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-settlements')}" class="hub-sidebar-page"><a href="#fetch-settlements" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-settlements" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Settlements">Fetch Settlements</div></a></li><li ng-class="{'subnav-expanded' : isActive('5e5fcced93ee8b004becc2a2') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-settlement-transactions')}" class="hub-sidebar-page"><a href="#fetch-settlement-transactions" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-settlement-transactions" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Settlement Transactions">Fetch Settlement Transactions</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Balance History</h3><ul><li ng-class="{'subnav-expanded' : isActive('5de0f6e41f54790013edc6b7') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-balance-history')}" class="hub-sidebar-page"><a href="#fetch-balance-history" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-balance-history" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Balance History">Fetch Balance History</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Transfer Recipients</h3><ul><li ng-class="{'subnav-expanded' : isActive('5893872c5d68453100e0cb60') || (false &amp;&amp; state.getStateFromUrl().params.category === 'create-transfer-recipient')}" class="hub-sidebar-page"><a href="#create-transfer-recipient" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="create-transfer-recipient" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Create Transfer Recipient">Create Transfer Recipient</div></a></li><li ng-class="{'subnav-expanded' : isActive('58939eac268acb3d00798fb7') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-transfer-recipients')}" class="hub-sidebar-page"><a href="#list-transfer-recipients" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-transfer-recipients" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Transfer Recipients">List Transfer Recipients</div></a></li><li ng-class="{'subnav-expanded' : isActive('58938bba5d68453100e0cb70') || (false &amp;&amp; state.getStateFromUrl().params.category === 'update-transfer-recipient')}" class="hub-sidebar-page"><a href="#update-transfer-recipient" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="update-transfer-recipient" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Update Transfer Recipient">Update Transfer Recipient</div></a></li><li ng-class="{'subnav-expanded' : isActive('5c06597c29f372019d7cdb2d') || (false &amp;&amp; state.getStateFromUrl().params.category === 'delete-transfer-recipient')}" class="hub-sidebar-page"><a href="#delete-transfer-recipient" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="delete-transfer-recipient" class="text-overflow"><span class="pg-type type-delete">delete</span><div class="link-title"><input type="hidden" value="Delete Transfer Recipient">Delete Transfer Recipient</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Transfers</h3><ul><li ng-class="{'subnav-expanded' : isActive('5894bc764d9c7e27002e426a') || (false &amp;&amp; state.getStateFromUrl().params.category === 'initiate-transfer')}" class="hub-sidebar-page"><a href="#initiate-transfer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="initiate-transfer" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Initiate Transfer">Initiate Transfer</div></a></li><li ng-class="{'subnav-expanded' : isActive('5894bd2c0d6b0c0f00add302') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-transfers')}" class="hub-sidebar-page"><a href="#list-transfers" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-transfers" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Transfers">List Transfers</div></a></li><li ng-class="{'subnav-expanded' : isActive('58956c8c41581f0f008846b2') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-transfer')}" class="hub-sidebar-page"><a href="#fetch-transfer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-transfer" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Transfer">Fetch Transfer</div></a></li><li ng-class="{'subnav-expanded' : isActive('5bb5e209478c1300031a4efa') || (false &amp;&amp; state.getStateFromUrl().params.category === 'verify-transfer')}" class="hub-sidebar-page"><a href="#verify-transfer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="verify-transfer" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Verify Transfer">Verify Transfer</div></a></li><li ng-class="{'subnav-expanded' : isActive('5894bddc0d6b0c0f00add30a') || (false &amp;&amp; state.getStateFromUrl().params.category === 'finalize-transfer')}" class="hub-sidebar-page"><a href="#finalize-transfer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="finalize-transfer" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Finalize Transfer">Finalize Transfer</div></a></li><li ng-class="{'subnav-expanded' : isActive('591c4d6fbf2ea41900063c65') || (false &amp;&amp; state.getStateFromUrl().params.category === 'initiate-bulk-transfer')}" class="hub-sidebar-page"><a href="#initiate-bulk-transfer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="initiate-bulk-transfer" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Initiate Bulk Transfer">Initiate Bulk Transfer</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Transfers Control</h3><ul><li ng-class="{'subnav-expanded' : isActive('58b66a4c88386b25008ce707') || (false &amp;&amp; state.getStateFromUrl().params.category === 'check-balance')}" class="hub-sidebar-page"><a href="#check-balance" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="check-balance" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Check Balance">Check Balance</div></a></li><li ng-class="{'subnav-expanded' : isActive('5894c1490d6b0c0f00add31f') || (false &amp;&amp; state.getStateFromUrl().params.category === 'resend-otp-for-transfer')}" class="hub-sidebar-page"><a href="#resend-otp-for-transfer" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="resend-otp-for-transfer" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Resend OTP for Transfer">Resend OTP for Transfer</div></a></li><li ng-class="{'subnav-expanded' : isActive('5894c1f64d9c7e27002e4298') || (false &amp;&amp; state.getStateFromUrl().params.category === 'disable-otp-requirement-for-transfers')}" class="hub-sidebar-page"><a href="#disable-otp-requirement-for-transfers" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="disable-otp-requirement-for-transfers" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Disable OTP requirement for Transfers">Disable OTP requirement for Transfers</div></a></li><li ng-class="{'subnav-expanded' : isActive('5894c3d50d6b0c0f00add32e') || (false &amp;&amp; state.getStateFromUrl().params.category === 'finalize-disabling-of-otp-requirement-for-transfers')}" class="hub-sidebar-page"><a href="#finalize-disabling-of-otp-requirement-for-transfers" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="finalize-disabling-of-otp-requirement-for-transfers" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Finalize Disabling of OTP requirement for Transfers">Finalize Disabling of OTP requirement for Transfers</div></a></li><li ng-class="{'subnav-expanded' : isActive('5894c2f40d6b0c0f00add32b') || (false &amp;&amp; state.getStateFromUrl().params.category === 'enable-otp-requirement-for-transfers')}" class="hub-sidebar-page"><a href="#enable-otp-requirement-for-transfers" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="enable-otp-requirement-for-transfers" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Enable OTP requirement for Transfers">Enable OTP requirement for Transfers</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Bulk Charges</h3><ul><li ng-class="{'subnav-expanded' : isActive('5895689441581f0f008846b0') || (false &amp;&amp; state.getStateFromUrl().params.category === 'initiate-bulk-charge')}" class="hub-sidebar-page"><a href="#initiate-bulk-charge" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="initiate-bulk-charge" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Initiate Bulk Charge">Initiate Bulk Charge</div></a></li><li ng-class="{'subnav-expanded' : isActive('58956d803191370f0060dced') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-bulk-charge-batches')}" class="hub-sidebar-page"><a href="#list-bulk-charge-batches" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-bulk-charge-batches" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Bulk Charge Batches">List Bulk Charge Batches</div></a></li><li ng-class="{'subnav-expanded' : isActive('58956d653191370f0060dcec') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-bulk-charge-batch')}" class="hub-sidebar-page"><a href="#fetch-bulk-charge-batch" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-bulk-charge-batch" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Bulk Charge Batch">Fetch Bulk Charge Batch</div></a></li><li ng-class="{'subnav-expanded' : isActive('5895717c41581f0f008846be') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-charges-in-a-batch')}" class="hub-sidebar-page"><a href="#fetch-charges-in-a-batch" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-charges-in-a-batch" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Charges in a Batch">Fetch Charges in a Batch</div></a></li><li ng-class="{'subnav-expanded' : isActive('5895726e448a480f0076441f') || (false &amp;&amp; state.getStateFromUrl().params.category === 'pause-bulk-charge-batch')}" class="hub-sidebar-page"><a href="#pause-bulk-charge-batch" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="pause-bulk-charge-batch" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Pause Bulk Charge Batch">Pause Bulk Charge Batch</div></a></li><li ng-class="{'subnav-expanded' : isActive('58957319448a480f00764421') || (false &amp;&amp; state.getStateFromUrl().params.category === 'resume-bulk-charge-batch')}" class="hub-sidebar-page"><a href="#resume-bulk-charge-batch" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="resume-bulk-charge-batch" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Resume Bulk Charge Batch">Resume Bulk Charge Batch</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Control Panel</h3><ul><li ng-class="{'subnav-expanded' : isActive('58de3a629dc4a71900fa17c8') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-payment-session-timeout')}" class="hub-sidebar-page"><a href="#fetch-payment-session-timeout" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-payment-session-timeout" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Payment Session Timeout">Fetch Payment Session Timeout</div></a></li><li ng-class="{'subnav-expanded' : isActive('58de3aa36641651b002d1d3b') || (false &amp;&amp; state.getStateFromUrl().params.category === 'update-payment-session-timeout')}" class="hub-sidebar-page"><a href="#update-payment-session-timeout" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="update-payment-session-timeout" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Update Payment Session Timeout">Update Payment Session Timeout</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Charge</h3><ul><li ng-class="{'subnav-expanded' : isActive('5d5f257dd39abf002609bbcc') || (false &amp;&amp; state.getStateFromUrl().params.category === 'charge')}" class="hub-sidebar-page"><a href="#charge" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="charge" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Charge">Charge</div></a></li><li ng-class="{'subnav-expanded' : isActive('59381d061316ed000f783ea9') || (false &amp;&amp; state.getStateFromUrl().params.category === 'submit-pin')}" class="hub-sidebar-page"><a href="#submit-pin" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="submit-pin" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Submit PIN">Submit PIN</div></a></li><li ng-class="{'subnav-expanded' : isActive('592527cf38d6340f00dbeab4') || (false &amp;&amp; state.getStateFromUrl().params.category === 'submit-otp')}" class="hub-sidebar-page"><a href="#submit-otp" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="submit-otp" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Submit OTP">Submit OTP</div></a></li><li ng-class="{'subnav-expanded' : isActive('592528732ff36a25004799e6') || (false &amp;&amp; state.getStateFromUrl().params.category === 'submit-phone')}" class="hub-sidebar-page"><a href="#submit-phone" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="submit-phone" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Submit Phone">Submit Phone</div></a></li><li ng-class="{'subnav-expanded' : isActive('595a59141799490033a7113c') || (false &amp;&amp; state.getStateFromUrl().params.category === 'submit-birthday')}" class="hub-sidebar-page"><a href="#submit-birthday" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="submit-birthday" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Submit Birthday">Submit Birthday</div></a></li><li ng-class="{'subnav-expanded' : isActive('5925288f58d2d40f00311112') || (false &amp;&amp; state.getStateFromUrl().params.category === 'check-pending-charge')}" class="hub-sidebar-page"><a href="#check-pending-charge" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="check-pending-charge" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Check pending charge">Check pending charge</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Disputes</h3><ul><li ng-class="{'subnav-expanded' : isActive('5da63ef081b833005572cad8') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-disputes')}" class="hub-sidebar-page"><a href="#list-disputes" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-disputes" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Disputes">List Disputes</div></a></li><li ng-class="{'subnav-expanded' : isActive('5da63f7610fe9d004c745d89') || (false &amp;&amp; state.getStateFromUrl().params.category === 'get-dispute')}" class="hub-sidebar-page"><a href="#get-dispute" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="get-dispute" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Get Dispute">Get Dispute</div></a></li><li ng-class="{'subnav-expanded' : isActive('5da6402e3482b9005da45c88') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-transaction-disputes')}" class="hub-sidebar-page"><a href="#list-transaction-disputes" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-transaction-disputes" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Transaction Disputes">List Transaction Disputes</div></a></li><li ng-class="{'subnav-expanded' : isActive('5da64101d8e58f0072740a27') || (false &amp;&amp; state.getStateFromUrl().params.category === 'update-dispute')}" class="hub-sidebar-page"><a href="#update-dispute" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="update-dispute" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Update Dispute">Update Dispute</div></a></li><li ng-class="{'subnav-expanded' : isActive('5da643a889090c004d15d4bb') || (false &amp;&amp; state.getStateFromUrl().params.category === 'add-evidence')}" class="hub-sidebar-page"><a href="#add-evidence" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="add-evidence" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Add Evidence">Add Evidence</div></a></li><li ng-class="{'subnav-expanded' : isActive('5da64299f0e50b003eff6cab') || (false &amp;&amp; state.getStateFromUrl().params.category === 'get-upload-url')}" class="hub-sidebar-page"><a href="#get-upload-url" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="get-upload-url" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Get Upload URL">Get Upload URL</div></a></li><li ng-class="{'subnav-expanded' : isActive('5da645033482b9005da45d2c') || (false &amp;&amp; state.getStateFromUrl().params.category === 'resolve-dispute')}" class="hub-sidebar-page"><a href="#resolve-dispute" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="resolve-dispute" class="text-overflow"><span class="pg-type type-put">put</span><div class="link-title"><input type="hidden" value="Resolve Dispute">Resolve Dispute</div></a></li><li ng-class="{'subnav-expanded' : isActive('5da6459ce8fd8600337aeaad') || (false &amp;&amp; state.getStateFromUrl().params.category === 'export-disputes')}" class="hub-sidebar-page"><a href="#export-disputes" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="export-disputes" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Export Disputes">Export Disputes</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Refunds</h3><ul><li ng-class="{'subnav-expanded' : isActive('5a9fb499d47ce40036257c7a') || (false &amp;&amp; state.getStateFromUrl().params.category === 'create-refund')}" class="hub-sidebar-page"><a href="#create-refund" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="create-refund" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Create Refund">Create Refund</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a9fb524ffc7b00035a75c1c') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-refund')}" class="hub-sidebar-page"><a href="#list-refund" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-refund" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Refunds">List Refunds</div></a></li><li ng-class="{'subnav-expanded' : isActive('5a9fb7e0ffc7b00035a75c9d') || (false &amp;&amp; state.getStateFromUrl().params.category === 'fetch-refund')}" class="hub-sidebar-page"><a href="#fetch-refund" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="fetch-refund" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Fetch Refund">Fetch Refund</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Verification</h3><ul><li ng-class="{'subnav-expanded' : isActive('5912034f51c7810f00d9a100') || (false &amp;&amp; state.getStateFromUrl().params.category === 'resolve-bvn')}" class="hub-sidebar-page"><a href="#resolve-bvn" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="resolve-bvn" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Resolve BVN">Resolve BVN</div></a></li><li ng-class="{'subnav-expanded' : isActive('5accbf217df6200003967368') || (false &amp;&amp; state.getStateFromUrl().params.category === 'match-bvn')}" class="hub-sidebar-page"><a href="#match-bvn" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="match-bvn" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="BVN Match">BVN Match</div></a></li><li ng-class="{'subnav-expanded' : isActive('591206170475730f0033ec9e') || (false &amp;&amp; state.getStateFromUrl().params.category === 'resolve-account-number')}" class="hub-sidebar-page"><a href="#resolve-account-number" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="resolve-account-number" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Resolve Account Number">Resolve Account Number</div></a></li><li ng-class="{'subnav-expanded' : isActive('58238139cc1ea80f00d9315e') || (false &amp;&amp; state.getStateFromUrl().params.category === 'resolve-card-bin')}" class="hub-sidebar-page"><a href="#resolve-card-bin" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="resolve-card-bin" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="Resolve Card BIN">Resolve Card BIN</div></a></li><li ng-class="{'subnav-expanded' : isActive('5aa52483ccabc10026e57c5b') || (false &amp;&amp; state.getStateFromUrl().params.category === 'resolve-phone-number')}" class="hub-sidebar-page"><a href="#resolve-phone-number" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="resolve-phone-number" class="text-overflow"><span class="pg-type type-post">post</span><div class="link-title"><input type="hidden" value="Resolve Phone Number">Resolve Phone Number</div></a></li></ul></div><div class="hub-sidebar-category"><h3>Miscellaneous</h3><ul><li ng-class="{'subnav-expanded' : isActive('57f4faec9757b12000145504') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-banks')}" class="hub-sidebar-page"><a href="#list-banks" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-banks" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Banks">List Banks</div></a></li><li ng-class="{'subnav-expanded' : isActive('5dc565e413a32e00cd79d27e') || (false &amp;&amp; state.getStateFromUrl().params.category === 'list-countries')}" class="hub-sidebar-page"><a href="#list-countries" target="_self" du-smooth-scroll="" duration="0" du-scrollspy="list-countries" class="text-overflow"><span class="pg-type type-get">get</span><div class="link-title"><input type="hidden" value="List Countries">List Countries</div></a></li></ul></div></div><div ng-show="state.current().root == 'reference-edit'" class="ng-hide"></div></div></div><div class="nano-pane"><div class="nano-slider" style="height: 363px; transform: translate(0px);"></div></div></div></div></nav></div><section id="hub-content"><div state-container="" ng-class="{loading: contentLoading}" class="hub-content-container" data-state-container="true"><meta ng-non-bindable="" name="meta:slug" content="test-cards" class="compiled ng-scope"><meta ng-non-bindable="" name="meta:type" content="docs" class="ng-scope"><meta ng-non-bindable="" name="meta:parent" class="ng-scope"><meta ng-non-bindable="" name="meta:image" content="" class="ng-scope"><meta ng-non-bindable="" name="meta:title" content="Test Cards" class="ng-scope"><meta ng-non-bindable="" name="meta:title_raw" content="Test Cards" class="ng-scope"><meta ng-non-bindable="" name="meta:description" content="Here’s are some cards that work on our test environment. No validation Card Number: 408 408 408 408 408 1Expiry Date: any date in the futureCVV: 408 PIN+OTP validation (nonreusable) Card Number: 5060 6666 6666 6666 666 (Verve)Expiry Date: any date in the futureCVV: 123PIN: 1234OTP: 123456 PIN only v..." class="ng-scope"><meta ng-non-bindable="" name="meta:_id" content="56a4fcbfb5693d0d008a92bc" class="ng-scope"><meta ng-non-bindable="" name="meta:hidden" class="ng-scope"><!-- ngIf: !suggestedEdits.isEnabled --><div ng-if="!suggestedEdits.isEnabled" class="ng-scope"><header id="content-head"><h1>Test Cards</h1><div class="excerpt"></div></header><div id="content-container" scroll-spy="" class="grid-container-fluid ng-scope"><section ng-class="{&quot;grid-75&quot;: false != true &amp;&amp; ss.toc.length , &quot;grid-100&quot;: false != false || !ss.toc.length}" class="content-body grid-75"><div class="markdown-body" style="margin-left: 31px" content="Here’s are some cards that work on our test environment.
+
+## No validation
+
+Card Number: 408 408 408 408 408 1
+Expiry Date: any date in the future
+CVV: 408
+
+## PIN+OTP validation
+*(nonreusable)*
+
+Card Number: 5060 6666 6666 6666 666 (Verve)
+Expiry Date: any date in the future
+CVV: 123
+PIN: 1234
+OTP: 123456
+
+## PIN only validation
+*(reusable)*
+
+Card Number: 5078 5078 5078 5078 12 (Verve)
+Expiry Date: any date in the future
+CVV: 081
+PIN: 1111
+
+## PIN+PHONE+OTP validation
+
+Card Number: 5078 5078 5078 5078 04 (Verve)
+Expiry Date: any date in the future
+CVV: 884
+PIN: 0000
+Phone: If less than 10 numeric characters, Transaction will fail.
+OTP: 123456
+
+## Bank authorization Simulation
+Card Number: 408 408 0000000 409
+Expiry Date: any date in the future
+CVV: 000
+
+# Simulating failed transactions with specific messages
+
+## Declined
+Card Number: 408 408 0000005 408
+Expiry Date: any date in the future
+CVV: 001
+
+## Token Not Generated. Customer Not Registered on Token Platform
+Card Number: 5078 5078 5078 5078 53 (Verve)
+Expiry Date: any date in the future
+CVV: 082
+PIN: _(any PIN)_
+
+# Simulating issues
+
+## Timeout error
+Card Number: 506066 0000000064 (Verve)
+Expiry Date: any date in the future
+CVV: 606
+
+## 500 error
+Card Number: 506066 506066 506067 (Verve)
+Expiry Date: any date in the future
+CVV: 060" variables="{}" defaults="[]" terms="[]" options="{&quot;correctnewlines&quot;:false,&quot;rdmd&quot;:{&quot;callouts&quot;:{&quot;useIconFont&quot;:false},&quot;theme&quot;:{&quot;background&quot;:&quot;&quot;,&quot;border&quot;:&quot;&quot;,&quot;markdownEdge&quot;:&quot;&quot;,&quot;markdownFont&quot;:&quot;&quot;,&quot;markdownFontSize&quot;:&quot;&quot;,&quot;markdownLineHeight&quot;:&quot;&quot;,&quot;markdownRadius&quot;:&quot;&quot;,&quot;markdownText&quot;:&quot;&quot;,&quot;markdownTitle&quot;:&quot;&quot;,&quot;markdownTitleFont&quot;:&quot;&quot;,&quot;mdCodeBackground&quot;:&quot;&quot;,&quot;mdCodeFont&quot;:&quot;&quot;,&quot;mdCodeRadius&quot;:&quot;&quot;,&quot;mdCodeTabs&quot;:&quot;&quot;,&quot;mdCodeText&quot;:&quot;&quot;,&quot;tableEdges&quot;:&quot;&quot;,&quot;tableHead&quot;:&quot;&quot;,&quot;tableHeadText&quot;:&quot;&quot;,&quot;tableRow&quot;:&quot;&quot;,&quot;tableStripe&quot;:&quot;&quot;,&quot;tableText&quot;:&quot;&quot;,&quot;text&quot;:&quot;&quot;,&quot;title&quot;:&quot;&quot;}}}" hydrate="true" base="&quot;/&quot;"><p>Here’s are some cards that work on our test environment.</p>
+<h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="no-validation"></div><div class="heading-text"><div id="section-no-validation" class="heading-anchor_backwardsCompatibility"></div>No validation</div><a class="heading-anchor-icon fa fa-anchor" href="#no-validation"></a></h2>
+<p>Card Number: 408 408 408 408 408 1<br>
+Expiry Date: any date in the future<br>
+CVV: 408</p>
+<h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="pinotp-validation"></div><div class="heading-text"><div id="section-pin-otp-validation" class="heading-anchor_backwardsCompatibility"></div>PIN+OTP validation</div><a class="heading-anchor-icon fa fa-anchor" href="#pinotp-validation"></a></h2>
+<p><em>(nonreusable)</em></p>
+<p>Card Number: 5060 6666 6666 6666 666 (Verve)<br>
+Expiry Date: any date in the future<br>
+CVV: 123<br>
+PIN: 1234<br>
+OTP: 123456</p>
+<h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="pin-only-validation"></div><div class="heading-text"><div id="section-pin-only-validation" class="heading-anchor_backwardsCompatibility"></div>PIN only validation</div><a class="heading-anchor-icon fa fa-anchor" href="#pin-only-validation"></a></h2>
+<p><em>(reusable)</em></p>
+<p>Card Number: 5078 5078 5078 5078 12 (Verve)<br>
+Expiry Date: any date in the future<br>
+CVV: 081<br>
+PIN: 1111</p>
+<h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="pinphoneotp-validation"></div><div class="heading-text"><div id="section-pin-phone-otp-validation" class="heading-anchor_backwardsCompatibility"></div>PIN+PHONE+OTP validation</div><a class="heading-anchor-icon fa fa-anchor" href="#pinphoneotp-validation"></a></h2>
+<p>Card Number: 5078 5078 5078 5078 04 (Verve)<br>
+Expiry Date: any date in the future<br>
+CVV: 884<br>
+PIN: 0000<br>
+Phone: If less than 10 numeric characters, Transaction will fail.<br>
+OTP: 123456</p>
+<h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="bank-authorization-simulation"></div><div class="heading-text"><div id="section-bank-authorization-simulation" class="heading-anchor_backwardsCompatibility"></div>Bank authorization Simulation</div><a class="heading-anchor-icon fa fa-anchor" href="#bank-authorization-simulation"></a></h2>
+<p>Card Number: 408 408 0000000 409<br>
+Expiry Date: any date in the future<br>
+CVV: 000</p>
+<h1 class="heading heading-1 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="simulating-failed-transactions-with-specific-messages"></div><div class="heading-text"><div id="section-simulating-failed-transactions-with-specific-messages" class="heading-anchor_backwardsCompatibility"></div>Simulating failed transactions with specific messages</div><a class="heading-anchor-icon fa fa-anchor" href="#simulating-failed-transactions-with-specific-messages"></a></h1>
+<h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="declined"></div><div class="heading-text"><div id="section-declined" class="heading-anchor_backwardsCompatibility"></div>Declined</div><a class="heading-anchor-icon fa fa-anchor" href="#declined"></a></h2>
+<p>Card Number: 408 408 0000005 408<br>
+Expiry Date: any date in the future<br>
+CVV: 001</p>
+<h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="token-not-generated-customer-not-registered-on-token-platform"></div><div class="heading-text"><div id="section-token-not-generated-customer-not-registered-on-token-platform" class="heading-anchor_backwardsCompatibility"></div>Token Not Generated. Customer Not Registered on Token Platform</div><a class="heading-anchor-icon fa fa-anchor" href="#token-not-generated-customer-not-registered-on-token-platform"></a></h2>
+<p>Card Number: 5078 5078 5078 5078 53 (Verve)<br>
+Expiry Date: any date in the future<br>
+CVV: 082<br>
+PIN: <em>(any PIN)</em></p>
+<h1 class="heading heading-1 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="simulating-issues"></div><div class="heading-text"><div id="section-simulating-issues" class="heading-anchor_backwardsCompatibility"></div>Simulating issues</div><a class="heading-anchor-icon fa fa-anchor" href="#simulating-issues"></a></h1>
+<h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="timeout-error"></div><div class="heading-text"><div id="section-timeout-error" class="heading-anchor_backwardsCompatibility"></div>Timeout error</div><a class="heading-anchor-icon fa fa-anchor" href="#timeout-error"></a></h2>
+<p>Card Number: 506066 0000000064 (Verve)<br>
+Expiry Date: any date in the future<br>
+CVV: 606</p>
+<h2 class="heading heading-2 header-scroll" align=""><div class="heading-anchor anchor waypoint" id="500-error"></div><div class="heading-text"><div id="section-500-error" class="heading-anchor_backwardsCompatibility"></div>500 error</div><a class="heading-anchor-icon fa fa-anchor" href="#500-error"></a></h2>
+<p>Card Number: 506066 506066 506067 (Verve)<br>
+Expiry Date: any date in the future<br>
+CVV: 060</p></div><div class="magic-block-textarea updated-at"><p><img src="Test%20Cards_files/book-icon.svg"> Updated 7 months ago</p></div></section><section ng-show="ss.toc.length" class="content-toc grid-25"><!-- ngIf: stickyTOC --><div id="sticky0-sticky-wrapper" class="sticky-wrapper is-sticky"><div sticky="66" ng-if="stickyTOC" class="sticky-toc ng-scope" id="sticky0" style="width: 254px; position: fixed; top: 66px;"><nav><div class=""><ul class="toc-list"><li ng-show="ss.toc.length"><a href="" ng-click="scrollTo()" class="tocHeader"><i class="icon icon-text-align-left"></i>Table of Contents</a></li><!-- ngRepeat: node in ss.toc --><li ng-repeat="node in ss.toc" class="toc-DIV"><a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Simulating failed transactions with specific messages</a><!-- ngIf: node.children.length --><ul ng-if="node.children.length" class="ng-scope"><!-- ngRepeat: node in node.children --><li ng-repeat="node in node.children" class="toc-DIV"><a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Declined</a></li><!-- end ngRepeat: node in node.children --><li ng-repeat="node in node.children" class="toc-DIV"><a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Token Not Generated. Customer Not Registered on Token Platform</a></li><!-- end ngRepeat: node in node.children --></ul><!-- end ngIf: node.children.length --></li><!-- end ngRepeat: node in ss.toc --><li ng-repeat="node in ss.toc" class="toc-DIV"><a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Simulating issues</a><!-- ngIf: node.children.length --><ul ng-if="node.children.length" class="ng-scope"><!-- ngRepeat: node in node.children --><li ng-repeat="node in node.children" class="toc-DIV"><a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">Timeout error</a></li><!-- end ngRepeat: node in node.children --><li ng-repeat="node in node.children" class="toc-DIV"><a href="" ng-click="scrollTo(node.data[0])" class="ng-binding">500 error</a></li><!-- end ngRepeat: node in node.children --></ul><!-- end ngIf: node.children.length --></li><!-- end ngRepeat: node in ss.toc --></ul></div></nav></div></div><!-- end ngIf: stickyTOC --><!-- ngIf: !stickyTOC --></section></div></div><!-- end ngIf: !suggestedEdits.isEnabled --><!-- ngIf: suggestedEdits.isEnabled --></div></section></div></div><!-- Logo--><footer><div class="hub-container"><div id="readmeLogo"><a href="https://readme.com/?ref_src=hub&amp;project=paystack" class="icon icon-readme"></a></div></div></footer><script id="config" type="application/json" data-json="{&quot;sslGenerationService&quot;:&quot;ssl.readmessl.com&quot;,&quot;metricsUrl&quot;:&quot;https://metrics.readme.io&quot;,&quot;metricsPrimus&quot;:{&quot;retries&quot;:10,&quot;pingTimeout&quot;:45000}}"></script><script>var is_hub = true;
+var is_hub2 = true;
+var is_hub_edit = true;
+</script><script src="Test%20Cards_files/bundle-hub2.js"></script><!-- Google Analytics--><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-52479696-1', 'auto');
+
+$(window).on('pageLoad', function(e, state){
+  ga('send', 'pageview', window.location.pathname);
+});
+</script><script>ga('create', 'UA-88753547-1', 'auto', {'name': 'custom'});
+$(window).on('pageLoad', function(e, state){
+  ga('custom.send', 'pageview', window.location.pathname);
+});
+
+</script><script id="hub-me" type="application/json" data-json="{&quot;loggedIn&quot;:false,&quot;search&quot;:{&quot;app&quot;:&quot;T28YKFATPY&quot;,&quot;token&quot;:&quot;Nzk1YzA2N2RiZTA5NDRmMDM0MWNjMjcyNWIyYmFkMTQ5YTZiMjBkMzA2NWMwZGM2MjI1Mzk0NzlmMjUwYTNhY3RhZ0ZpbHRlcnM9KHByb2plY3Q6NTY0YmQ2NjE3ZjA0YzUyYjAwMDRhZDIwKSwodmVyc2lvbjpub25lLHZlcnNpb246NTY0YmQ2NjE3ZjA0YzUyYjAwMDRhZDIzKSwoaGlkZGVuOm5vbmUsaGlkZGVuOmZhbHNlKSwoaW5kZXg6UGFnZSxpbmRleDpDdXN0b21QYWdlLGluZGV4OkJsb2cp&quot;,&quot;filters&quot;:&quot;tagFilters=(project:564bd6617f04c52b0004ad20),(version:none,version:564bd6617f04c52b0004ad23),(hidden:none,hidden:false),(index:Page,index:CustomPage,index:Blog)&quot;,&quot;metaData&quot;:[{&quot;modules&quot;:{&quot;landing&quot;:true,&quot;docs&quot;:true,&quot;examples&quot;:true,&quot;reference&quot;:true,&quot;changelog&quot;:true,&quot;discuss&quot;:false,&quot;suggested_edits&quot;:false,&quot;logs&quot;:false},&quot;id&quot;:&quot;564bd6617f04c52b0004ad20&quot;,&quot;subdomain&quot;:&quot;paystack&quot;}]}}"></script><div id="nspopover-1" class="ns-popover-dropdown-theme ns-popover-bottom-placement ns-popover-right-align ng-scope" style="position: absolute; display: none;"><div id="hub-user-dropdown" class="ns-popover-tooltip"><div class="ns-triangle"></div><div class="triangle"></div><ul><li ng-show="user.isAdmin" class="ng-hide"><a href="https://dash.readme.io/project/paystack/v1.0/dashboard"> <i class="fa fa-lock"></i>Admin Panel</a></li><li><a ng-href="/logout?redirect_uri=docs/test-cards" target="_self" href="https://developers.paystack.co/logout?redirect_uri=docs/test-cards"> <i class="fa fa-power-off"></i>Log out</a></li></ul></div></div></body></html>

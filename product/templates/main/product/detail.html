@@ -1,0 +1,385 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+{{block.super}}
+<!-- Product Details Area Start -->
+
+<div class="single-product-area detail-section section-padding-100 clearfix">
+    <div class="container-fluid">
+
+        <div id="breadcrumb">
+            <div class="container">
+                <ul class="breadcrumb">
+                    
+                    <li class="active">{{object.name| title}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-7">
+                <div class="single_product_thumb">
+                    <div id="product_details_slider" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li class="active" data-target="#product_details_slider" data-slide-to="0" style="background-image: url({{object.image.url}});">
+                            </li>
+                            
+                            <li data-target="#product_details_slider" data-slide-to="1" style="background-image: url({% if object.images %}{{object.images.url}}{% else %}{{object.image.url}}{% endif %});">
+                            </li>
+
+                            <li data-target="#product_details_slider" data-slide-to="2" style="background-image: url({% if object.images_left %}{{object.images_left.url}}{% else %}{{object.image.url}}{% endif %});">
+                            </li>
+                            <li data-target="#product_details_slider" data-slide-to="3" style="background-image: url({% if object.images_right %}{{object.images_right.url}}{% else %}{{object.image.url}}{% endif %});">
+                            </li>
+                        </ol>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <a class="gallery_img" href="{{object.image.url}}">
+                                    <img class="d-block w-100" src="{{object.image.url}}" alt="{{object.name}}">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a class="gallery_img" href="{% if object.images %}{{object.images.url}}{% else %}{{object.image.url}}{% endif %}">
+                                    <img class="d-block w-100" src="{% if object.images %}{{object.images.url}}{% else %}{{object.image.url}}{% endif %}" alt="Second slide">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a class="gallery_img" href="{% if object.images_left %}{{object.images_left.url}}{% else %}{{object.image.url}}{% endif %}">
+                                    <img class="d-block w-100" src="{% if object.images_left %}{{object.images_left.url}}{% else %}{{object.image.url}}{% endif %}" alt="Third slide">
+                                </a>
+                            </div>
+                            <div class="carousel-item">
+                                <a class="gallery_img" href="{% if object.images_right %}{{object.images_right.url}}{% else %}{{object.image.url}}{% endif %}">
+                                    <img class="d-block w-100" src="{% if object.images_right %}{{object.images_right.url}}{% else %}{{object.image.url}}{% endif %}" alt="Fourth slide">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5">
+                <div class="single_product_desc">
+                    <!-- Product Meta Data -->
+                    <div class="product-meta-data">
+                        <div class="line"></div>
+                        <a href="{{object.get_absolute_url}}">
+                            <h6>{{object.name | title}}</h6>
+                        </a>
+                        <div class="line"></div>
+                        <h3 class="product-price">&#8358;{{object.price}} <small><del class="product-old-price" style="color: #333333;">&#8358;{{object.discounted_from}}</del></small></h3>
+                        
+                        <!-- Ratings & Review -->
+                        <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
+                            <div class="ratings" id="meanRating">
+<!--                                 
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i>
+                                <i class="fa fa-star" aria-hidden="true"></i> -->
+                                
+                            </div>
+                            <div class="review">
+                                <a href="#review">
+                                    <h1> {{object.rating}}</h1>
+                                    {{reviews.count}} Review{% if reviews.count > 1 %}s{% endif %}
+                                    <!-- Write A Review -->
+                                    <input type="hidden" value="{{object.rating}}" id="meanStarVal" />
+                                    
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Avaiable -->
+                        <p class="avaibility"><a href="/{{object.company.slug}}">Sold by : {{object.company.name}}</a></p><br/>
+                        <p class="avaibility"><a href="/{{object.company.slug}}">Areas goods can be delivered : {{object.company.areas_covered}}</a></p><br/>
+                        
+                        {% if object.avaibility <= 0 %}
+                        
+                        <p> {{object.name|title}} not in stock</p>
+                        {% else %}
+                        <p class="avaibility"><i class="fa fa-circle"></i> {{object.avaibility}}</p>
+                        {% endif %}
+                        {% if request.user == object.company.owner %}
+                        <p class="avaibility pull-right" ><a href="{{object.get_absolute_url}}update" style="font-size: 15px; font-weight:bolder;"><i class="fa fa-pencil"></i> Edit Product Info </a></p>
+                        {% endif %}
+                    </div>
+                    <br/>
+                    
+                    {% for sale in request.user.cart.content.all %}{% if object == sale.product %}
+                        <input type="hidden" name="" class="incarttest" value="{{object}}" />    
+                            <button class="default-btn add-to-cart " style="background-color:#30323A;" onclick="window.location.href='/cart/'">
+                                <i class="fa fa-shopping-cart"></i> Added To Cart 
+                            </button>
+                            {% endif %}{% endfor %}
+                            {% if not user.is_authenticated %}
+    <button class="primary-btn pull-right" onclick="window.location.href='/cart/'"><i class="fa fa-shopping-cart" ></i> Add To Cart </button>
+    {% else %}
+                            <form class="cart clearfix  cart-form" method="post" action="{% url 'add_cart' %}" >{% csrf_token %}
+                                <input type="hidden" name="product_id" value="{{object.id}}" />
+                  
+                    <div class="cart-btn d-flex mb-50" style="width:60px;">
+                        <p>Qty</p>
+                        <div class="quantity">
+                            <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                            <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity_needed" value="1">
+                            <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                        </div>
+
+                      
+                    </div>
+                    <div class="cart-btn d-flex mb-50" style="width:40px; margin-top:-20px;">
+                        <p>Size</p>
+                        <div class="quantity">
+                            
+                            <input type="text" class="qty-text" id="qty"  name="size_needed" >
+                            
+                        </div>
+
+                      
+                    </div>
+                    <div class="cart-btn d-flex mb-50" style="width:40px; margin-top:-20px;">
+                        <p>Color</p>
+                        <div class="quantity">
+                            
+                            <input type="text" class="qty-text" id="qty"  name="color_needed" >
+                            
+                        </div>
+
+                      
+                    </div>
+                    
+    
+                                <button class="primary-btn add-to-cart " style="width: 100%; margin-top: -30px;"><i class="fa fa-shopping-cart" ></i> Add To Cart </button>
+                                
+                            </form>
+                            {% endif %}
+                            <br/>
+                           
+                    <div class="short_overview my-5">
+                        <p>Sizes Avaiable: {{object.size}}</p>
+                        <p>Colors Avaiable: {{object.color}}</p>
+                        <p>{{object.description | linebreaks}}</p>
+                        
+                        
+
+                    </div>
+                    
+                
+                    <br/>
+      
+                    {% for sale in request.user.cart.content.all %}{% if object == sale.product %}
+                    <input type="hidden" name="" class="incarttest" value="{{object}}" />    
+                        <button class="default-btn add-to-cart " style="background-color:#30323A;" onclick="window.location.href='/cart/'">
+                            <i class="fa fa-shopping-cart"></i> Added To Cart 
+                        </button>
+                        {% endif %}{% endfor %}
+                        {% if not user.is_authenticated %}
+<button class="primary-btn pull-right" onclick="window.location.href='/cart/'"><i class="fa fa-shopping-cart" ></i> Add To Cart </button>
+{% else %}
+                        <form class="cart clearfix  cart-form" method="post" action="{% url 'add_cart' %}" >{% csrf_token %}
+                            <input type="hidden" name="product_id" value="{{object.id}}" />
+              
+                <div class="cart-btn d-flex mb-50" style="width:60px;">
+                    <p>Qty</p>
+                    <div class="quantity">
+                        <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity_needed" value="1">
+                        <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                    </div>
+
+                  
+                </div>
+                <div class="cart-btn d-flex mb-50" style="width:40px; margin-top:-20px;">
+                    <p>Size</p>
+                    <div class="quantity">
+                        
+                        <input type="text" class="qty-text" id="qty"  name="size_needed" >
+                        
+                    </div>
+
+                  
+                </div>
+                <div class="cart-btn d-flex mb-50" style="width:40px; margin-top:-20px;">
+                    <p>Color</p>
+                    <div class="quantity">
+                        
+                        <input type="text" class="qty-text" id="qty"  name="color_needed" >
+                        
+                    </div>
+
+                  
+                </div>
+                
+
+                            <button class="primary-btn add-to-cart " style="width: 100%; margin-top: -30px;"><i class="fa fa-shopping-cart" ></i> Add To Cart </button>
+                            
+                        </form>
+                        {% endif %}
+                        <br/>
+                       
+                    
+                        <!-- {% if needed_record in request.user.cart.content.all %}
+                            <button class="default-btn add-to-cart btn " onclick="window.location.href='/cart/'">
+                                <i class="fa fa-shopping-cart"></i> Already in Cart 
+                            </button>
+                            {% else %}
+                            <form class="cart clearfix" method="post" action="{% url 'add_cart' %}">{% csrf_token %}
+                                
+                                <input type="hidden" name="product_id" value="{{object.id}}" />
+                                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add To Cart </button>
+                                
+                            </form>
+                            {% endif %} -->
+
+                     
+                            <!-- <form class="cart clearfix" method="post" action="{% url 'add_cart' %}">{% csrf_token %}
+                                <div class="cart-btn d-flex mb-50">
+                                    <p>Qty</p>
+                                    <div class="quantity">
+                                        <span class="qty-minus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i class="fa fa-caret-down" aria-hidden="true"></i></span>
+                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="300" name="quantity_needed" value="1">
+                                        <span class="qty-plus" onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i class="fa fa-caret-up" aria-hidden="true"></i></span>
+                                    </div>
+                                </div>
+                                <input type="hidden" name="product_id" value="{{object.id}}" />
+                                <button class="primary-btn add-to-cart"><i class="fa fa-shopping-cart"></i> Add To Cart </button>
+                                
+                            </form> -->
+                            
+                           
+
+                      
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="product-tab">
+            <ul class="tab-nav">
+                <li><a data-toggle="tab" href="#tab2" id="review">Review{% if reviews.all.count > 1 %}s{% endif %}({{ reviews.all.count }})</a></li>
+            </ul>
+            <div class="tab-content">
+                
+                <div id="tab2" class="">
+    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="product-reviews" id="apiReview">
+                           {% for review in reviews %} 
+                      <div class="single-review"><div class="review-heading"><div><a href="#"><i class="fa fa-user-o" style="font-weight: bolder;"></i>{{review.user.username|title}}</a></div><div><a href="#"><i class="fa fa-clock-o"></i>{{ review.timestamp}}</a></div><div class="rating-class review-rating pull-right" id="ratingId"><input type="hidden" name="ratingValue" id="ratingValue" value="{{review.rating}}" /></div></div><div class="review-body"><p>{{review.content}}</p></div></div>     {% endfor %}
+                               
+                                <!-- <div class="single-review">
+                                    <div class="review-heading">
+                                        <div><a href="#"><i class="fa fa-user-o"></i> {{review.user}}</a></div>
+                                        <div><a href="#"><i class="fa fa-clock-o"></i> {{review.timestamp | timesince}}</a></div>
+                                        <div class="review-rating pull-right" >
+                                            stars
+
+                                        </div>
+                                    </div>
+                                    <div class="review-body">
+                                        <p>{{review.content}}</p>
+                                    </div>
+                                </div> -->
+                               
+                               
+                                
+    
+                                
+                            </div>
+                        </div>
+                        {% if user.is_authenticated %}
+                        {% if allow_to_review %}
+                        <div class="col-md-6">
+                            
+                            <h4 class="text-uppercase" >Write Your Review</h4>
+                           
+                            <form class="review-form" method="POST" action="." height="100px">{% csrf_token %}
+                                
+                                <div class="form-group" >
+                                    {{review_form}}
+                                </div>
+                                <div class="form-group" >
+                                    <div class="input-rating">
+                                        <strong class="text-uppercase">Your Rating: </strong>
+                                        <div class="stars">
+                                            
+                                            <input type="radio" id="star5" required name="rating" value="5" /><label for="star5"></label>
+                                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="primary-btn">Submit</button>
+                            </form>
+                        </div>{% endif %}{% endif %}
+                    </div>
+    
+                    <div id="store">
+                        <!-- row -->
+                        <ul class="tab-nav">
+                            <li><a  href="/{{object.company.slug}}" >Other Products From {{object.company|title}}</a></li>
+                        </ul>
+                        <div class="row">
+                            
+                        <!-- Single Product Area -->
+                       
+                        <!-- Single Product Area -->
+                        {% for product in object.company.products_set.all %}
+                        {% if product != object %}
+                          <div class="col-md-3 col-sm-6 col-xs-6">
+                                    <div class="product product-single">
+                                        <div class="product-thumb">
+                                            <div class="product-label">
+                                                <span>New</span>
+                                                <span class="sale">-{{product.discount}}%</span>
+                                            </div>
+                                            <a href="{{product.get_absolute_url}}"><button class="main-btn quick-view"><i class="fa fa-search-plus"></i> Quick view</button></a>
+                                            <img src="{{product.image.url}}" alt="">
+                                        </div>
+                                        <div class="product-body">
+                                            <h3 class="product-price">&#8358;{{product.price}} <del class="product-old-price">&#8358;{{product.discounted_from}}</del></h3>
+                                            
+                                            <h2 class="product-name"><a href="#">{{product.name}}</a></h2>
+                                           {% if product.rating > 0 %} <div class="rating-class">
+                                              <input type="hidden" name="" id="" value="{{product.rating}}" />
+                                            </div>{% endif %}
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                       {% endif %}
+                    {% endfor %}
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
+
+{% block formadjust %}
+<script type="text/javascript">
+    $('document').ready(function(){
+        $('input').addClass('form-control');
+        $('input').css('width','250px');
+        var cartTest=$(".incarttest").val();
+  
+  if (cartTest){
+    $(".cart-form").css("display","none");
+  };
+    });
+    
+</script>
+
+{% endblock formadjust %}

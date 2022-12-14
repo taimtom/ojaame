@@ -1,0 +1,183 @@
+ 
+        
+{% load static %}
+        <!-- Mobile Nav (max width 767px)-->
+        <div class="mobile-nav">
+            <!-- Navbar Brand -->
+            <div class="amado-navbar-brand">
+                <a href="{% url 'home' %}"><img style="width:60%;" src="{% static 'img/core-img/mainlogo.jpg' %}"  alt=""></a>
+            </div>
+            <!-- Navbar Toggler -->
+        
+            
+            
+            <!-- <div class="amado-navbar-toggler">
+                
+                <span></span><span></span><span></span>
+            </div> -->
+            <!-- Mobile nav toggle-->
+            <div class="mobile-nav-list">
+                <ul>
+                  
+                    
+                   
+                    <li ><a href="{% url 'company:list' %}">
+                        <img class="head-icon" src="{% static 'img/core-img/shop.png' %}"  />
+                        <!-- <div class="header-text">Shops/offices</div> -->
+                    </a></li>
+                    <!-- <li><a href="{% url 'delivery:checkout' %}">Checkout</a></li> -->
+                     <!-- Cart -->
+                     {% if user.is_authenticated %}
+            <li class="header-cart dropdown default-dropdown" style="margin-left: -12px;">
+                <a class="" data-toggle="dropdown" aria-expanded="true">
+                    <div class="header-btns-icon">
+                        <!-- <i class="fa fa-shopping-cart"></i> -->
+                        <!-- <div class="header-text">
+                            <img src="{% static 'img/core-img/cart.png' %}"  alt="">
+                        Cart
+                        </div> -->
+                        
+                        <img class="head-icon" src="{% static 'img/core-img/carts.png' %}" alt="">
+                        <span class="qty" id="cartTotal"> {{request.user.cart.content.count}}</span>
+                    </div>
+                    
+                               
+                    
+                </a>
+                <div class="custom-menu">
+                    <div id="shopping-cart">
+                        <div class="shopping-cart-list header-cart-list">
+                            
+                            {% for product in request.user.cart.content.all %}
+                            <div class="product product-widget">
+                                <div class="product-thumb">
+                                    <img src="{{product.product.image.url}}" alt="">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-price">&#8358;{{product.product.price}} <span class="qty">x{{product.quantity}}</span></h3>
+                                    <h2 class="product-name"><a href="{{product.product.get_absolute_url}}">{{product.product.name}}</a></h2>
+                                </div>
+                                <form class="cart clearfix" method="post" action="{% url 'add_cart' %}">{% csrf_token %}
+                                    <input type="hidden" name="sale_id" value="{{product.id}}" />
+                                    <button class="cancel-btn"><i class="fa fa-trash"></i></button>
+                                    
+                                </form>
+                                
+                            </div>
+                            {% empty %}
+                            <h3 class="text-muted"> No Item In Cart</h3>
+                            {% endfor %}
+                            
+                          
+                        </div>
+                        <div class="shopping-cart-btns">
+                            <a href="{% url 'cart:cart' %}"><button class="main-btn" >View Cart</button></a>
+                            <a href="{% url 'delivery:delivery-info' %}"> <button class="primary-btn">Checkout </button></a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {% endif %}
+            <!-- /Cart -->
+                    <!-- <li><a href="{% url 'cart:cart' %}" class="cart-nav"><img src="{% static 'img/core-img/cart.png' %}" alt=""> <span class="qty"></span>Cart <span>({% for cart in user.cart_set.all %} {{cart.products.count}} {% endfor %})</span></a></li> -->
+                   
+                    <li class="header-cart dropdown default-dropdown" >
+                        <a class="" data-toggle="dropdown" aria-expanded="true">
+                            <div class="header-btns-icon">
+                                <!-- <i class="fa fa-shopping-cart"></i> -->
+                                
+                              
+                                
+                                 <!-- <div class="header-text">Search <img  src="{% static 'img/core-img/search.png' %}" alt=""></div> -->
+                                <img class="head-icon" src="{% static 'img/core-img/search1.png' %}" alt="">
+                            </div>
+                            
+                        </a>
+                        <div class="custom-menu">
+                            <div id="shopping-cart">
+                                <div class="shopping-cart-list">
+                            <form method="GET" action="{% url 'search' %}">
+                           
+                                
+                                
+                                    
+                                    
+                                        
+                                       
+                                        <div class="input-group">
+                                            <input size="25" style="overflow: hidden; border-radius: 5px;" class="" type="text" name="search">
+                                            <button class="main-btn icon-btn "><i class="fa fa-search"></i></button>
+                                       </div>
+                                       
+                                   
+                                    
+                                  
+                              
+                                
+                                </form>
+                            </div>
+                        </div>
+                        </div>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class=" dropdown default-dropdown " >
+                        <a class="" data-toggle="dropdown" aria-expanded="true">
+                            <div class="header-btns-icon">
+                                <!-- <i class="fa fa-shopping-cart"></i> -->
+                                <!-- <div class="header-text" style="font-weight: bold;">
+                                    <img width="25px" src="{% static 'img/core-img/users.png' %}"  alt="">
+                                    
+                                </div> -->
+                                <!-- {{user.username|title}} -->
+                                <img class="head-icon" src="{% static 'img/core-img/users.png' %}" alt="">
+                                <!-- <i class="fa fa-caret-down" aria-hidden="true"></i> -->
+                               
+                            </div>
+                            
+                        </a>
+                        <div class="custom-menu" style="width: min-content;">
+                            <div id="shopping-cart">
+                                <div class="shopping-cart-list">
+                                    <div class="product-body">
+                                        <h3 class="product-price">{% if user.company %}<a href="{{user.company.get_company_url}}">{{user.company.name}}</a>{% else %}<a href="{% url 'company:create' %}"> Sell Products</a>{% endif %}</h3>
+                                                          {% if user.company %}              <h3 class="product-name"><a href="{% url 'company:update' %}">Update Company's Info</a></h3>
+                                                      <h4 class="product-name"><a href="{% url 'products:create' %}">Add Goods To Store</a></h4>
+                           
+                           {% endif %}              
+                           {% if user.company %}{% if not user.company.bankaccountdetail %}<h4 class="product-name"><a href="{% url 'company:bank-detail' %}">Add Bank Account</a></h4>{% endif %}{% endif %}
+                           <h2 class="product-name"><a href="{% url 'referral:create' %}">Invite People</a></h2>
+                           <h3><a href="{% url 'accounts:my-pack' %}">Order Info</a></h3>
+                           <h3><a href="{% url 'profile:notifications' %}">Notifications({{user.notification_set.all.count}})</a></h3>
+                                                 <h3 ><a href="{% url 'logout' %}">Log Out</a></h3>          </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    
+                   </li>
+                   {% else %}
+                   <li class="header-cart">
+                                
+                    <a href="{% url 'login' %}" > 
+                        
+                        <!-- <div class="header-btns-icon header-text">
+                            Favourite<img  src="{% static 'img/core-img/favorites.png' %}" alt="">
+                            
+                        </div> -->
+                        <img class="head-icon" style="width: 35px;" src="{% static 'img/core-img/loginimg.png' %}" alt="Login">
+                    </a>
+                    
+                
+            </li>
+  {% endif %}
+                  <li class="nav-toggle" style="margin-left: -2px;" id="navbar-toggler">
+                        <button class="nav-toggle-btn" style="background-color: white; border: none; width: 4px; "><img class="head-icon" src="{% static 'img/core-img/dot.png' %}"></button>
+                    </li>
+                   
+                </ul>
+            </div>
+           
+           
+        </div>
+
+
