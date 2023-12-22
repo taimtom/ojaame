@@ -1,39 +1,36 @@
 {% extends "main/base_try.html" %}
 {% load static %}
-{% block content %}
-<div class="single-product-area detail-section section-padding clearfix indextry">
-<!-- HOME -->
-
-    <!-- container -->
+{% block banner %}
+<!-- container -->
     <!-- <div class="container"> -->
         <!-- home wrap -->
         <div class="home-wrap" id="indextry">
             <!-- home slick -->
             <div id="home-slick">
                 <!-- banner -->
-                <div class="banner banner-1" style="width:95%;height:70%;">
+                <!-- <div class="banner banner-1" style="width:99%; height: 250px ;">
                     <img src="{% static 'img/core-img/christmas.jpg' %}" alt="">
                     <div class="banner-caption text-center">
                         <h1>Are You A Retailer?</h1>
                         <h4 class="white-color font-weak">Scale Up Your Business Now By Creating A Free Online Store To Showcase Your Goods</h4>
                         <button onclick=window.location.assign("{% url 'company:create' %}") class="primary-btn">Create Store</button>
                     </div>
-                </div>
+                </div> -->
                 <!-- /banner -->
 
                 <!-- banner -->
-                <div class="banner banner-1" style="width:95%">
-                    <img src="{% static 'img/core-img/christmas1.jpg' %}"  alt="">
+                <div class="banner banner-1" style="width:99%; height: 250px ;">
+                    <!-- <img src="{% static 'img/core-img/christmas1.jpg' %}"  alt=""> -->
                     <div class="banner-caption">
-                        <h1 class="primary-color">HOT DEAL<br><span class="white-color font-weak">Up to 50% OFF</span></h1>
+                        <h1 class="primary-color">HOT DEALS Up to 50% OFF</h1>
                         <button onclick=window.location.assign("{% url 'products:list' %}") class="primary-btn">Shop Now</button>
                     </div>
                 </div>
                 <!-- /banner -->
 
                 <!-- banner -->
-                <div class="banner banner-1" style="width:95%; height:70% ;">
-                    <img src="{% static 'img/core-img/christmas2.jpg' %}" alt="">
+                <div class="banner banner-1" style="width:99%; height: 250px ;">
+                    <!-- <img src="{% static 'img/core-img/christmas2.jpg' %}" alt=""> -->
                     <div class="banner-caption">
                         <h1 class="white-color">Make Money By Refering People To Buy Now </h1>
                         <button onclick=window.location.assign("{% url 'referral:create' %}") class="primary-btn">Refer Others</button>
@@ -46,10 +43,16 @@
         <!-- /home wrap -->
     <!-- </div> -->
     <!-- /container -->
+{% endblock banner %}
+{% block content %}
+<div class="single-product-area detail-section section-padding clearfix indextry">
+<!-- HOME -->
+
+    
 
 <!-- /HOME -->
 <!-- section -->
-<div class="section">
+<div class="section" >
     <!-- container -->
     <div class="container">
         <!-- row -->

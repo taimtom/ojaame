@@ -1,233 +1,230 @@
-{% extends 'main/base.html' %}
-{% load staticfiles %}
-{% block company %}
-<div class="company-head"  style="background-image: {% if object.cover %}url('{{object.cover.url}}'){% else %} url('{% static 'img/product-img/pro-big-1.jpg' %}'){% endif %};">
-    
-    
-    
-        
-    <div class="company-logo">
-      {% if object.logo %}
-      <img  src="{{object.logo.url}}"  >
-      {% else %}
-      
-      <h1 style="text-align: center; color: #717571;">{{object.name|title}}</h1>
-      {% endif %}
+{% extends 'main/base.html' %} {% load static %} {% block company %}
+<div
+  class="company-head"
+  style="background-image: {% if object.cover %}url('{{object.cover.url}}'){% else %} url('{% static 'img/product-img/background1.webp' %}'){% endif %};"
+>
+  <div class="company-logo">
+    {% if object.logo %}
+    <img src="{{object.logo.url}}" />
+    {% else %}
+
+    <h1 style="text-align: center; color: #717571">{{object.name|title}}</h1>
+    {% endif %}
   </div>
   {% if object == user.company %}
   <div class="profile-link">
-      <a class="" href="{% url 'products:create'  %}"> <i class="icon ion-plus"></i><span>Add Product</span></a><a class="" href="{% url 'company:update'  %}">  
-                <i class="ion ion-edit"
-  ></i>	<span>Update Store Info</span>	</a>
+    <a class="" href="{% url 'products:create'  %}">
+      <i class="icon ion-plus"></i><span>Add Product</span></a
+    ><a class="" href="{% url 'company:update'  %}">
+      <i class="ion ion-edit"></i> <span>Update Store Info</span>
+    </a>
   </div>
-{% endif %}
-  
- 
+  {% endif %}
 </div>
-{% endblock company %}
-{% block content %}
-{{block.super}}
-
-
-
-
+{% endblock company %} {% block content %} {{block.super}}
 
 <section class="courses">
-    <div class="row ">
-        <div class="col-12">
-          
-                    
-                    <a href="/{{object.slug}}/account/" class="btn btn-primary" style=" float:left; background-color: #30323A; border-color: #30323A; margin: 5px;">My Company Finance</a>
-                    <a href="/{{object.slug}}/requested/" class="btn btn-main" style="float:left; border-color:#30323A;; margin: 5px;;">Recent Orders</a>
-                    <a href="/{{object.slug}}/delivered/" class="btn btn-main" style=" float:left;  border-color: #30323A; margin: 5px;">Delivered Orders</a>
-                    <a href="/{{object.slug}}/returned/" class="btn btn-main" style="float:left; border-color:#30323A;; margin: 5px;;">Returned Orders</a>
-               
-                <!-- Sorting -->
-               
-        </div>
-    </div>
-    
-    
-    <!-- row -->
-    <div class="store">
-    <div class="row">
-       
-        
-        <!-- <h4 class=" ">CUSTOMERS ({{instance.customers.all.count}} )</h4> -->
-        <div class="row ">
-            <div class="col-12">
-                <div class="product-topbar d-xl-flex align-items-end justify-content-between">
-                    <!-- Total Products -->
-                    <div class="total-products">
-                        
-                        
-                           <h2> <a href="#">CUSTOMERS ({{customers.all.count}} )</a></h2>
-                   
-                    </div>
-                    <!-- Sorting -->
-                   
-                </div>
-            </div>
-        </div>
-                    <div class="cart-table clearfix " style="overflow-x: scroll;">
-                      <table class="table table-responsive" style="overflow: hidden; outline: currentcolor none medium;">
-                        <thead>
-                          <tr style="background-color: #f5f7fa;">
-                            <th> Name </th>
-                            <th> Email </th>
-                            
-                            
-                          </tr>
-                        </thead>
-                        <tbody>
-                            {% for customer in customers %}
-                          <tr>
-                            
-                            <td> {{customer.username}}</td>
-                            <td>
-                              <label class="badge badge-gradient-success">{{customer.email}}</label>
-                            </td>
-                          
-                          </tr>
-                          {% endfor %}
-                          
-                        </tbody>
-                      </table>
-                      </div>
-        
-     </div>
-</div>
+  <div class="row">
+    <div class="col-12">
+      <a
+        href="/{{object.slug}}/account/"
+        class="btn btn-primary"
+        style="
+          float: left;
+          background-color: #30323a;
+          border-color: #30323a;
+          margin: 5px;
+        "
+        >My Company Finance</a
+      >
+      <a
+        href="/{{object.slug}}/requested/"
+        class="btn btn-main"
+        style="float: left; border-color: #30323a; margin: 5px"
+        >Recent Orders</a
+      >
+      <a
+        href="/{{object.slug}}/delivered/"
+        class="btn btn-main"
+        style="float: left; border-color: #30323a; margin: 5px"
+        >Delivered Orders</a
+      >
+      <a
+        href="/{{object.slug}}/returned/"
+        class="btn btn-main"
+        style="float: left; border-color: #30323a; margin: 5px"
+        >Returned Orders</a
+      >
 
+      <!-- Sorting -->
+    </div>
+  </div>
+
+  <!-- row -->
+  <div class="store">
+    <div class="row">
+      <!-- <h4 class=" ">CUSTOMERS ({{instance.customers.all.count}} )</h4> -->
+      <div class="row">
+        <div class="col-12">
+          <div
+            class="product-topbar d-xl-flex align-items-end justify-content-between"
+          >
+            <!-- Total Products -->
+            <div class="total-products">
+              <h2><a href="#">CUSTOMERS ({{customers.all.count}} )</a></h2>
+            </div>
+            <!-- Sorting -->
+          </div>
+        </div>
+      </div>
+      <div class="cart-table clearfix" style="overflow-x: scroll">
+        <table
+          class="table table-responsive"
+          style="overflow: hidden; outline: currentcolor none medium"
+        >
+          <thead>
+            <tr style="background-color: #f5f7fa">
+              <th>Name</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for customer in customers %}
+            <tr>
+              <td>{{customer.username}}</td>
+              <td>
+                <label class="badge badge-gradient-success"
+                  >{{customer.email}}</label
+                >
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-
- 
 <div class="aside">
-    <label class="aside-title">{{object.name}} Website Link</label>
+  <label class="aside-title">{{object.name}} Website Link</label>
+  <!-- widget product -->
+
+  <div class="product product-widget">
+    <input class="form-control" value="ojaa.me/{{object.slug}}/" readonly />
+  </div>
+  <label class="aside-title">Bank Details</label>
+  <!-- widget product -->
+
+  <div class="product product-widget">
+    <h5>Name: {{object.bankaccountdetail.acc_name}}</h5>
+    <h5>Number: {{object.bankaccountdetail.acc_number}}</h5>
+    <h5>Bank: {{object.bankaccountdetail.bank}}</h5>
+  </div>
+  <h3 class="aside-title">Last Purchase</h3>
+  <!-- widget product -->
+
+  <div class="product product-widget">
+    <h1>&#8358;{{account.last_cash_recieved}}</h1>
+  </div>
+  <!-- /widget product -->
+  <h3 class="aside-title">Total Income</h3>
+  <!-- widget product -->
+
+  <div class="product product-widget">
+    <h2>&#8358;{{object.account.total_income}}</h2>
+  </div>
+  <!-- /widget product -->
+  <h3 class="aside-title">Ledger Balance</h3>
+  <!-- widget product -->
+
+  <div class="product product-widget">
+    <h2>&#8358;{{object.account.ledger_balance}}</h2>
+  </div>
+  <!-- /widget product -->
+  <h3 class="aside-title">Avaliable Balance</h3>
+  <!-- widget product -->
+
+  <div class="product product-widget">
+    <h2>&#8358;{{object.account.available_balance}}</h2>
+  </div>
+
+  <!-- /widget product -->
+
+  <button id="cashout-btn" name="addtocart" value="5" class="btn amado-btn">
+    Cash out
+  </button>
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li class="{{message.tags}}">{{message}}</li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  <div id="cashout-form" class="">
+    <h3 class="aside-title cashout">Cashout</h3>
     <!-- widget product -->
-    
+
     <div class="product product-widget">
-        <input class="form-control" value="ojaa.me/{{object.slug}}/" readonly />
-        
-        
-        
+      <form
+        action="{% url 'referral:withdraw' %}"
+        class="form-group"
+        method="POST"
+      >
+        {% csrf_token %}
+        <label>Ammount Requested</label>
+        {% if form.error %} {{form.errors}} {% endif %}
+
+        <p id="id_ammount_alert"></p>
+        <input
+          type="hidden"
+          name=""
+          id="savings_balance"
+          value="{{account.available_balance}}"
+        />
+        <input
+          type="text"
+          id="id_ammount_requested"
+          maxlength="240"
+          name="ammount_request"
+          required
+          class="form-control"
+        />
+        <button type="submit" class="btn amado-btn">Cash out</button>
+      </form>
     </div>
-    <label class="aside-title">Bank Details</label>
-    <!-- widget product -->
-    
-    <div class="product product-widget">
-        <h5>Name: {{object.bankaccountdetail.acc_name}}</h5>
-        <h5>Number: {{object.bankaccountdetail.acc_number}}</h5>
-        <h5>Bank: {{object.bankaccountdetail.bank}}</h5>
-        
-        
-        
-    </div>
-    <h3 class="aside-title">Last Purchase</h3>
-    <!-- widget product -->
-    
-    <div class="product product-widget">
-        <h1>&#8358;{{account.last_cash_recieved}}</h1>
-        
-        
-        
-    </div>
-    <!-- /widget product -->
-    <h3 class="aside-title">Total Income</h3>
-    <!-- widget product -->
-    
-    <div class="product product-widget">
-        <h2>&#8358;{{object.account.total_income}}</h2>
-        
-        
-    </div>
-    <!-- /widget product -->
-    <h3 class="aside-title">Ledger Balance</h3>
-    <!-- widget product -->
-    
-    <div class="product product-widget">
-        <h2>&#8358;{{object.account.ledger_balance}}</h2>
-        
-        
-    </div>
-    <!-- /widget product -->
-    <h3 class="aside-title">Avaliable Balance</h3>
-    <!-- widget product -->
-    
-    <div class="product product-widget">
-        <h2>&#8358;{{object.account.available_balance}}</h2>
-        
-        
-    </div>
-    
-    <!-- /widget product -->
-    
-        
-        <button id="cashout-btn" name="addtocart" value="5" class="btn amado-btn"> Cash out</button>
-        {% if messages %}
-        <ul class="messages">
-        {% for message in messages %}
-        <li class="{{message.tags}}">{{message}}</li>
-        {% endfor %}
-        </ul>
-        {% endif %}
-    <div id="cashout-form" class="">
-        <h3 class="aside-title  cashout" >Cashout</h3>
-    <!-- widget product -->
-    
-    <div class="product product-widget">
-        <form action="{% url 'referral:withdraw' %}" class="form-group" method="POST">
-            {% csrf_token %}
-            <label>Ammount Requested</label>
-            {% if form.error %}
-            {{form.errors}}
-            {% endif %}
-            
-            
-            <p id="id_ammount_alert"></p>
-            <input type="hidden" name="" id="savings_balance" value="{{account.available_balance}}">
-            <input type="text" id="id_ammount_requested" maxlength="240" name="ammount_request"  required class="form-control">
-            <button   type="submit" class="btn amado-btn"> Cash out</button>
-            
-        </form>
-        
-        
-    </div>
-    </div>
-    <!-- /widget product -->
+  </div>
+  <!-- /widget product -->
 </div>
 
-        
-{% endblock content %}
-{% block formadjust %}
+{% endblock content %} {% block formadjust %}
 <script>
-$.ajax()
+  $.ajax();
 </script>
 <script>
-$('#cashout-btn').on('click',function(){
-    $('#cashout-form').addClass('open');
-    $('#cashout-btn').addClass('close');
-});
-var withdrawAmmount=$('#id_ammount_alert');
-var savingsBalance=$('#savings_balance').val();
-var inputArea=$('#id_ammount_requested');
-console.log(savingsBalance)
+  $("#cashout-btn").on("click", function () {
+    $("#cashout-form").addClass("open");
+    $("#cashout-btn").addClass("close");
+  });
+  var withdrawAmmount = $("#id_ammount_alert");
+  var savingsBalance = $("#savings_balance").val();
+  var inputArea = $("#id_ammount_requested");
+  console.log(savingsBalance);
 
-inputArea.keyup(function(){
-    var withdrawAmmountValue=$(this).val();
-    if(parseInt(withdrawAmmountValue) >= savingsBalance){
-        var x="<p> You Don't have upto "+withdrawAmmountValue+" in your account</p>";
-        document.getElementById('id_ammount_alert').innerHTML= x;
-    
-};
-});
-    
+  inputArea.keyup(function () {
+    var withdrawAmmountValue = $(this).val();
+    if (parseInt(withdrawAmmountValue) >= savingsBalance) {
+      var x =
+        "<p> You Don't have upto " +
+        withdrawAmmountValue +
+        " in your account</p>";
+      document.getElementById("id_ammount_alert").innerHTML = x;
+    }
+  });
 
-if(parseInt(withdrawAmmount) >= savingsBalance){
-    alert('Insufficient Balance');
-};
-
+  if (parseInt(withdrawAmmount) >= savingsBalance) {
+    alert("Insufficient Balance");
+  }
 </script>
 <!-- <script>
     var endpoint_sale='/referral/sale/api/'
@@ -356,6 +353,5 @@ var myChart = new Chart(ctx, {
 });
 }
 </script> -->
-
 
 {% endblock formadjust %}

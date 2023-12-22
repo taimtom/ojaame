@@ -30,7 +30,7 @@ from django.views.generic import View, ListView, DetailView
 from django.utils import timezone
 
 from referal.models import Referral
-from .models import Products
+from .models import Products, ProductPriceRanges
 from reviews.forms import ReviewForm
 from reviews.models import Review
 from cart.models import Cart
@@ -112,6 +112,7 @@ class ProductsList(ListView):
 
 def productdetail(request, slug=None):
 	instance = get_object_or_404(Products, slug=slug)
+	product_ranges=ProductPriceRanges.objects.filter(product=instance)
 	reviews=Review.objects.filter_by_instance(instance)
 	prev_review=None
 	allow_to_review=None
@@ -188,7 +189,8 @@ def productdetail(request, slug=None):
 		'object':instance,
 		'reviews':reviews,
 		'review_form':form,
-		"allow_to_review":allow_to_review
+		"allow_to_review":allow_to_review,
+		'product_ranges':product_ranges
 		# 'needed_record':needed_record
 		# 'product_name':instance.name,
 		# 'in_cart':in_cart
@@ -203,20 +205,22 @@ def productcreate_view(request):
 		sub_category=request.POST.get("sub_category")
 		form = ProductForm(request.POST,request.FILES)
 		cat_filter=request.user.company.product_cat
+		print(form.is_valid())
 		if form.is_valid():
 			instance=form.save(commit=False)
+			print("got here")
 			instance.sub_category=sub_category
 			instance.category=request.user.company.product_cat
 			instance.company=request.user.company
 			discount=100-(((instance.price)/(instance.discounted_from))*100)
 			instance.discount=discount
+			print("got here")
 			instance.save()
 			messages.success(request, "Successfully Created")
 			html_message = loader.render_to_string(
                             'main/emails/advert-add-product.html',
                             {
-                                'product':instance,
-                                
+                                'product':instance, 
                             }
                         )
 			all_users=User.objects.filter(cart__advert_email_unsubscribe=False)

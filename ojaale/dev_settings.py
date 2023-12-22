@@ -88,7 +88,7 @@ TEMPLATES = [
 AUTHENTICATION_BACKENDS = (
     
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+    # 'allauth.account.auth_backends.AuthenticationBackend',
 )
 
 WSGI_APPLICATION = 'ojaale.dev_wsgi.application'
@@ -100,7 +100,7 @@ ACCOUNT_DEFAULT_HTTP_PROTOCOL="https"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'dba.sqlite3'),
     }
 }
 
@@ -135,7 +135,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 

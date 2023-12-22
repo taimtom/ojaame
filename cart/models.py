@@ -55,10 +55,6 @@ def post_save_user_receiver(sender,instance,created,*args, **kwargs):
 
 	if created:
 		cart, is_created  = Cart.objects.get_or_create(user=instance)
-		# default_user_profile = Cart.objects.get_or_create(user__id=1)[0]
-		# default_user_profile.products.add(instance)
-		# myprofile.followers.add(default_user_profile.user)
-		# myprofile.followers.add(1)
 
 
 post_save.connect(post_save_user_receiver, sender=User)

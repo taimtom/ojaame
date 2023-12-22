@@ -2,8 +2,7 @@ from django import forms
 from .models import Products
 CATEGORY_CHOICES =( ("New", "New Product"), ("Used", "Fairly Used Product")) 
 class ProductForm(forms.ModelForm):
-    
-    
+
     # # creating a form  
     status = forms.ChoiceField(choices = CATEGORY_CHOICES) 
     class Meta:
@@ -20,16 +19,7 @@ class ProductForm(forms.ModelForm):
             'description',
             'color',
             'image',
-            'images',
-            'images_right',
-            'images_left',
-
         )
-        labels = {
-        "images": "Back View Image (optional)",
-        "images_right": "Left Side View Image (optional)",
-        "images_left": "Right Side View Image (optional)",
-        }
         widgets={
             'name':forms.TextInput(attrs={'placeholder':'Product Name'}),
             # 'category':forms.ChoiceField(choices = CATEGORY_CHOICES),
@@ -40,7 +30,6 @@ class ProductForm(forms.ModelForm):
             'brand':forms.TextInput(attrs={'placeholder':'Brand'}),
             'size':forms.TextInput(attrs={'placeholder':'Size e.g S, M, L, 41,42 ...'}),
             'color':forms.TextInput(attrs={'placeholder':'Color'}),
-            
         }
 
 

@@ -14,7 +14,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 from .models import Cart 
-from product.models import Products
+from product.models import Products,ProductPriceRanges
 from accounts.models import SaleRecord
 from accounts.forms import SaleRecordForm
 User=get_user_model()
@@ -29,13 +29,19 @@ class CartToggle(LoginRequiredMixin,View):
         qty_product=request.POST.get('quantity_needed')
         size_product=request.POST.get('size_needed')
         color_product=request.POST.get('color_needed')
-        
+         
         if product_id:
             product_selected = get_object_or_404(Products, id=product_id)
+            product_ranges = ProductPriceRanges.objects.filter(product=product_selected)
+            product_sale_price = 0
+            # for s
+            for product_range in product_ranges:
+                if int(qty_product) in range (product_range.start_quantity, product_range.stop_quantity):
+                    product_sale_price=product_range.price*int(qty_product)
             instance=SaleRecord.objects.create(
                 user=request.user,
                 product=product_selected,
-                price=product_selected.price*int(qty_product),
+                price=product_sale_price,
                 quantity=int(qty_product),
                 color=color_product,
                 size=size_product

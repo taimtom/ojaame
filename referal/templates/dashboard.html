@@ -1,5 +1,5 @@
 {% extends 'main/base.html' %}
-{% load staticfiles %}
+{% load static %}
 {% block company %}
 <div class="company-head"  style="background-image: {% if object.cover %}url('{{object.cover.url}}'){% else %} url('{% static 'img/product-img/pro-big-1.jpg' %}'){% endif %};">
     

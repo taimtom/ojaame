@@ -24,7 +24,7 @@
 
 	<!-- Font Awesome Icon -->
 	<link rel="stylesheet" href="{% static 'dist/css/font-awesome.min.css' %}">
-
+	<link rel="icon" href="{% static 'img/core-img/mainlogo.jpg' %}">
 	<!-- Custom stlylesheet -->
 	<link type="text/css" rel="stylesheet" href="{% static 'dist/css/style.css' %}" />
 <!-- Hotjar Tracking Code for ojaa.me -->
@@ -61,7 +61,6 @@
 
 {% endblock content %}
 
-{% include 'main/footer_test.html' %}
 
 	<!-- jQuery Plugins -->
 	<script src="{% static 'dist/js/jquery.min.js' %}"></script>
@@ -71,10 +70,22 @@
 	<script src="{% static 'dist/js/jquery.zoom.min.js' %}"></script>
 	<script src="{% static 'dist/js/main.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/rev.js' %}" ></script>
+	<script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js"
+    ></script>
 	  <script type="text/javascript" src="{% static 'js/an.js' %}" >
 
 
 	  </script>
+	  <script type="text/javascript">
+    console.log("got here ojaaame")
+    var converter = new showdown.Converter(),
+    text      = "{{object.description}}",
+    html      = converter.makeHtml(text);
+    console.log(html);
+    document.getElementById("markdownDescription").innerHTML =html
+  </script>
 
 </body>
 

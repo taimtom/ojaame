@@ -65,9 +65,6 @@ class Products(models.Model):
     description=models.TextField()
     color=models.CharField(max_length=30,null=True, blank=True)
     rating=models.FloatField(default=0)
-    images=models.FileField(upload_to='product/images',null=True, blank=True)
-    images_left=models.FileField(upload_to='product/images',null=True, blank=True)
-    images_right=models.FileField(upload_to='product/images',null=True, blank=True)
     image=models.FileField(upload_to='product/image')
     timestamp=models.DateTimeField(auto_now_add=True)
     slug=models.SlugField(null=True, blank=True)
@@ -90,6 +87,28 @@ class Products(models.Model):
       content_type=ContentType.objects.get_for_model(instance.__class__)
       return content_type
 
+
+class ProductImages(models.Model):
+  product=models.ForeignKey(Products, on_delete=models.CASCADE)
+  image=models.ImageField(upload_to='product/images')
+  alt=models.CharField(max_length=200, null=True, blank=True)
+  def __str__(self):
+      return str(self.product.name) + str(self.id)
+
+class ProductPriceRanges(models.Model):
+  product=models.ForeignKey(Products, on_delete=models.CASCADE)
+  start_quantity=models.IntegerField()
+  stop_quantity=models.IntegerField()
+  price=models.DecimalField(max_digits=20, decimal_places=2)
+
+  def __str__(self):
+      return str(self.product.name) + str(self.id)
+
+class ProductVariant(models.Model):
+  product=models.ForeignKey(Products, on_delete=models.CASCADE)
+  
+  def __str__(self):
+      return str(self.product.name) + str(self.id)
 
 def rl_pre_save_receiver(sender, instance, *args, **kwargs):
 	instance.name = instance.name.capitalize()

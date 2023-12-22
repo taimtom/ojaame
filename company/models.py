@@ -11,6 +11,11 @@ from .utils import unique_slug_generator
 User=settings.AUTH_USER_MODEL
 
 
+COMPANY_TYPE =(
+    ("W", "Wholesale Store"),
+    ("M", "Manufacturer"),
+)
+
 class CompanyQuerySet(models.QuerySet):
 	def search(self,query=None):
 		qs=self
@@ -40,17 +45,23 @@ class CompanyManager(models.Manager):
     # def cat_search(self,query=None):
 	# 	return self.get_queryset().cat_search(category_search)
 
+
 class Company(models.Model):
     owner=models.OneToOneField(User, on_delete=models.CASCADE)
     name=models.CharField(max_length=100)
     email=models.EmailField()
     phone=models.CharField(max_length=11)
+    company_type=models.CharField(
+        max_length=1,
+        choices=COMPANY_TYPE,
+        default="M",
+    )
     self_delivery=models.BooleanField(default=True)
     logo=models.FileField(upload_to='company/images')
     cover=models.FileField(upload_to='company/covers', null=True, blank=True)
     monitor=models.CharField(max_length=100, help_text="Ojaa monitors and enhances your mode of operation")
     average_delivery_cost=models.IntegerField(default=900)
-    areas_covered=models.CharField(max_length=260,help_text="Locations where your products can be available for delivery. Seperate each with semi colon (;)")
+    # areas_covered=models.CharField(max_length=260,help_text="Locations where your products can be available for delivery. Seperate each with semi colon (;)")
     description=models.TextField(null=True, blank=True)
     #products=models.ManyToManyField(Products, related_name='our_products')
     location=models.TextField()

@@ -123,6 +123,7 @@ hr {
   text-transform: uppercase;
   font-weight: 700;
   border: none;
+  border-radius: 8px;
   -webkit-transition: 0.3s all;
   transition: 0.3s all;
 }
