@@ -49,7 +49,7 @@
                                             <img src="{{product.product.image.url}}" alt="">
                                         </div>
                                         <div class="product-body">
-                                            <h3 class="product-price">&#8358;{{product.product.price}} <span class="qty">x{{product.quantity}}</span></h3>
+                                            <h3 class="product-price">&#8358;{{product.price_per_one}} <span class="qty">x{{product.quantity}}</span></h3>
                                             <h2 class="product-name"><a href="{{product.product.get_absolute_url}}">{{product.product.name}}</a></h2>
                                         </div>
                                         <form class="cart clearfix" method="post" action="{% url 'add_cart' %}">{% csrf_token %}

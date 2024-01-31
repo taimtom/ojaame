@@ -19,8 +19,9 @@ class SaleRecord(models.Model):
   package_time=models.DateTimeField(null=True,blank=True)
   collected_time=models.DateTimeField(null=True,blank=True, help_text='Date item was collected by delivery company')
   quantity=models.IntegerField(default=1)
+  price_per_one=models.DecimalField(max_digits=20, decimal_places=2)
   shiping_msg=models.CharField(max_length=250, null=True, blank=True)
-  price=models.IntegerField(default=0)
+  price=models.DecimalField(max_digits=20, decimal_places=2)
   timestamp=models.DateTimeField(auto_now_add=True)
   
   class Meta:

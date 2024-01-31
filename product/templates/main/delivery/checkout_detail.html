@@ -44,9 +44,9 @@
                         <li><span>delivery type:</span> <span >{{user.cart.delivery_type | title}}</span></li>
         
                         <li><span>delivery:</span> <span >Undefined</span></li>
-                        <li><span>gift card:</span> <span>&#8358;{{request.user.userprofile.gift_card}}</span></li>
+                        {% comment %} <li><span>gift card:</span> <span>&#8358;{{request.user.userprofile.gift_card}}</span></li> {% endcomment %}
                         <input type="hidden" id="priceSubtotal" name="price"  value="{{user.cart.total}}">
-                        <input type="hidden" id="giftTotal" name="price"  value="{{request.user.userprofile.gift_card}}">
+                        {% comment %} <input type="hidden" id="giftTotal" name="price"  value="{{request.user.userprofile.gift_card}}"> {% endcomment %}
                         <li><span>total:</span> <span >Undefined</span></li>
                     </ul>
 

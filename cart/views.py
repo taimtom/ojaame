@@ -38,11 +38,13 @@ class CartToggle(LoginRequiredMixin,View):
             for product_range in product_ranges:
                 if int(qty_product) in range (product_range.start_quantity, product_range.stop_quantity):
                     product_sale_price=product_range.price*int(qty_product)
+
             instance=SaleRecord.objects.create(
                 user=request.user,
                 product=product_selected,
                 price=product_sale_price,
                 quantity=int(qty_product),
+                price_per_one=round(product_sale_price/int(qty_product), 2),
                 color=color_product,
                 size=size_product
             )

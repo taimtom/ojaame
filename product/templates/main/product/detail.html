@@ -264,18 +264,7 @@
 
           <br />
 
-          {% for sale in request.user.cart.content.all %}
-          <!---->
-          {% if object == sale.product %}
-          <input type="hidden" name="" class="incarttest" value="{{object}}" />
-          <button
-            class="default-btn add-to-cart"
-            style="background-color: #30323a"
-            onclick="window.location.href='/cart/'"
-          >
-            <i class="fa fa-shopping-cart"></i> Added To Cart
-          </button>
-          {% endif %}{% endfor %}
+          
           <br />
 
           <!-- {% if needed_record in request.user.cart.content.all %}

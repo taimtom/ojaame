@@ -48,10 +48,10 @@
                     <ul class="summary-table">
                         <li><span>subtotal:</span> <span>&#8358;{{cart.total}}</span></li>
                         <li><span>delivery:</span> <span id="deliveryCharge">&#8358;</span></li>
-                        <li><span>delivery type:</span> <span >{{user.cart.delivery_type | title}}</span></li>
-                        <li><span>delivery type price:</span> <span >&#8358;{% if user.cart.delivery_type == "vip" %}5000{% elif user.cart.delivery_type == "standard" %} 1000 {% else %}Free{% endif %}</span></li>
-                        <li><span>gift card:</span> <span>&#8358;{% if request.user.userprofile.gift_card > 0 %}{{request.user.userprofile.gift_card}}{% else %}0{% endif %}</span></li>
-                        <input type="hidden" id="giftTotal" name="price"  value="{% if request.user.userprofile.gift_card > 0 %}{{request.user.userprofile.gift_card}}{% else %}0{% endif %}">
+                        {% comment %} <li><span>delivery type:</span> <span >{{user.cart.delivery_type | title}}</span></li> {% endcomment %}
+                        {% comment %} <li><span>delivery type price:</span> <span >&#8358;{% if user.cart.delivery_type == "vip" %}5000{% elif user.cart.delivery_type == "standard" %} 1000 {% else %}Free{% endif %}</span></li> {% endcomment %}
+                        {% comment %} <li><span>gift card:</span> <span>&#8358;{% if request.user.userprofile.gift_card > 0 %}{{request.user.userprofile.gift_card}}{% else %}0{% endif %}</span></li> {% endcomment %}
+                        {% comment %} <input type="hidden" id="giftTotal" name="price"  value="{% if request.user.userprofile.gift_card > 0 %}{{request.user.userprofile.gift_card}}{% else %}0{% endif %}"> {% endcomment %}
                         <input type="hidden" id="priceSubtotal" name="price"  value="{{cart.total}}">
                         <li><span>total:</span>  <span id="TotalPrice">&#8358;</span></li>
                     </ul>
